@@ -35,7 +35,7 @@ body {
 }
 
 a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.6);
+  -webkit-tap-highlight-color: rgba(0, 0, 128, 1);
 }
 
 .animated {
