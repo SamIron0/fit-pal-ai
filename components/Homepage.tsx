@@ -6,15 +6,14 @@ export default function HomePage() {
             <div className="sm:flex sm:flex-col sm:align-center">
             <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
                 Your AI{' '}
-                <a
+                <p
                     className="text-pink-500"
-                    href="https://dashboard.stripe.com/products"
-                    rel="noopener noreferrer"
-                    target="_blank"
+                    
                     >
                     Fitness Coach
-                    </a>
+                    </p>
                     .
+                <p></p>
             </h1>
             <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
                 
