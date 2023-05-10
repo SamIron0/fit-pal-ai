@@ -7,7 +7,7 @@ export default function HomePage() {
             <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
                 Your AI{' '}
                 <a
-                    className="text-pink-500 underline"
+                    className="text-pink-500"
                     href="https://dashboard.stripe.com/products"
                     rel="noopener noreferrer"
                     target="_blank"
