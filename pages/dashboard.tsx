@@ -2,8 +2,12 @@ export default function DashBoard() {
  
     return (
         <section className="bg-black">
-        
-            <div className="bg-black">
+                <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
+                    <div className="relative">
+                        
+                    </div>
+                </div>
+
                 <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
                     <div className="relative">
                         <input
@@ -16,8 +20,6 @@ export default function DashBoard() {
                         </button>
                     </div>
                 </div>
-            </div>
-        
         </section>
     )
     }
