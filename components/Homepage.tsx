@@ -27,7 +27,7 @@ export default function HomePage() {
                 </p>
             </div>
         </div>
-        <div className="bg-gray">
+        <div className="bg-gray-500">
             f
         </div>
         
