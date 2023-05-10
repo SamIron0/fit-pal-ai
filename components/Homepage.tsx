@@ -13,7 +13,7 @@ export default function HomePage() {
                     Fitness Coach
                     </p>
                     .
-                <p></p>
+                <p>Meal plans and workout plans tailor made for you. Just ask </p>
             </h1>
             <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
                 
