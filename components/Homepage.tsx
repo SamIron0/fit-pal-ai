@@ -7,6 +7,8 @@ export default function HomePage() {
                 <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
                     Your AI{' '}<p className="text-blue-500"> Fitness Coach </p>.
                 </h1>
+            </div>
+            <div>
                 <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
                     hkdhi idud iduiubd
                 </p>
