@@ -23,12 +23,7 @@ const Navbar = () => {
             <Link href="/" className={s.logo} aria-label="Logo">
               <Logo />
             </Link>
-            <nav className="space-x-2 ml-6 hidden lg:block">
-              
-              <Link href="/account" className={s.link}>
-                Dashboard
-              </Link>
-            </nav>
+            
           </div>
 
           <div className="flex flex-1 justify-end space-x-8">
