@@ -27,6 +27,9 @@ export default function HomePage() {
                 </p>
             </div>
         </div>
+        <div className="bg-white">
+            f
+        </div>
         
         <div>
             <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
