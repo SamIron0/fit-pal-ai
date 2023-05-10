@@ -115,7 +115,7 @@ export default function Pricing({ products }: Props) {
               minimumFractionDigits: 0
             }).format((price?.unit_amount || 0) / 100);
             return (
-              <div
+              <div 
                 key={product.id}
                 className={cn(
                   'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',

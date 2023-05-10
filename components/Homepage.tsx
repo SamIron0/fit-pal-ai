@@ -27,13 +27,13 @@ export default function HomePage() {
                 </p>
             </div>
         </div>
-        <div className="bg-white">
+        <div className="bg-gray">
             f
         </div>
         
         <div>
             <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
-            Brought to you by
+            Brought to you by 
             </p>
             <div className="flex flex-col items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-5">
             <div className="flex items-center justify-start">
