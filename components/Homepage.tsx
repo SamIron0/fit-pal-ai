@@ -15,9 +15,19 @@ export default function HomePage() {
             </div>
         </div>
 
-        <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
-            p
+        <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
+            <div className="sm:flex sm:flex-col sm:align-center">
+                <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
+                    Your AI{' '}<p className="text-blue-500"> Fitness Coach. </p>
+                </h1>
+            </div>
+            <div>
+                <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
+                    hkdhi idud iduiubd
+                </p>
+            </div>
         </div>
+        
         <div>
             <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
             Brought to you by
