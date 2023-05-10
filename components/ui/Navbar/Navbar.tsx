@@ -24,9 +24,7 @@ const Navbar = () => {
               <Logo />
             </Link>
             <nav className="space-x-2 ml-6 hidden lg:block">
-              <Link href="/" className={s.link}>
-                Home
-              </Link>
+              
               <Link href="/account" className={s.link}>
                 Dashboard
               </Link>
@@ -34,6 +32,10 @@ const Navbar = () => {
           </div>
 
           <div className="flex flex-1 justify-end space-x-8">
+              <Link href="/account" className={s.link}>
+                Dashboard
+              </Link>
+            
             {user ? (
               <span
                 className={s.link}
