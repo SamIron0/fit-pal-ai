@@ -140,6 +140,32 @@ export default function Account({ user }: { user: User }) {
                 {[...Array(5)].map((_, index) => (
                   <div key={index} className="bg-gray-400 w-64 h-64"></div>
                 ))}
+                <PlanCard
+                title="Monday"
+                description={
+                  subscription
+                    ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
+                    : ''
+                }
+                footer={
+                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+                    
+                  </div>
+                }
+                >
+                  <div className="text-xl mt-8 mb-4 font-semibold">
+                    {isLoading ? (
+                      <div className="h-12 mb-6">
+                        <LoadingDots />
+                      </div>
+                    ) : subscription ? (
+                      `${subscriptionPrice}/${subscription?.prices?.interval}`
+                    ) : (
+                      <Link href="/">Select something</Link>
+                    )}
+                  </div>
+                </PlanCard>
+
               </div>
             </div>
             
