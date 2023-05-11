@@ -82,7 +82,7 @@ export default function Account({ user }: { user: User }) {
 
   return (
     <section className="bg-black mb-32">
-        <div className="sm:flex sm:flex-col sm:align-center">
+        <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
             <div className="px-5 py-4">
               <h3 className="text-2xl mb-1 font-medium">Hello Samuel</h3>
@@ -90,12 +90,12 @@ export default function Account({ user }: { user: User }) {
           </div>
         </div>
 
-        <div className="sm:flex p-4 sm:flex-col sm:align-center">
+        <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
             <div className="px-5 py-4">
             </div>
             <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
-              <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
+              <div>
                 <div className="relative">
                   <input
                   type="text"
