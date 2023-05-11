@@ -273,7 +273,7 @@ export default function Account({ user }: { user: User }) {
             
               <div>
                 <div p-20>
-                
+                 gg
                 </div>
                 <div className="relative">
                   <input
