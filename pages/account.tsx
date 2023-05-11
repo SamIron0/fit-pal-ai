@@ -270,10 +270,11 @@ export default function Account({ user }: { user: User }) {
             </div>
             
             <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
-            <div p-20>
-              
-            </div>
+            
               <div>
+                <div p-20>
+                
+                </div>
                 <div className="relative">
                   <input
                   type="text"
