@@ -106,7 +106,7 @@ export default function Account({ user }: { user: User }) {
         </div>
 
         <div className="sm:flex px-4 sm:flex-col sm:align-center">
-          <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
+          <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto my-1">
             <div className="px-5"> 
               <div className="flex overflow-x-scroll space-x-4">
                 
