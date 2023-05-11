@@ -99,8 +99,8 @@ export default function Account({ user }: { user: User }) {
     <section className="bg-black mb-32">
         <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto">
-            <div className="px-5">
-              <h3 className="text-xl my-2.4 font-medium">Hello Samuel</h3>
+            <div className="px-5 py-3">
+              <h3 className="text-xl font-medium">Hello Samuel</h3>
             </div>
           </div>
         </div>
