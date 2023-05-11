@@ -108,7 +108,9 @@ export default function Account({ user }: { user: User }) {
         <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
             <div className="px-5 py-4">
-              <Card
+              
+
+              <PlanCard
                 title="Monday"
                 description={
                   subscription
@@ -132,14 +134,21 @@ export default function Account({ user }: { user: User }) {
                       <Link href="/">Select something</Link>
                     )}
                   </div>
-            </Card>
+              </PlanCard>     
+              
+              <div className="flex overflow-x-scroll space-x-4">
+                {[...Array(5)].map((_, index) => (
+                  <div key={index} className="bg-gray-400 w-64 h-64"></div>
+                ))}
+              </div>
             </div>
+            
             <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
               <div>
                 <div className="relative">
                   <input
                   type="text"
-                  className="bg-gray-700 rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="bg-black rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   placeholder="Make a workout plan for 4 days.."
                   />
                   <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
