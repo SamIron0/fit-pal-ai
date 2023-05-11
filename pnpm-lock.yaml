@@ -5,8 +5,8 @@ dependencies:
     specifier: ^1.48.0
     version: 1.48.0
   '@supabase/auth-helpers-nextjs':
-    specifier: ^0.5.4
-    version: 0.5.4(@supabase/supabase-js@2.10.0)
+    specifier: ^0.5.9
+    version: 0.5.9(@supabase/supabase-js@2.10.0)
   '@supabase/auth-helpers-react':
     specifier: ^0.3.1
     version: 0.3.1(@supabase/supabase-js@2.10.0)
@@ -219,12 +219,12 @@ packages:
     resolution: {integrity: sha512-Kw2BRXk6z/wnTU9m2IJOhxJNrx9xzmpFSbk6D/Z0x6LJntMafiHeHFag2PvSF30O2quMb1UUdWsnZqGVDruZww==}
     dev: false
 
-  /@supabase/auth-helpers-nextjs@0.5.4(@supabase/supabase-js@2.10.0):
-    resolution: {integrity: sha512-Xm3BMDOYPbNyuh8UXDRgBDc3JkeM5S2PfuC1jFJ73CCay4YiH1YxTz06Cvtp+vLH432qdjnqH+49ehVvUehPnQ==}
+  /@supabase/auth-helpers-nextjs@0.5.9(@supabase/supabase-js@2.10.0):
+    resolution: {integrity: sha512-OBmltVuPNFbtznBAgQgOFaWh3dO6rRmU7i77TVzEkbViZoK2ylzlKPIORg9Wh+4ZgYbP2QMsI5GzEtAz+aNTvA==}
     peerDependencies:
       '@supabase/supabase-js': ^2.0.4
     dependencies:
-      '@supabase/auth-helpers-shared': 0.2.4(@supabase/supabase-js@2.10.0)
+      '@supabase/auth-helpers-shared': 0.3.3(@supabase/supabase-js@2.10.0)
       '@supabase/supabase-js': 2.10.0
     dev: false
 
@@ -236,12 +236,13 @@ packages:
       '@supabase/supabase-js': 2.10.0
     dev: false
 
-  /@supabase/auth-helpers-shared@0.2.4(@supabase/supabase-js@2.10.0):
-    resolution: {integrity: sha512-c+hi3N6DhjPTzjXGOokre4gmMZOqt0f1ORrwZwi2s07pk3cbkmn77DwwVtlYMNi3oZNYRQqAfxJu83UzpJrrmg==}
+  /@supabase/auth-helpers-shared@0.3.3(@supabase/supabase-js@2.10.0):
+    resolution: {integrity: sha512-ZwZGffApfyz9MiT3knnZoF1DMWE56H/Q0Mrsn22J9ubhss7/+e7TP3dChxxwlUYqtDmjmLV6OV8W0BANENfUew==}
     peerDependencies:
       '@supabase/supabase-js': ^2.0.4
     dependencies:
       '@supabase/supabase-js': 2.10.0
+      js-base64: 3.7.5
     dev: false
 
   /@supabase/auth-ui-react@0.3.3(@supabase/supabase-js@2.10.0):
@@ -678,6 +679,10 @@ packages:
 
   /is-typedarray@1.0.0:
     resolution: {integrity: sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA==}
+    dev: false
+
+  /js-base64@3.7.5:
+    resolution: {integrity: sha512-3MEt5DTINKqfScXKfJFrRbxkrnk2AxPWGBL/ycjz4dK8iqiSJ06UxD8jh8xuh6p10TX4t2+7FsBYVxxQbMg+qA==}
     dev: false
 
   /js-tokens@4.0.0:
