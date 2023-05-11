@@ -85,12 +85,18 @@ export default function Account({ user }: { user: User }) {
       <div className="max-w-6xl mx-auto pt-8 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
         <div className="bg-zinc-700 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
-          <div className="relative">
             <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
               Hello, Samuel
             </p>
-          </div>
       </div>
+      <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
+      <div className="px-5 py-4">
+        <h3 className="text-2xl mb-1 font-medium">Enter text</h3>
+
+       </div>
+      <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
+      </div>
+    </div>
           
         </div>
       </div>
