@@ -107,7 +107,7 @@ export default function Account({ user }: { user: User }) {
 
         <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
-            <div className="px-5 py-1.8"> 
+            <div className="px-5 py-1"> 
               <div className="flex overflow-x-scroll space-x-4">
                 
                 <PlanCard
@@ -269,7 +269,10 @@ export default function Account({ user }: { user: User }) {
               </div>
             </div>
             
-            <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
+            <div className="border-t border-zinc-700 bg-zinc-900 p-42 text-zinc-500 rounded-b-md">
+              <div className="p-60">
+
+              </div>
               <div>
                 <div className="relative">
                   <input
