@@ -100,7 +100,7 @@ export default function DashBoard() {
                     <input
                         type="text"
                         className="bg-gray-700 rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                        placeholder="Make a eworkout plan for 4 days.."
+                        placeholder="Make a workout plan for 4 days.."
                     />
 
                     {!loading && (
