@@ -4,7 +4,7 @@ import { GetServerSidePropsContext } from 'next';
 import {
   createServerSupabaseClient,
   User
-} from '@supabase/auth-helpers-nextjs';
+} from '@supabase/auth-helpers-nextjs' ; 
 
 import LoadingDots from '@/components/ui/LoadingDots';
 import Button from '@/components/ui/Button';
