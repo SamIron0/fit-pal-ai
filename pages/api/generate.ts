@@ -1,8 +1,8 @@
 import { OpenAIStream, OpenAIStreamPayload } from "../../utils/OpenAIStream";
 
-if (!process.env.OPENAI_API_KEY) {
-  throw new Error("Missing env var from OpenAI");
-}
+//if (!process.env.OPENAI_API_KEY) {
+  //throw new Error("Missing env var from OpenAI");
+//}
 
 export const config = {
   runtime: "edge",
