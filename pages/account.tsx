@@ -87,16 +87,26 @@ export default function Account({ user }: { user: User }) {
             <div className="px-5 py-4">
               <h3 className="text-2xl mb-1 font-medium">Hello Samuel</h3>
             </div>
-            <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
-            </div>
           </div>
         </div>
 
-        <div className="sm:flex sm:flex-col sm:align-center">
+        <div className="sm:flex p-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
             <div className="px-5 py-4">
             </div>
             <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
+              <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
+                <div className="relative">
+                  <input
+                  type="text"
+                  className="bg-gray-700 rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  placeholder="Make a workout plan for 4 days.."
+                  />
+                  <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
+                    Button
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
