@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 const { Configuration, OpenAIApi } = require("openai");
-//const [generatedBios, setGeneratedBios] = useState<String>("");
+let generated="";
 
 const generate = async (e: any) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const generate = async (e: any) => {
         presence_penalty: 0.0,
         stop: ["\n"],
     });
-    //setGeneratedBios(response);
+    generated = response;
 
 }
 
