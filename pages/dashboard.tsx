@@ -4,7 +4,7 @@ const [generatedBios, setGeneratedBios] = useState<String>("");
 
 const generate = async (e: any) => {
     e.preventDefault();
-    setGeneratedBios(""); 
+    //setGeneratedBios(""); 
     const configuration = new Configuration({
         apiKey: process.env.OPENAI_API_KEY,
     });
@@ -21,7 +21,7 @@ const generate = async (e: any) => {
         presence_penalty: 0.0,
         stop: ["\n"],
     });
-    setGeneratedBios(response);
+    //setGeneratedBios(response);
 
 }
 
