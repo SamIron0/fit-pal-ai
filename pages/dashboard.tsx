@@ -34,6 +34,7 @@ export default function DashBoard() {
                 >
                     Your generated bios
                 </h2>
+                {generated}
             </div>
 
             <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
