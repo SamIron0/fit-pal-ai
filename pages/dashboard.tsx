@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 const { Configuration, OpenAIApi } = require("openai");
-const [generatedBios, setGeneratedBios] = useState<String>("");
+//const [generatedBios, setGeneratedBios] = useState<String>("");
 
 const generate = async (e: any) => {
     e.preventDefault();
@@ -34,7 +34,6 @@ export default function DashBoard() {
                 >
                     Your generated bios
                 </h2>
-                {generatedBios}
             </div>
 
             <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
