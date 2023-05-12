@@ -1,12 +1,20 @@
 import { OpenAIStream, OpenAIStreamPayload } from "../../utils/OpenAIStream";
 
+const { Configuration, OpenAIApi } = require("openai");
+
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,  
+});
+const openai = new OpenAIApi(configuration);
+
+
 //if (!process.env.OPENAI_API_KEY) {
-  //throw new Error("Missing env var from OpenAI");
+  //throw new Error("Missing env var from OpenAI")
 //}
 
-export const config = {
-  runtime: "edge",
-};
+//export const config = {
+//  runtime: "edge",
+//};
 
 const handler = async (req: Request): Promise<Response> => {
   const { prompt } = (await req.json()) as {
@@ -16,7 +24,7 @@ const handler = async (req: Request): Promise<Response> => {
   if (!prompt) {
     return new Response("No prompt in the request", { status: 400 });
   }
-
+/*
   const payload: OpenAIStreamPayload = {
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
@@ -28,9 +36,19 @@ const handler = async (req: Request): Promise<Response> => {
     stream: true,
     n: 1,
   };
-
-  const stream = await OpenAIStream(payload);
-  return new Response(stream);
+*/
+  //const stream = await OpenAIStream(payload);
+  return new Response(await openai.createCompletion({
+    model: "text-davinci-003",
+    prompt: "How to make toast",
+    temperature: 0,
+    max_tokens: 100,
+    top_p: 1,
+    frequency_penalty: 0.0,
+    presence_penalty: 0.0,
+    stop: ["\n"],
+  }));
+  
 };
 
 export default handler;
