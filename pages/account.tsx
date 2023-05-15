@@ -10,7 +10,6 @@ import LoadingDots from '@/components/ui/LoadingDots';
 import Button from '@/components/ui/Button';
 import { useUser } from '@/utils/useUser';
 import { postData } from '@/utils/helpers';
-import { errorToJSON } from 'next/dist/server/render';
 
 interface Props {
   title: string;
