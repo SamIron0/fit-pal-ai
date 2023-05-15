@@ -87,7 +87,7 @@ export default function Account({ user }: { user: User }) {
       });
       window.location.assign(url);
     } catch (error) {
-      if (error) return alert((error as Error).message + "here");
+      if (error) return alert((error as Error).message);
     }
     setLoading(false);
   };
@@ -108,7 +108,7 @@ export default function Account({ user }: { user: User }) {
       //console.log(data);
       //setMealData(data);
     } catch (error) {
-      if (error) return alert((error as Error).message);
+      if (error) return alert((error as Error).message + "here");
     }
   }
 
