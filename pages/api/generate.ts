@@ -4,7 +4,7 @@ import { NextApiHandler } from 'next';
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,  
+  apiKey: "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",  
 });
 const openai = new OpenAIApi(configuration);
 
@@ -15,6 +15,7 @@ const handler: NextApiHandler = async (req, res) => {
       model: "gpt-3.5-turbo",
       messages: [{role: "user", content: "Make me a meal plan"}],
     });
+    alert(meal_plan.data);
     res.status(200).json(meal_plan.data.choices[0].message);
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
