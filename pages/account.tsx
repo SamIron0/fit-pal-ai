@@ -103,7 +103,7 @@ export default function Account({ user }: { user: User }) {
   const getResult = async () => {
     try {
       const response = await fetch('/api/generate');
-      //const data = await response.json();
+      const data = await response.json();
       //setResponseData(data);
       //console.log(data);
       //setMealData(data);
