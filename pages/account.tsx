@@ -101,15 +101,15 @@ export default function Account({ user }: { user: User }) {
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
   const getResult = async () => {
-    try {
+    //try {
       const response = await fetch('/api/generate');
       const data = await response.json();
       //setResponseData(data);
       //console.log(data);
       //setMealData(data);
-    } catch (error) {
-      if (error) return alert((error as Error).message + "here");
-    }
+    //} catch (error) {
+      //if (error) return alert((error as Error).message + "here");
+    //}
   }
 
   return (
