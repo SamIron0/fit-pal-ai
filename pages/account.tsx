@@ -301,7 +301,7 @@ export default function Account({ user }: { user: User }) {
                 />
                 <button
                   className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600"
-                  onClick={getResult}>
+                  /*onClick={getResult}*/>
                   Button
                 </button>
               </div>
