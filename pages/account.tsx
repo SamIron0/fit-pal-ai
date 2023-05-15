@@ -289,7 +289,7 @@ export default function Account({ user }: { user: User }) {
 
             <div>
               <div className="p-20">
-                <p>{responseData.data}</p>
+                <p>{responseData}</p>
               </div>
 
               <div className="relative">
