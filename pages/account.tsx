@@ -77,7 +77,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
-  const [responseData, setResponseData] = useState<Response>({ data: '' });
+  const [responseData, setResponseData] = useState('');
 
   const redirectToCustomerPortal = async () => {
     setLoading(true);
@@ -107,7 +107,7 @@ export default function Account({ user }: { user: User }) {
       setResponseData(data);
       //setMealData(data);
     } catch (error) {
-      //if (error) return alert(data);
+      if (error) return alert(Error);
     }
   }
 
