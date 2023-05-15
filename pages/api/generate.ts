@@ -16,7 +16,7 @@ const handler: NextApiHandler = async (req, res) => {
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: "Make me a meal plan" }],
       });
-      window.alert(meal_plan.data.choices[0].message. stringify)
+      window.alert(meal_plan.data.choices[0].message.stringify)
       res.status(200).json(meal_plan.data.choices[0].message);
     //} catch (error) {
       //if (error) return alert((error as Error).message);
