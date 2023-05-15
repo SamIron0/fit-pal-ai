@@ -1,4 +1,5 @@
 import { OpenAIStream, OpenAIStreamPayload } from "../../utils/OpenAIStream";
+import { NextApiHandler } from 'next';
 
 const { Configuration, OpenAIApi } = require("openai");
 
@@ -8,47 +9,16 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 
-//if (!process.env.OPENAI_API_KEY) {
-  //throw new Error("Missing env var from OpenAI")
-//}
-
-//export const config = {
-//  runtime: "edge",
-//};
-
-const handler = async (req: Request): Promise<Response> => {
-  const { prompt } = (await req.json()) as {
-    prompt?: string;
-  };
-
-  if (!prompt) {
-    return new Response("No prompt in the request", { status: 400 });
+const handler: NextApiHandler = async (req, res) => {
+  if (req.method === 'GET') {
+    const meal_plan = openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [{role: "user", content: "Make me a meal plan"}],
+    });
+    res.status(200).json(meal_plan.data.choices[0].message);
+  } else {
+    res.status(405).json({ message: 'Method Not Allowed' });
   }
-/*
-  const payload: OpenAIStreamPayload = {
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: prompt }],
-    temperature: 0.7,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0,
-    max_tokens: 200,
-    stream: true,
-    n: 1,
-  };
-*/
-  //const stream = await OpenAIStream(payload);
-  return new Response(await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: "How to make toast",
-    temperature: 0,
-    max_tokens: 100,
-    top_p: 1,
-    frequency_penalty: 0.0,
-    presence_penalty: 0.0,
-    stop: ["\n"],
-  }));
-  
 };
 
 export default handler;
