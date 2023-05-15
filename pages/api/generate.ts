@@ -11,6 +11,7 @@ const openai = new OpenAIApi(configuration);
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
+   try{
     const meal_plan = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [{role: "user", content: "Make me a meal plan"}],
@@ -19,6 +20,10 @@ const handler: NextApiHandler = async (req, res) => {
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
   }
+
+} catch(){
+  console.log()
+}
 };
 
 export default handler;
