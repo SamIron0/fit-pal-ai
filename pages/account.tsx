@@ -103,9 +103,9 @@ export default function Account({ user }: { user: User }) {
   const getResult = async () => {
     try {
       const response = await fetch('/api/generate');
-      const data = await response.json();
+      //const data = await response.json();
       //setResponseData(data);
-      console.log(data);
+      //console.log(data);
       //setMealData(data);
     } catch (error) {
       if (error) return alert((error as Error).message);
@@ -301,7 +301,7 @@ export default function Account({ user }: { user: User }) {
                 />
                 <button
                   className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600"
-                  /*onClick={getResult}*/>
+                  onClick={getResult}>
                   Button
                 </button>
               </div>
