@@ -11,7 +11,7 @@ const openai = new OpenAIApi(configuration);
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
-    const meal_plan = openai.createChatCompletion({
+    const meal_plan = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [{role: "user", content: "Make me a meal plan"}],
     });
