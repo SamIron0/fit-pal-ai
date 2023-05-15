@@ -107,7 +107,7 @@ export default function Account({ user }: { user: User }) {
       setResponseData(data);
       //setMealData(data);
     } catch (error) {
-      if (error) return alert(Error);
+      if (error) return alert((error as Error).message);
     }
   }
 
