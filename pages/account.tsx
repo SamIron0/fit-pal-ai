@@ -105,7 +105,7 @@ export default function Account({ user }: { user: User }) {
     try {
       const response = await fetch('/api/generate');
       const data = await response.json();
-      //setResponseData(data);
+      setResponseData(data);
       //console.log(data);
       //setMealData(data);
     } catch (error) {
