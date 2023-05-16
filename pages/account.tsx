@@ -10,6 +10,7 @@ import LoadingDots from '@/components/ui/LoadingDots';
 import Button from '@/components/ui/Button';
 import { useUser } from '@/utils/useUser';
 import { postData } from '@/utils/helpers';
+import { stringify } from 'node:querystring';
 
 interface Props {
   title: string;
@@ -22,6 +23,12 @@ type StockData = {
   name: string,
   price: number
 };
+
+type Response={
+  role: string,
+  content: string,
+}
+
 
 function Card({ title, description, footer, children }: Props) {
   return (
@@ -78,7 +85,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
-  const [responseData, setResponseData] = useState<StockData>({ name: '', price: 0 });
+  const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
 
   const redirectToCustomerPortal = async () => {
     setLoading(true);
@@ -291,7 +298,7 @@ export default function Account({ user }: { user: User }) {
 
             <div>
               <div className="p-20">
-                <p>responseData</p>
+                <p>{responseData.content}</p>
               </div>
 
               <div className="relative">
