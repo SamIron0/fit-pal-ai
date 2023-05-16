@@ -9,10 +9,7 @@ const openai = new OpenAIApi(configuration);
 // method to add two numbers
 
 async function getAIResponse() {
-  const completion = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: [{role: "user", content: "Hello world"}],
-  });
+  
   //console.log(completion.data.choices[0].message);
 }
 
@@ -23,8 +20,12 @@ const handler: NextApiHandler = async (req, res) => {
       name: 'genie',
       price: 0
     };
-    res.status(200).json(bot);
-    getAIResponse();
+    const completion = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [{role: "user", content: "Hello world"}],
+    });
+    res.status(200).json(completion);
+    //getAIResponse();
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
   }
