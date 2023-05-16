@@ -10,7 +10,10 @@ const openai = new OpenAIApi(configuration);
 // method to add two numbers
 
 const handler: NextApiHandler = async (req, res) => {
-
+  const bot = {
+    name: 'genie',
+    price: 0
+  };
   if (req.method === 'GET') {
     try {
       const meal_plan = await openai.createChatCompletion({
@@ -19,7 +22,7 @@ const handler: NextApiHandler = async (req, res) => {
       });
       //window.alert(meal_plan.data.choices[0].message.stringify)
       //res.status(200).json(meal_plan.data.choices[0].message);
-      res.status(200).json("Welome");
+      res.status(200).json(bot);
     } catch (error) {
       if (error) return alert((error as Error).message);
     }
@@ -27,5 +30,3 @@ const handler: NextApiHandler = async (req, res) => {
     res.status(405).json({ message: 'Method Not Allowed' });
   }
 };
-
-export default handler;

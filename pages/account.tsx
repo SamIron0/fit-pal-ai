@@ -18,9 +18,10 @@ interface Props {
   children: ReactNode;
 }
 
-type Response = {
-  data: string;
-}
+type StockData = {
+  name: string,
+  price: number
+};
 
 function Card({ title, description, footer, children }: Props) {
   return (
@@ -77,7 +78,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
-  const [responseData, setResponseData] = useState('');
+  const [responseData, setResponseData] = useState<StockData>({ name: '', price: 0 });
 
   const redirectToCustomerPortal = async () => {
     setLoading(true);
@@ -104,7 +105,7 @@ export default function Account({ user }: { user: User }) {
     try {
       const response = await fetch('/api/generate');
       const data = await response.json();
-      //setResponseData(data);
+      setResponseData(data);
       //console.log(data);
       //setMealData(data);
     } catch (error) {
@@ -290,7 +291,7 @@ export default function Account({ user }: { user: User }) {
 
             <div>
               <div className="p-20">
-                <p>{responseData}</p>
+                <p>{responseData.name}</p>
               </div>
 
               <div className="relative">
