@@ -14,8 +14,6 @@ const handler: NextApiHandler = async (req, res) => {
   }
 };
 */
-import { OpenAIStream, OpenAIStreamPayload } from "../../utils/OpenAIStream";
-
 import { NextApiHandler } from 'next';
 
 const { Configuration, OpenAIApi } = require("openai");
