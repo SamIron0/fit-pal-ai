@@ -10,7 +10,7 @@ const openai = new OpenAIApi(configuration);
 
 async function getAIResponse() {
 
-  //console.log(completion.data.choices[0].message);
+  //console.log(cmessage);
 }
 
 const handler: NextApiHandler = async (req, res) => {
@@ -20,13 +20,13 @@ const handler: NextApiHandler = async (req, res) => {
       role: "",
       content: "here",
     };
-    //const completion = 
-    //response.content = JSON.stringify({completion});
-    response.role = JSON.stringify(await openai.createChatCompletion({
+    const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: "Hello world" }],
-    }));
-    res.status(200).json(response);
+    });
+    //response.content = JSON.stringify({completion});
+    response.role = JSON.stringify(completion.data.choices[0].message);
+    //res.status(200).json(response);
     //getAIResponse();
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
