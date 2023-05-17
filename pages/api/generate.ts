@@ -18,14 +18,14 @@ const handler: NextApiHandler = async (req, res) => {
     
     const response = {
       role: "",
-      content: "",
+      content: "here",
     };
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [{role: "user", content: "Hello world"}],
     });
-    response.content = JSON.stringify({completion});
-    response.role = JSON.stringify("Assistant");
+    //response.content = JSON.stringify({completion});
+    //response.role = JSON.stringify("Assistant");
     res.status(200).json(response);
     //getAIResponse();
   } else {
