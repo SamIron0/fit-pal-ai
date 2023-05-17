@@ -1,6 +1,6 @@
 import { NextApiHandler } from 'next';
 
-const { Configuration, OpenAIApi } = require("openai");
+import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
   apiKey: "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",
@@ -25,7 +25,7 @@ const handler: NextApiHandler = async (req, res) => {
       messages: [{role: "user", content: "Hello world"}],
     });
     //response.content = JSON.stringify({completion});
-    //response.role = JSON.stringify("Assistant");
+    response.role = JSON.stringify({"Assistant":"a"});
     res.status(200).json(response);
     //getAIResponse();
   } else {
