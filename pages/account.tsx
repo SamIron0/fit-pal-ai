@@ -104,7 +104,7 @@ export default function Account({ user }: { user: User }) {
 const [queryText, setQueryText] = useState('');
 
   const fetchStockData = async () => {
-    const response = await fetch(`/api/generate?${queryText}`);
+    const response = await fetch(`/api/generate?AIquery=${queryText}`);
     const data = await response.json();
     setResponseData(data);
   };
