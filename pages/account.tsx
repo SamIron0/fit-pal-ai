@@ -122,7 +122,8 @@ export default function Account({ user }: { user: User }) {
     }
 
     catch (error) {
-      if (error) return alert((error as Error).message);
+      if (error) return console.log(responseData);//alert((error as Error).message);
+      
     }
   }
 
