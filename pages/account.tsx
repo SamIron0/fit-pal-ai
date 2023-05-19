@@ -301,7 +301,7 @@ export default function Account({ user }: { user: User }) {
 
             <div>
               <div className="p-20">
-                <p>{}</p>
+                <p>{responseData.role}</p>
               </div>
               <div className="relative">
                 <input
