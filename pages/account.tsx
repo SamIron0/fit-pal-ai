@@ -86,18 +86,20 @@ export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
   var [responseData, setResponseData] = useState("");
+  try {
+    useEffect(() => {
+      const fetchStockData = async () => {
+        const response = await fetch('/api/generate');
+        const data = await response.json();
+        setResponseData(data);
+      };
 
-  useEffect(() => {
-    const fetchStockData = async () => {
-      const response = await fetch('/api/generate');
-      var data = await response.json();
-      setResponseData(data);
-    };
-
-    const interval = setInterval(fetchStockData, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
+      const interval = setInterval(fetchStockData, 1000);
+      return () => clearInterval(interval);
+    }, []);
+  } catch (error) {
+    console.log(error);
+  }
 
   const redirectToCustomerPortal = async () => {
     setLoading(true);
@@ -301,7 +303,7 @@ export default function Account({ user }: { user: User }) {
 
             <div>
               <div className="p-20">
-                <p>{}</p>
+                <p>{ }</p>
               </div>
               <div className="relative">
                 <input
