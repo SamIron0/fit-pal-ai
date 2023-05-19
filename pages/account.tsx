@@ -85,12 +85,12 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
-  const [responseData, setResponseData] = useState("");
+  var [responseData, setResponseData] = useState("");
 
   useEffect(() => {
     const fetchStockData = async () => {
       const response = await fetch('/api/genetate');
-      const data = await response.json();
+      var data = await response.json();
       setResponseData(data);
     };
 
