@@ -9,7 +9,7 @@ export default function HomePage() {
                     </h3>
                 </div>
                 <div>
-                    <p className="mt-5 text-3xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
+                    <p className="mt-5 text-3xl text-zinc-200 sm:text-center sm:text-2xl max-w-6xl m-auto">
                     Your AI-powered health and fitness companion. Personalized exercises and meal plans, real-time feedback, and support. Achieve your goals with ease.
                     </p>
                 </div>
