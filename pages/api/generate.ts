@@ -26,7 +26,7 @@ const handler: NextApiHandler = async (req, res) => {
     });
     //response.content = JSON.stringify({completion});
     //response.role = JSON.stringify(completion.data.choices[0].message);
-    res.status(200).json({"hello":"hello"});//completion.data.choices[0].message);
+    res.status(200).json(response);//completion.data.choices[0].message);
     //getAIResponse();
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
