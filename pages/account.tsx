@@ -110,8 +110,7 @@ export default function Account({ user }: { user: User }) {
 
   const getResult = async () => {
     //const [response, setResponse] = useState(null);
-    try {
-      useEffect(() => {
+    useEffect(() => {
         async function fetchData() {
           const res = await fetch('/api/generate');
           const data = await res.json();
@@ -119,12 +118,7 @@ export default function Account({ user }: { user: User }) {
         }
         fetchData();
       }, []);
-    }
-
-    catch (error) {
-      if (error) return alert((error as Error).message);
-      
-    }
+    
   }
 
 
