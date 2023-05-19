@@ -109,9 +109,8 @@ export default function Account({ user }: { user: User }) {
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
   const getResult = async () => {
-    const YourComponent = () => {
-      //const [response, setResponse] = useState(null);
-
+    //const [response, setResponse] = useState(null);
+    try {
       useEffect(() => {
         async function fetchData() {
           const res = await fetch('/api/generate');
@@ -121,7 +120,12 @@ export default function Account({ user }: { user: User }) {
         fetchData();
       }, []);
     }
+
+    catch (error) {
+      if (error) return alert((error as Error).message);
+    }
   }
+
 
   return (
     <section className="bg-black mb-32">
