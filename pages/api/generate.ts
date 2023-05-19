@@ -20,7 +20,7 @@ const handler: NextApiHandler = async (req, res) => {
 
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: AIquery?.toString?.() ?? ''}], // Use queryText input in messages array
+      messages: [{ role: "user", content: 'make me a meal plan'}] //AIquery?.toString?.() ?? ''}], // Use queryText input in messages array
     });res.status(200).json(completion.data.choices[0].message);
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });

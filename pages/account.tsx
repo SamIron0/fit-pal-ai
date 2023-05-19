@@ -90,39 +90,43 @@ export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
   const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
-/*
-  useEffect(() => {
-    const fetchStockData = async () => {
-      const response = await fetch('/api/generate/${queryText}');
+  /*
+    useEffect(() => {
+      const fetchStockData = async () => {
+        const response = await fetch('/api/generate/${queryText}');
+        const data = await response.json();
+        setResponseData(data);
+      };
+  
+    const [responseData, setResponseData] = useState('');
+  */
+
+  const [queryText, setQueryText] = useState('');
+  const fetchStockData = async () => {
+    try {
+
+      const response = await fetch(`/api/generate?AIquery=${queryText}`);
       const data = await response.json();
       setResponseData(data);
-    };
-
-  const [responseData, setResponseData] = useState('');
-*/
-
-const [queryText, setQueryText] = useState('');
-
-  const fetchStockData = async () => {
-    const response = await fetch(`/api/generate?AIquery=${queryText}`);
-    const data = await response.json();
-    setResponseData(data);
-  };
-
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
   const handleButtonClick = () => {
     fetchStockData();
   };
-/*
-    const interval = setInterval(fetchStockData, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  function updateAIResponse(): void {
-    const queryText = document.querySelector("#userInput") as HTMLInputElement;
-    
-    
-  }
-*/
+  /*
+      const interval = setInterval(fetchStockData, 1000);
+      return () => clearInterval(interval);
+    }, []);
+  
+    function updateAIResponse(): void {
+      const queryText = document.querySelector("#userInput") as HTMLInputElement;
+      
+      
+    }
+  */
   const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
