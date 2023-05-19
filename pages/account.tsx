@@ -90,22 +90,39 @@ export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
   const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
-
-  function handleClick(): void {
-    const queryText = document.querySelector("#userInput") as HTMLInputElement;
-
-    //useEffect(() => {
+/*
+  useEffect(() => {
     const fetchStockData = async () => {
       const response = await fetch('/api/generate/${queryText}');
       const data = await response.json();
       setResponseData(data);
     };
 
-    //const interval = setInterval(fetchStockData, 1000);
-    //return () => clearInterval(interval);
-    //}, []);
-  }
+  const [responseData, setResponseData] = useState('');
+*/
 
+const [queryText, setQueryText] = useState('');
+
+  const fetchStockData = async () => {
+    const response = await fetch(`/api/generate?${queryText}`);
+    const data = await response.json();
+    setResponseData(data);
+  };
+
+  const handleButtonClick = () => {
+    fetchStockData();
+  };
+/*
+    const interval = setInterval(fetchStockData, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  function updateAIResponse(): void {
+    const queryText = document.querySelector("#userInput") as HTMLInputElement;
+    
+    
+  }
+*/
   const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
@@ -314,12 +331,13 @@ export default function Account({ user }: { user: User }) {
                 <input
                   type="text"
                   id="userInput"
+                  value={queryText} onChange={(e) => setQueryText(e.target.value)}
                   className="bg-black rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   placeholder="Make a workout plan for 4 days.."
                 />
                 <button
                   className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600"
-                  onClick={handleClick}
+                  onClick={handleButtonClick}
                 >
                   Button
                 </button>
