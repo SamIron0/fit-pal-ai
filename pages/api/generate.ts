@@ -17,8 +17,8 @@ const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
 
     const response = {
-      role: '',
-      content: '',
+      role: 'hi',
+      content: 'hi',
     };
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
