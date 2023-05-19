@@ -89,7 +89,7 @@ export default function Account({ user }: { user: User }) {
 
   useEffect(() => {
     const fetchStockData = async () => {
-      const response = await fetch('/api/genetate');
+      const response = await fetch('/api/generate');
       var data = await response.json();
       setResponseData(data);
     };
