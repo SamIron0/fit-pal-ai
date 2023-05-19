@@ -87,6 +87,19 @@ export default function Account({ user }: { user: User }) {
   const { isLoading, subscription, userDetails } = useUser();
   const [responseData, setResponseData] = useState("");
 
+  const getResult = async () => {
+    //const [response, setResponse] = useState(null);
+    useEffect(() => {
+        async function fetchData() {
+          const res = await fetch('/api/generate');
+          const data = await res.json();
+          setResponseData(data);
+        }
+        fetchData();
+      }, []);
+    
+  }
+  
   const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
@@ -108,18 +121,7 @@ export default function Account({ user }: { user: User }) {
       minimumFractionDigits: 0
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
-  const getResult = async () => {
-    //const [response, setResponse] = useState(null);
-    useEffect(() => {
-        async function fetchData() {
-          const res = await fetch('/api/generate');
-          const data = await res.json();
-          setResponseData(data);
-        }
-        fetchData();
-      }, []);
-    
-  }
+  
 
 
   return (
