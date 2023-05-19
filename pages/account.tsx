@@ -85,7 +85,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
-  var [responseData, setResponseData] = useState("");
+  const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
 
   useEffect(() => {
     const fetchStockData = async () => {
