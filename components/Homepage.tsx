@@ -1,88 +1,38 @@
 export default function HomePage() {
- 
+
     return (
         <section className="bg-black">
-        <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
-            <div className="sm:flex sm:flex-col sm:align-center">
-                <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-                    Your AI{' '}<p className="text-blue-500"> Fitness Coach. </p>
-                </h1>
+            <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
+                <div className="sm:flex sm:flex-col sm:align-center">
+                    <h1 className="text-6xl font-extrabold text-white sm:text-center sm:text-6xl">
+                        Your AI Fitness Coach.
+                    </h1>
+                </div>
+                <div>
+                    <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
+                        Ask it to make meal plans/workout plans
+                    </p>
+                </div>
             </div>
-            <div>
-                <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
-                    Ask it to make meal plans/workout plans
-                </p>
-            </div>
-        </div>
 
-        <div className="bg-black">
-        <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
-            <div className="relative">
-                <input
-                type="text"
-                className="bg-gray-700 rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                placeholder="Make a workout plan for 4 days.."
-                />
-                <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
-                Button
-                </button>
+            <div className="bg-black">
+                <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
+                    <div className="relative">
+                        <input
+                            type="text"
+                            className="bg-gray-700 rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                            placeholder="Make a workout plan for 4 days.."
+                        />
+                        <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
+                            Button
+                        </button>
+                    </div>
+                </div>
             </div>
+
+            <div>
             </div>
-        </div>
-        
-        <div>
-            <p className="mt-24 text-xs uppercase text-zinc-400 text-center font-bold tracking-[0.3em]">
-            Brought to you by 
-            </p>
-            <div className="flex flex-col items-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-6 sm:grid-cols-5">
-            <div className="flex items-center justify-start">
-                <a href="https://nextjs.org" aria-label="Next.js Link">
-                <img
-                    src="/nextjs.svg"
-                    alt="Next.js Logo"
-                    className="h-12 text-white"
-                />
-                </a>
-            </div>
-            <div className="flex items-center justify-start">
-                <a href="https://vercel.com" aria-label="Vercel.com Link">
-                <img
-                    src="/vercel.svg"
-                    alt="Vercel.com Logo"
-                    className="h-6 text-white"
-                />
-                </a>
-            </div>
-            <div className="flex items-center justify-start">
-                <a href="https://stripe.com" aria-label="stripe.com Link">
-                <img
-                    src="/stripe.svg"
-                    alt="stripe.com Logo"
-                    className="h-12 text-white"
-                />
-                </a>
-            </div>
-            <div className="flex items-center justify-start">
-                <a href="https://supabase.io" aria-label="supabase.io Link">
-                <img
-                    src="/supabase.svg"
-                    alt="supabase.io Logo"
-                    className="h-10 text-white"
-                />
-                </a>
-            </div>
-            <div className="flex items-center justify-start">
-                <a href="https://github.com" aria-label="github.com Link">
-                <img
-                    src="/github.svg"
-                    alt="github.com Logo"
-                    className="h-8 text-white"
-                />
-                </a>
-            </div>
-            </div>
-            </div>
-            
+
         </section>
     )
-    }
+}
