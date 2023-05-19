@@ -105,7 +105,7 @@ export default function Account({ user }: { user: User }) {
   const fetchStockData = async () => {
     try {
 
-      const response = await fetch(`/api/generate?AIquery=${queryText}`);
+      const response = await fetch(`/api/generate?AIquery=${queryText}`,{ timeout: 10000 } as RequestInit & {timeout: number});
       const data = await response.json();
       setResponseData(data);
     }
