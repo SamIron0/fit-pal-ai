@@ -93,17 +93,17 @@ export default function Account({ user }: { user: User }) {
 
   function handleClick(): void {
     const queryText = document.querySelector("#userInput") as HTMLInputElement;
-    
-    useEffect(() => {
-      const fetchStockData = async () => {
-        const response = await fetch('/api/generate/${queryText}');
-        const data = await response.json();
-        setResponseData(data);
-      };
 
-      const interval = setInterval(fetchStockData, 1000);
-      return () => clearInterval(interval);
-    }, []);
+    //useEffect(() => {
+    const fetchStockData = async () => {
+      const response = await fetch('/api/generate/${queryText}');
+      const data = await response.json();
+      setResponseData(data);
+    };
+
+    //const interval = setInterval(fetchStockData, 1000);
+    //return () => clearInterval(interval);
+    //}, []);
   }
 
   const redirectToCustomerPortal = async () => {
