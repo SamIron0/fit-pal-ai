@@ -325,7 +325,7 @@ const [queryText, setQueryText] = useState('');
 
             <div>
               <div className="p-20">
-                <p>{queryText}</p>
+                <p>{responseData.content}</p>
               </div>
               <div className="relative">
                 <input
