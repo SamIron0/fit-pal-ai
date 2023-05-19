@@ -87,19 +87,17 @@ export default function Account({ user }: { user: User }) {
   const { isLoading, subscription, userDetails } = useUser();
   const [responseData, setResponseData] = useState("");
 
-  const getResult = async () => {
-    //const [response, setResponse] = useState(null);
-    useEffect(() => {
-      const fetchStockData = async () => {
-        const response = await fetch('/api/genetate');
-        const data = await response.json();
-        setResponseData(data);
-      };
-  
-      const interval = setInterval(fetchStockData, 1000);
-      return () => clearInterval(interval);
-    }, []);
-  }
+  useEffect(() => {
+    const fetchStockData = async () => {
+      const response = await fetch('/api/genetate');
+      const data = await response.json();
+      setResponseData(data);
+    };
+
+    const interval = setInterval(fetchStockData, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
 
   const redirectToCustomerPortal = async () => {
     setLoading(true);
@@ -122,7 +120,7 @@ export default function Account({ user }: { user: User }) {
       minimumFractionDigits: 0
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
-  
+
 
 
   return (
@@ -314,7 +312,7 @@ export default function Account({ user }: { user: User }) {
                 />
                 <button
                   className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600"
-                  >
+                >
                   Button
                 </button>
               </div>
