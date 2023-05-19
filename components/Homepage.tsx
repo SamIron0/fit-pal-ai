@@ -4,12 +4,12 @@ export default function HomePage() {
         <section className="bg-black">
             <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
                 <div className="sm:flex sm:flex-col sm:align-center">
-                    <h1 className="text-8xl font-extrabold text-white sm:text-center sm:text-6xl">
+                    <h3 className="text-8xl font-extrabold text-white sm:text-center sm:text-6xl">
                         Your AI Fitness Coach.
-                    </h1>
+                    </h3>
                 </div>
                 <div>
-                    <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
+                    <p className="mt-5 text-3xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
                     Your AI-powered health and fitness companion. Personalized exercises and meal plans, real-time feedback, and support. Achieve your goals with ease.
                     </p>
                 </div>
