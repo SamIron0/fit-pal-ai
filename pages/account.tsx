@@ -82,22 +82,29 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   };
 };
 
+function setAIResponse(inputText: string) {
+
+}
+
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
   const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
 
-  useEffect(() => {
-    const fetchStockData = async () => {
-      const response = await fetch('/api/generate');
-      const data = await response.json();
-      setResponseData(data);
-    };
+  function handleClick(): void {
+    const queryText = document.querySelector("#userInput") as HTMLInputElement;
+    
+    useEffect(() => {
+      const fetchStockData = async () => {
+        const response = await fetch('/api/generate/${queryText}');
+        const data = await response.json();
+        setResponseData(data);
+      };
 
-    const interval = setInterval(fetchStockData, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
+      const interval = setInterval(fetchStockData, 1000);
+      return () => clearInterval(interval);
+    }, []);
+  }
 
   const redirectToCustomerPortal = async () => {
     setLoading(true);
@@ -301,16 +308,18 @@ export default function Account({ user }: { user: User }) {
 
             <div>
               <div className="p-20">
-                <p>{responseData.role}</p>
+                <p>{responseData.content}</p>
               </div>
               <div className="relative">
                 <input
                   type="text"
+                  id="userInput"
                   className="bg-black rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   placeholder="Make a workout plan for 4 days.."
                 />
                 <button
                   className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600"
+                  onClick={handleClick}
                 >
                   Button
                 </button>

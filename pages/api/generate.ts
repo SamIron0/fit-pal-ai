@@ -16,18 +16,12 @@ async function getAIResponse() {
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
 
-    const response = {
-      role: 'hi',
-      content: 'hi',
-    };
+    const { queryText } = req.query; // Get queryText input from client request
+
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: "Hello world" }],
-    });
-    //response.content = JSON.stringify({completion});
-    //response.role = JSON.stringify(completion.data.choices[0].message);
-    res.status(200).json(completion.data.choices[0].message);
-    //getAIResponse();
+      messages: [{ role: "user", content: queryText?.toString?.() ?? ''}], // Use queryText input in messages array
+    });res.status(200).json(completion.data.choices[0].message);
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
   }
