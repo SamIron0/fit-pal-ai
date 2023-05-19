@@ -17,16 +17,16 @@ const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
 
     const response = {
-      role: "",
-      content: "here",
+      role: '',
+      content: '',
     };
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: "Hello world" }],
     });
     //response.content = JSON.stringify({completion});
-    response.role = JSON.stringify(completion.data.choices[0].message);
-    //res.status(200).json(response);
+    //response.role = JSON.stringify(completion.data.choices[0].message);
+    res.status(200).json(completion.data.choices[0].message);
     //getAIResponse();
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });

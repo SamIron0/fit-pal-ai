@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, useEffect } from 'react';
 import Link from 'next/link';
 import { GetServerSidePropsContext } from 'next';
 import {
@@ -24,7 +24,7 @@ type StockData = {
   price: number
 };
 
-type Response={
+type Response = {
   role: string,
   content: string,
 }
@@ -85,7 +85,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
-  const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
+  const [responseData, setResponseData] = useState("");
 
   const redirectToCustomerPortal = async () => {
     setLoading(true);
@@ -109,14 +109,17 @@ export default function Account({ user }: { user: User }) {
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
   const getResult = async () => {
-    try {
-      const response = await fetch('/api/generate');
-      const data = await response.json();
-      setResponseData(data);
-      //console.log(data);
-      //setMealData(data);
-    } catch (error) {
-      if (error) return alert((error as Error).message);
+    const YourComponent = () => {
+      //const [response, setResponse] = useState(null);
+
+      useEffect(() => {
+        async function fetchData() {
+          const res = await fetch('/api/generate');
+          const data = await res.json();
+          setResponseData(data);
+        }
+        fetchData();
+      }, []);
     }
   }
 
@@ -298,7 +301,7 @@ export default function Account({ user }: { user: User }) {
 
             <div>
               <div className="p-20">
-                <p>{responseData.role}</p>
+                <p>{responseData}</p>
               </div>
 
               <div className="relative">
