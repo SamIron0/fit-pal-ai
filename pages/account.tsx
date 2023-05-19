@@ -90,16 +90,17 @@ export default function Account({ user }: { user: User }) {
   const getResult = async () => {
     //const [response, setResponse] = useState(null);
     useEffect(() => {
-        async function fetchData() {
-          const res = await fetch('/api/generate');
-          const data = await res.json();
-          setResponseData(data);
-        }
-        fetchData();
-      }, []);
-    
-  }
+      const fetchStockData = async () => {
+        const response = await fetch('/api/genetate');
+        const data = await response.json();
+        setResponseData(data);
+      };
   
+      const interval = setInterval(fetchStockData, 1000);
+      return () => clearInterval(interval);
+    }, []);
+  }
+
   const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
@@ -313,7 +314,7 @@ export default function Account({ user }: { user: User }) {
                 />
                 <button
                   className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600"
-                  onClick={getResult}>
+                  >
                   Button
                 </button>
               </div>
