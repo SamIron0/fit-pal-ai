@@ -3,7 +3,7 @@ export default function HomePage() {
     return (
         <section className="bg-black">
             <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-                <div className="sm:flex sm:flex-col sm:align-center">
+                <div className=" sm:align-center">
                     <h3 className="text-5xl font-extrabold text-white sm:text-center sm:text-6xl max-w-4xl m-auto">
                         Create.Track.Achieve.
                     </h3>
@@ -23,7 +23,7 @@ export default function HomePage() {
                     <div className="relative">
                         <input
                             type="text"
-                            className=" rounded-full py-2 px-4 h-20 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                            className=" rounded-full py-2 px-4 h-18.5 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                             placeholder="Email address"
                         />
                         <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
