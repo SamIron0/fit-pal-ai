@@ -341,7 +341,7 @@ export default function Account({ user }: { user: User }) {
                     placeholder="Make a workout plan for 4 days.."
                   />
                   <button
-                    className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600"
+                    className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-md focus:outline-none hover:bg-gray-600"
                     onClick={handleButtonClick}
                   >
                     Button
