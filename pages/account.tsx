@@ -49,7 +49,7 @@ function PlanCard({ title, description, footer, children }: Props) {
   return (
     <div className="border border-zinc-700	w-l w-full p rounded-md m-auto my-4">
       <div className="px-5 py-2">
-        <h3 className="text-l mb-1 font-medium">{title}</h3>
+        <h1 className="text-l mb-1 font-medium">{title}</h1>
         <p className="text-zinc-300">{description}</p>
         {children}
       </div>
@@ -105,7 +105,7 @@ export default function Account({ user }: { user: User }) {
   const fetchStockData = async () => {
     try {
 
-      const response = await fetch(`/api/generate?AIquery=${queryText}`,{ timeout: 20000 } as RequestInit & {timeout: number});
+      const response = await fetch(`/api/generate?AIquery=${queryText}`, { timeout: 20000 } as RequestInit & { timeout: number });
       const data = await response.json();
       setResponseData(data);
     }
@@ -166,7 +166,7 @@ export default function Account({ user }: { user: User }) {
           <div className="px-5">
             <div className="flex overflow-x-scroll space-x-4">
 
-            <PlanCard
+              <PlanCard
                 title="Tuesday"
                 description={
                   subscription
