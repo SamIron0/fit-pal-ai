@@ -152,7 +152,7 @@ export default function Account({ user }: { user: User }) {
 
 
   return (
-    <div className="h-screen">
+    <div className="h-screen overflow-hidden">
       <section className="bg-black h-full">
         <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
