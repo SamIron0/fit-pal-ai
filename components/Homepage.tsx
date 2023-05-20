@@ -5,7 +5,7 @@ export default function HomePage() {
             <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
                 <div className="sm:flex sm:flex-col sm:align-center">
                     <h3 className="text-5xl font-extrabold text-white sm:text-center sm:text-6xl">
-                        Your AI Fitness Coach.
+                        Create.Track.Achieve.
                     </h3>
                 </div>
                 <div>
@@ -20,15 +20,12 @@ export default function HomePage() {
                     <div className="relative">
                         <input
                             type="text"
-                            className=" rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                            className=" rounded-full py-2 px-4 h-24 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                             placeholder="Make a workout plan for 4 days.."
                         />
                         <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
                             Button
                         </button>
-                        <div>
-                            fg
-                        </div>
                     </div>
                 </div>
             </div>
