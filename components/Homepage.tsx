@@ -8,7 +8,7 @@ export default function HomePage() {
                         Create.Track.Achieve.
                     </h3>
                     <h3 className="mt-9 mb-14 text-xxl text-zinc-200 sm:text-center sm:text-xl max-w-4xl m-auto">
-                        Your AI-powered health and fitness companion. Personalized exercises and meal plans, real-time feedback, and support. Achieve your goals with ease.
+                        Create.Track.Achieve.
                     </h3>
                 </div>
                 <div>
