@@ -326,10 +326,10 @@ export default function Account({ user }: { user: User }) {
               </div>
             </div>
 
-            <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
+            <div className="border-t h-96 border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
 
               <div >
-                <div className="">
+                <div className="80">
                   <p>{responseData.content}</p>
                 </div>
                 <div className="relative">
@@ -337,7 +337,7 @@ export default function Account({ user }: { user: User }) {
                     type="text"
                     id="userInput"
                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                    className="bg-black rounded-full py-2 px-2 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className="bg-black rounded-md p-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Make a workout plan for 4 days.."
                   />
                   <button
