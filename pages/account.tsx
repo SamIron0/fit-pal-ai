@@ -329,7 +329,7 @@ export default function Account({ user }: { user: User }) {
             <div className="border-t h-96 border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
 
               <div >
-                <div className="">
+                <div className="h-80">
                   <p>{responseData.content}</p>
                 </div>
                 <div className="relative">
