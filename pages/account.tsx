@@ -325,7 +325,7 @@ export default function Account({ user }: { user: User }) {
             </div>
           </div>
 
-          <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
+          <div className="border-t h-full border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
 
             <div>
               <div className="p-32">
