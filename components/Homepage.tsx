@@ -3,7 +3,7 @@ export default function HomePage() {
     return (
         <section className="bg-black">
             <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
-                <div className=" h-lg sm:align-center ">
+                <div className=" h-80 sm:align-center ">
                     <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
                         Create. Track. Achieve.
                     </p>
