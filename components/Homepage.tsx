@@ -16,8 +16,7 @@ export default function HomePage() {
             </div>
 
             <div className="bg-black">
-                <div className="rounded-full border border-gray-600 max-w-lg mx-auto">
-                    
+            <div className="rounded-full border border-gray-600 max-w-md mx-auto sm:max-w-lg">                    
                     <div className="relative">
                         <input
                             type="text"
