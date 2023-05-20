@@ -179,7 +179,7 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 }
               >
-                <div className="text-xl mt-8 mb-4 font-semibold">
+                <div className="text-xl mt-4 mb-2 font-semibold">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
