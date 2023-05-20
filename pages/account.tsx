@@ -166,8 +166,8 @@ export default function Account({ user }: { user: User }) {
           <div className="px-5">
             <div className="flex overflow-x-scroll space-x-4">
 
-              <PlanCard
-                title="Monday"
+            <PlanCard
+                title="Tuesday"
                 description={
                   subscription
                     ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
@@ -179,7 +179,7 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 }
               >
-                <div className="text-xl mt-4 mb-2 font-semibold">
+                <div className="text-xl mt-8 mb-4 font-semibold">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
