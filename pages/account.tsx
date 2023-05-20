@@ -329,8 +329,8 @@ export default function Account({ user }: { user: User }) {
             <div className="border-t h-128 border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
 
               <div >
-                <div className="h-80 text-gray-200 pl-5">
-                  <p>{responseData.content}</p>
+                <div className="h-80 text-gray-200 ">
+                  <p pl-5>{responseData.content}</p>
                 </div>
                 <div className="relative">
                   <input
