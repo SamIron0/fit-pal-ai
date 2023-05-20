@@ -21,7 +21,7 @@ export default function HomePage() {
                         <input
                             type="text"
                             className=" rounded-full py-2 px-4 h-24 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                            placeholder="Make a workout plan for 4 days.."
+                            placeholder="Email address"
                         />
                         <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
                             Button
