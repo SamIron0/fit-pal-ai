@@ -337,7 +337,7 @@ export default function Account({ user }: { user: User }) {
                     type="text"
                     id="userInput"
                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                    className="bg-black rounded-md p-4 mb-1 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className="bg-black rounded-md p-4  text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Make a workout plan for 4 days.."
                   />
                   <button
