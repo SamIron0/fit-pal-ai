@@ -4,7 +4,7 @@ export default function HomePage() {
         <section className="bg-black">
             <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
                 <div className="sm:flex sm:flex-col sm:align-center">
-                    <h3 className="text-5xl font-extrabold text-white sm:text-center sm:text-6xl">
+                    <h3 className="text-5xl font-extrabold text-white sm:text-center sm:text-6xl max-w-4xl">
                         Create.Track.Achieve.
                     </h3>
                 </div>
