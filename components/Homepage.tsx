@@ -3,10 +3,10 @@ export default function HomePage() {
     return (
         <section className="bg-black">
             <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-                <div className=" sm:align-center">
-                    <h3 className="text-5xl font-extrabold text-white sm:text-center sm:text-6xl max-w-4xl m-auto">
+                <div className=" sm:align-center ">
+                    <p className="text-5xl font-extrabold text-white sm:text-center sm:text-8xl max-w-4xl m-auto">
                         Create.Track.Achieve.
-                    </h3>
+                    </p>
                     <h3 className=" text-5xl mt-9 mb-14  text-zinc-200 sm:text-center sm:text-3xl max-w-4xl m-auto">
                         Create.Track.Achieve.
                     </h3>
