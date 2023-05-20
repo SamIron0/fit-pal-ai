@@ -9,14 +9,15 @@ export default function HomePage() {
                     </h3>
                 </div>
                 <div>
-                    <p className="mt-9 text-3xl text-zinc-200 sm:text-center sm:text-2xl max-w-6xl m-auto">
-                    Your AI-powered health and fitness companion. Personalized exercises and meal plans, real-time feedback, and support. Achieve your goals with ease.
+                    <p className="mt-9 text-xxl text-zinc-200 sm:text-center sm:text-2xl max-w-6xl m-auto">
+                        Your AI-powered health and fitness companion. Personalized exercises and meal plans, real-time feedback, and support. Achieve your goals with ease.
                     </p>
                 </div>
             </div>
 
             <div className="bg-black">
-                <div className="bg-gray-800 rounded-lg border border-gray-300 max-w-md mx-auto p-4">
+                <div className="rounded-full border border-gray-600 max-w-lg mx-auto">
+                    
                     <div className="relative">
                         <input
                             type="text"
