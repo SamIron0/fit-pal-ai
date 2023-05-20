@@ -3,7 +3,7 @@ export default function HomePage() {
     return (
         <section className="bg-black">
             <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
-                <div className="pb-  mt-8 sm:align-center ">
+                <div className=" mt-8 sm:align-center ">
                     <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
                         Create. Track. Achieve.
                     </p>
@@ -15,8 +15,8 @@ export default function HomePage() {
                 </div>
             </div>
 
-            <div className="bg-black px-8">
-            <div className="rounded-full border h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">                    
+            <div className="bg-black pb-24 px-8">
+                <div className="rounded-full border h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                     <div className="relative h-full ">
                         <input
                             type="text"
