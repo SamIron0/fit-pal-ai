@@ -17,10 +17,10 @@ export default function HomePage() {
 
             <div className="bg-black px-8">
             <div className="rounded-full border  border-gray-600 max-w-md mx-auto sm:max-w-lg">                    
-                    <div h-full className="relative h-24">
+                    <div h-full className="relative h-20">
                         <input
                             type="text"
-                            className=" rounded-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                            className=" rounded-full h-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                             placeholder="Email address"
                         />
                         <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
