@@ -16,8 +16,8 @@ export default function HomePage() {
             </div>
 
             <div className="bg-black px-8">
-            <div className="rounded-full border h-29 border-gray-600 max-w-md mx-auto sm:max-w-lg">                    
-                    <div className="relative">
+            <div className="rounded-full border border-gray-600 max-w-md mx-auto sm:max-w-lg">                    
+                    <div className="relative h-22">
                         <input
                             type="text"
                             className=" rounded-full h-full py-2 px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
