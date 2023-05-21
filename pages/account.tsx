@@ -89,6 +89,7 @@ function setAIResponse(inputText: string) {
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
+  const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
   /*
     useEffect(() => {
@@ -148,12 +149,8 @@ export default function Account({ user }: { user: User }) {
       minimumFractionDigits: 0
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
-  function showSection(sectionId: string) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.classList.toggle('visible');
-    }
-  }
+  const section1Class = activeSection === 1 ? "block" : "hidden";
+  const section2Class = activeSection === 2 ? "block" : "hidden";
 
   return (
     <div className="h-screen overflow-hidden">
@@ -331,19 +328,28 @@ export default function Account({ user }: { user: User }) {
             </div>
 
             <div className="border-t h-96 border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
-
               <div >
                 <div className="h-80 text-gray-200 ">
-                  <div className="flex justify-between border-b">
-                    <h1 className="cursor-pointer py-2 px-4 font-medium text-lg text-gray-700 border-b-2 border-blue-500" id="section-one-heading" onClick={() => showSection('section-one-heading')}>
-                      Section One
-                    </h1>
-                    <h1 className="cursor-pointer py-2 px-4 font-medium text-lg text-gray-700" id="section-two-heading" onClick={() => showSection('section-two-heading')}>
-                      Section Two
-                    </h1>
+                  <div>
+                    <div className="w-1/2 mx-auto my-8">
+                      <div className="py-2 cursor-pointer" onClick={() => setActiveSection(1)}>
+                        <h2 className="text-2xl font-bold text-gray-800">Section 1</h2>
+                      </div>
+                      <div className={`mt-4 ${section1Class}`}>
+                        <p>Content of section 1</p>
+                      </div>
+                    </div>
+                    <div className="w-1/2 mx-auto my-8">
+                      <div className="py-2 cursor-pointer" onClick={() => setActiveSection(2)}>
+                        <h2 className="text-2xl font-bold text-gray-800">Section 2</h2>
+                      </div>
+                      <div className={`mt-4 ${section2Class}`}>
+                        <p>Content of section 2</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
+
                 <div className="relative  ">
                   <input
                     type="text"
