@@ -51,10 +51,10 @@ function Card({ title, description, footer, children }: Props) {
 function MessageBox({ avatar, text }: Messages) {
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="w-full md:w-1/4 bg-gray-200 p-4">
+      <div className="w-full md:w-1/4 p-4">
         {avatar}
       </div>
-      <div className="w-full md:w-3/4 bg-gray-200 p-4">
+      <div className="w-full md:w-3/4 p-4">
         {text}
       </div>
     </div>
@@ -108,7 +108,7 @@ export default function Account({ user }: { user: User }) {
   const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
 
   const [queryText, setQueryText] = useState('');
-  const fetchStockData = async () => {
+  const fetchAIData = async () => {
     try {
 
       const response = await fetch(`/api/generate?AIquery=${queryText}`, { timeout: 20000 } as RequestInit & { timeout: number });
@@ -120,7 +120,7 @@ export default function Account({ user }: { user: User }) {
     }
   }
   const handleButtonClick = () => {
-    fetchStockData();
+    fetchAIData();
   };
 
   const redirectToCustomerPortal = async () => {
