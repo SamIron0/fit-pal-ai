@@ -147,6 +147,17 @@ export default function Account({ user }: { user: User }) {
   const section1Class = activeSection === 1 ? "block" : "hidden";
   const section2Class = activeSection === 2 ? "block" : "hidden";
 
+  function AISection() {
+    return (
+      <div> <p>here</p> </div>
+    )
+  }
+  function ManualSection() {
+    return (
+      <div> <p>saved</p> </div>
+    )
+  }
+
   return (
     <div className="h-screen overflow-hidden">
       <section className="bg-black h-full">
@@ -335,16 +346,7 @@ export default function Account({ user }: { user: User }) {
                         >
                           <h2 className="text-xl font-bold text-gray-800">FITPAL AI</h2>
                         </div>
-                        <div
-                          className={`mt-4 ${activeSection === 1 ? "w-full-block" : "hidden"}`}
-                        >
-                          <MessageBox
-                            avatar="Friday"
-                            text="You are currently on the plan."
-                          >
-                            
-                          </MessageBox>
-                        </div>
+
                       </div>
                       <div className=" mx-auto">
                         <div
@@ -352,16 +354,22 @@ export default function Account({ user }: { user: User }) {
                             }`}
                           onClick={() => setActiveSection(2)}
                         >
-                          <h2 className="text-xl font-bold text-gray-800">MANUAL SETTINGS</h2>
+                          <h2 className="text-xl font-bold text-gray-800">SAVED PLANS</h2>
                         </div>
-                        <div
-                          className={`mt-4 ${activeSection === 2 ? "w-full-block" : "hidden"}`}
-                        >
-                          <p>Content of section 2</p>
-                        </div>
+
                       </div>
                     </div>
                   </div>
+
+
+                  <div className="mt-4">
+                    {activeSection === 1 ? (
+                      <AISection />
+                    ) : activeSection === 2 ? (
+                      <ManualSection />
+                    ) : null}
+                  </div>
+
                 </div>
 
                 <div className="relative  ">
@@ -376,7 +384,7 @@ export default function Account({ user }: { user: User }) {
                     className="absolute right-0 top-0 h-full px-4 bg-zinc-900 text-gray-100 rounded-r-md focus:outline-none hover:bg-gray-600"
                     onClick={handleButtonClick}
                   >
-                    Button
+                    Generate
                   </button>
                 </div>
               </div>
