@@ -148,8 +148,12 @@ export default function Account({ user }: { user: User }) {
       minimumFractionDigits: 0
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
-
-
+  function showSection(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.classList.toggle('hidden');
+    }
+  }
 
   return (
     <div className="h-screen overflow-hidden">
@@ -331,7 +335,16 @@ export default function Account({ user }: { user: User }) {
               <div >
                 <div className="h-80 text-gray-200 ">
                   <p>{responseData.content}</p>
+                  <div className="flex justify-between border-b">
+                    <h1 className="cursor-pointer py-2 px-4 font-medium text-lg text-gray-700 border-b-2 border-blue-500" id="section-one-heading" onClick={() => showSection('section-one')}>
+                      Section One
+                    </h1>
+                    <h1 className="cursor-pointer py-2 px-4 font-medium text-lg text-gray-700" id="section-two-heading" onClick={() => showSection('section-two')}>
+                      Section Two
+                    </h1>
+                  </div>
                 </div>
+                
                 <div className="relative  ">
                   <input
                     type="text"
