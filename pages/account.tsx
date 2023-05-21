@@ -151,7 +151,7 @@ export default function Account({ user }: { user: User }) {
   function showSection(sectionId: string) {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.classList.toggle('hidden');
+      section.classList.toggle('visible');
     }
   }
 
