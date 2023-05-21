@@ -19,8 +19,9 @@ interface Props {
   children: ReactNode;
 }
 interface Messages {
-  avatar: string,
-  text: string,
+  avatar: string;
+  text: string;
+  children: ReactNode;
 }
 type StockData = {
   name: string,
@@ -341,13 +342,8 @@ export default function Account({ user }: { user: User }) {
                             avatar="Friday"
                             text="You are currently on the plan."
                           >
-                            <div>
-                              here
-                            </div>
+                            
                           </MessageBox>
-
-
-
                         </div>
                       </div>
                       <div className=" mx-auto">
