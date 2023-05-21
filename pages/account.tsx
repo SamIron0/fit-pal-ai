@@ -334,12 +334,11 @@ export default function Account({ user }: { user: User }) {
 
               <div >
                 <div className="h-80 text-gray-200 ">
-                  <p>{responseData.content}</p>
                   <div className="flex justify-between border-b">
-                    <h1 className="cursor-pointer py-2 px-4 font-medium text-lg text-gray-700 border-b-2 border-blue-500" id="section-one-heading" onClick={() => showSection('section-one')}>
+                    <h1 className="cursor-pointer py-2 px-4 font-medium text-lg text-gray-700 border-b-2 border-blue-500" id="section-one-heading" onClick={() => showSection('section-one-heading')}>
                       Section One
                     </h1>
-                    <h1 className="cursor-pointer py-2 px-4 font-medium text-lg text-gray-700" id="section-two-heading" onClick={() => showSection('section-two')}>
+                    <h1 className="cursor-pointer py-2 px-4 font-medium text-lg text-gray-700" id="section-two-heading" onClick={() => showSection('section-two-heading')}>
                       Section Two
                     </h1>
                   </div>
