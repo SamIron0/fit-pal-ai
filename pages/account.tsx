@@ -309,7 +309,7 @@ export default function Account({ user }: { user: User }) {
 
             <div className="border-t h-96 border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
               <div >
-                <div className="h-80 text-gray-200 ">
+                <div className="h-80 text-gray-200">
                   <div className="flex flex-col">
                     <div className="flex">
                       <div className=" mx-auto">
@@ -321,21 +321,21 @@ export default function Account({ user }: { user: User }) {
                           <h2 className="text-xl font-bold text-gray-800">FITPAL AI</h2>
                         </div>
                         <div
-                          className={`mt-4 ${activeSection === 1 ? "block" : "hidden"}`}
+                          className={`mt-4 ${activeSection === 1 ? "full-block" : "hidden"}`}
                         >
                           <p>Content of section 1</p>
                         </div>
                       </div>
                       <div className=" mx-auto">
                         <div
-                          className={`y-2 cursor-pointer ${activeSection === 2 ? "underline" : ""
+                          className={`py-2 cursor-pointer ${activeSection === 2 ? "underline" : ""
                             }`}
                           onClick={() => setActiveSection(2)}
                         >
                           <h2 className="text-xl font-bold text-gray-800">MANUAL SETTINGS</h2>
                         </div>
                         <div
-                          className={`mt-4 ${activeSection === 2 ? "block" : "hidden"}`}
+                          className={`mt-4 ${activeSection === 2 ? "full-block" : "hidden"}`}
                         >
                           <p>Content of section 2</p>
                         </div>
