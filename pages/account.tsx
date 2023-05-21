@@ -18,7 +18,10 @@ interface Props {
   footer?: ReactNode;
   children: ReactNode;
 }
-
+interface Messages {
+  avatar: string,
+  text: string,
+}
 type StockData = {
   name: string,
   price: number
@@ -44,7 +47,18 @@ function Card({ title, description, footer, children }: Props) {
     </div>
   );
 }
-
+function MessageBox({ avatar, text }: Messages) {
+  return (
+    <div className="flex flex-col md:flex-row">
+      <div className="w-full md:w-1/4 bg-gray-200 p-4">
+        {avatar}
+      </div>
+      <div className="w-full md:w-3/4 bg-gray-200 p-4">
+        {text}
+      </div>
+    </div>
+  )
+}
 function PlanCard({ title, description, footer, children }: Props) {
   return (
     <div className="border border-zinc-700	w-l w-full p rounded-md m-auto my-4">
@@ -321,9 +335,19 @@ export default function Account({ user }: { user: User }) {
                           <h2 className="text-xl font-bold text-gray-800">FITPAL AI</h2>
                         </div>
                         <div
-                          className={`mt-4 ${activeSection === 1 ? "full-block" : "hidden"}`}
+                          className={`mt-4 ${activeSection === 1 ? "w-full-block" : "hidden"}`}
                         >
-                          <p>Content of section 1</p>
+                          <MessageBox
+                            avatar="Friday"
+                            text="You are currently on the plan."
+                          >
+                            <div>
+                              here
+                            </div>
+                          </MessageBox>
+
+
+
                         </div>
                       </div>
                       <div className=" mx-auto">
@@ -335,7 +359,7 @@ export default function Account({ user }: { user: User }) {
                           <h2 className="text-xl font-bold text-gray-800">MANUAL SETTINGS</h2>
                         </div>
                         <div
-                          className={`mt-4 ${activeSection === 2 ? "full-block" : "hidden"}`}
+                          className={`mt-4 ${activeSection === 2 ? "w-full-block" : "hidden"}`}
                         >
                           <p>Content of section 2</p>
                         </div>
@@ -363,7 +387,7 @@ export default function Account({ user }: { user: User }) {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   )
 }
