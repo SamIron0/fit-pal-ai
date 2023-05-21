@@ -91,16 +91,6 @@ export default function Account({ user }: { user: User }) {
   const { isLoading, subscription, userDetails } = useUser();
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
-  /*
-    useEffect(() => {
-      const fetchStockData = async () => {
-        const response = await fetch('/api/generate/${queryText}');
-        const data = await response.json();
-        setResponseData(data);
-      };
-  
-    const [responseData, setResponseData] = useState('');
-  */
 
   const [queryText, setQueryText] = useState('');
   const fetchStockData = async () => {
@@ -117,17 +107,7 @@ export default function Account({ user }: { user: User }) {
   const handleButtonClick = () => {
     fetchStockData();
   };
-  /*
-      const interval = setInterval(fetchStockData, 1000);
-      return () => clearInterval(interval);
-    }, []);
-  
-    function updateAIResponse(): void {
-      const queryText = document.querySelector("#userInput") as HTMLInputElement;
-      
-      
-    }
-  */
+
   const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
@@ -330,21 +310,35 @@ export default function Account({ user }: { user: User }) {
             <div className="border-t h-96 border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
               <div >
                 <div className="h-80 text-gray-200 ">
-                  <div>
-                    <div className="w-1/2 mx-auto my-8">
-                      <div className="py-2 cursor-pointer" onClick={() => setActiveSection(1)}>
-                        <h2 className="text-2xl font-bold text-gray-800">Section 1</h2>
+                  <div className="flex flex-col items-center mt-8">
+                    <div className="flex">
+                      <div className="w-1/2 mx-auto pr-4">
+                        <div
+                          className={`py-2 cursor-pointer ${activeSection === 1 ? "bg-gray-300" : ""
+                            }`}
+                          onClick={() => setActiveSection(1)}
+                        >
+                          <h2 className="text-2xl font-bold text-gray-800">Section 1</h2>
+                        </div>
+                        <div
+                          className={`mt-4 ${activeSection === 1 ? "block" : "hidden"}`}
+                        >
+                          <p>Content of section 1</p>
+                        </div>
                       </div>
-                      <div className={`mt-4 ${section1Class}`}>
-                        <p>Content of section 1</p>
-                      </div>
-                    </div>
-                    <div className="w-1/2 mx-auto my-8">
-                      <div className="py-2 cursor-pointer" onClick={() => setActiveSection(2)}>
-                        <h2 className="text-2xl font-bold text-gray-800">Section 2</h2>
-                      </div>
-                      <div className={`mt-4 ${section2Class}`}>
-                        <p>Content of section 2</p>
+                      <div className="w-1/2 mx-auto pl-4">
+                        <div
+                          className={`py-2 cursor-pointer ${activeSection === 2 ? "bg-gray-300" : ""
+                            }`}
+                          onClick={() => setActiveSection(2)}
+                        >
+                          <h2 className="text-2xl font-bold text-gray-800">Section 2</h2>
+                        </div>
+                        <div
+                          className={`mt-4 ${activeSection === 2 ? "block" : "hidden"}`}
+                        >
+                          <p>Content of section 2</p>
+                        </div>
                       </div>
                     </div>
                   </div>
