@@ -400,7 +400,13 @@ export default function Account({ user }: { user: User }) {
           </div>
         </div>
       </div>
-      <div className="h-20 bg-gradient-to-r from-blue-500 to-white"></div>
+      <div>
+      <h1 className="text-3xl font-bold gradient-text">
+        This is blue gradient text!
+      </h1>
+      </div>
+      
+
     </section >
   )
 }
