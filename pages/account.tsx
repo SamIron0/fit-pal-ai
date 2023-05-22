@@ -172,7 +172,7 @@ export default function Account({ user }: { user: User }) {
   //const section2Class = activeSection === 2 ? "block" : "hidden";
 
   return (
-    <div className="overflow-hidden">
+    <div className="h-screen overflow-hidden">
       <section className="bg-black h-full">
         <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
@@ -374,7 +374,7 @@ export default function Account({ user }: { user: User }) {
                     </div>
                   </div>
 
-                  <div className="mt-2 bg-white">
+                  <div className="mt-2 overflow-hidden">
                     {activeSection === 1 ? (
                       <AISection />
                     ) : activeSection === 2 ? (
