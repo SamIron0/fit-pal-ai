@@ -16,6 +16,7 @@ interface Props {
   description?: string;
   footer?: ReactNode;
   children: ReactNode;
+  completed: boolean;
 }
 interface Messages {
   avatar: string;
@@ -36,35 +37,10 @@ type Chats = {
   messages: string[];
 };
 
-function Card({ title, description, footer, children }: Props) {
+function PlanCard({ title, description, footer, children, completed }: Props) {
+  const bgColor = completed ? "green-gradient-bg" : "bg-zinc-700";
   return (
-    <div className="border border-zinc-700	max-w-3xl w-full p rounded-md m-auto my-8">
-      <div className="px-5 py-4">
-        <h3 className="text-2xl mb-1 font-medium">{title}</h3>
-        <p className="text-zinc-300">{description}</p>
-        {children}
-      </div>
-      <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
-        {footer}
-      </div>
-    </div>
-  );
-}
-function MessageBox({ avatar, text }: Messages) {
-  return (
-    <div className="flex flex-col md:flex-row">
-      <div className="w-full md:w-1/4 p-4">
-        {avatar}
-      </div>
-      <div className="w-full md:w-3/4 p-4">
-        {text}
-      </div>
-    </div>
-  )
-}
-function PlanCard({ title, description, footer, children }: Props) {
-  return (
-    <div className="h-full w-l w-full p-0.5 rounded-md blue-gradient-bg">
+    <div className="h-full w-l w-full p-px rounded-md ${bgColor}">
       <div className="bg-black h-full	w-l w-full p rounded-md m-auto">
         <div className="px-2 py-1">
           <h1 className="text-l mb-1 font-medium">{title}</h1>
@@ -197,6 +173,7 @@ export default function Account({ user }: { user: User }) {
 
                   </div>
                 }
+                completed={true}
               >
                 <div className="text-m mt-8 mb-4 font-semibold">
                   {isLoading ? (
@@ -223,6 +200,8 @@ export default function Account({ user }: { user: User }) {
 
                   </div>
                 }
+                completed={true}
+
               >
                 <div className="text-m mt-8 mb-4 font-semibold">
                   {isLoading ? (
@@ -249,6 +228,8 @@ export default function Account({ user }: { user: User }) {
 
                   </div>
                 }
+                completed={false}
+
               >
                 <div className="text-xl mt-8 mb-4 font-semibold">
                   {isLoading ? (
@@ -274,6 +255,8 @@ export default function Account({ user }: { user: User }) {
 
                   </div>
                 }
+                completed={false}
+
               >
                 <div className="text-xl mt-8 mb-4 font-semibold">
                   {isLoading ? (
@@ -300,6 +283,8 @@ export default function Account({ user }: { user: User }) {
 
                   </div>
                 }
+                completed={false}
+
               >
                 <div className="text-xl mt-8 mb-4 font-semibold">
                   {isLoading ? (
@@ -327,6 +312,8 @@ export default function Account({ user }: { user: User }) {
 
                   </div>
                 }
+                completed={false}
+
               >
                 <div className="text-xl mt-8 mb-4 font-semibold">
                   {isLoading ? (
