@@ -65,7 +65,7 @@ function MessageBox({ avatar, text }: Messages) {
 }
 function PlanCard({ title, description, footer, children }: Props) {
   return (
-    <div className="border border-zinc-700	w-l w-full p rounded-md m-auto my-4">
+    <div className="border border-zinc-700	w-l w-full p rounded-md m-auto my-2">
       <div className="px-5 py-2">
         <h1 className="text-l mb-1 font-medium">{title}</h1>
         <p className="text-zinc-300">{description}</p>
@@ -173,7 +173,7 @@ export default function Account({ user }: { user: User }) {
     <section className="bg-black flex-auto h-screen">
       <div className="sm:flex px-4 sm:flex-col sm:align-center">
         <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
-          <div className="px-5">
+          <div className="px-3">
             <h3 className="text-xl my-1 font-medium">Hello Samuel</h3>
           </div>
         </div>
@@ -181,8 +181,8 @@ export default function Account({ user }: { user: User }) {
 
       <div className="sm:flex px-4 sm:flex-col sm:align-center">
         <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto mt-3">
-          <div className="px-5">
-            <div className="flex overflow-x-scroll space-x-4">
+          <div className="px-3 h-lg">
+            <div className="flex overflow-x-scroll space-x-3">
 
               <PlanCard
                 title="Monday"
