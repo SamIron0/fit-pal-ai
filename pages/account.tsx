@@ -127,7 +127,6 @@ export default function Account({ user }: { user: User }) {
 
   const AISection = () => {
     return (
-      <div className="flex flex-col">
         <div className="flex-1 overflow-y-scroll">
           {messageList && messageList.map((message, index) => (
             <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
@@ -138,7 +137,6 @@ export default function Account({ user }: { user: User }) {
             </div>
           ))}
         </div>
-      </div>
     )
   }
   const ManualSection = () => {
@@ -374,7 +372,7 @@ export default function Account({ user }: { user: User }) {
                     </div>
                   </div>
 
-                  <div className="mt-2 h-full">
+                  <div className="mt-2 h-full flex flex-col">
                     {activeSection === 1 ? (
                       <AISection />
                     ) : activeSection === 2 ? (
