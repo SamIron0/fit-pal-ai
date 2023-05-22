@@ -130,7 +130,7 @@ export default function Account({ user }: { user: User }) {
       <div>
         {messageList && messageList.map((message, index) => (
           <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
-            <p mx-5 py-5 >
+            <p className={'mx-5 py-5'}>
               {index % 2 === 0 ? "S   " : "B   "}
               {message}
             </p>
