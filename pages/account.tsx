@@ -99,12 +99,12 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     }
   };
 };
-const [messageList, setMessages] = useState<string[]>([]);
+const [messageList, setMessages] = useState<string[]>();
 
 export const AISection= () => {
   return (
     <div>
-      {messageList.map((message, index) => (
+      {messageList && messageList.map((message, index) => (
         <p key={index} className="my-2">
           {index % 2 === 0 ? "S " : "B"}
           {message}
@@ -139,7 +139,7 @@ export default function Account({ user }: { user: User }) {
   }
   const handleButtonClick = () => {
     fetchAIData();
-    setMessages([...messageList, queryText]);
+    setMessages([...messageList?.concat(queryText) ?? [queryText]]);
     //populateChat();
   };
 
