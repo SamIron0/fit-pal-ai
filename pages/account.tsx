@@ -372,7 +372,7 @@ export default function Account({ user }: { user: User }) {
                     </div>
                   </div>
 
-                  <div className="mt-2 h-full flex flex-col">
+                  <div className="mb-16 h-full flex flex-col">
                     {activeSection === 1 ? (
                       <AISection />
                     ) : activeSection === 2 ? (
