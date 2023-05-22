@@ -101,10 +101,10 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 };
 const [messageList, setMessages] = useState<string[]>([]);
 
-export const AISection: FC<Chats> = ({ messages }) => {
+export const AISection= () => {
   return (
     <div>
-      {messages.map((message, index) => (
+      {messageList.map((message, index) => (
         <p key={index} className="my-2">
           {index % 2 === 0 ? "S " : "B"}
           {message}
