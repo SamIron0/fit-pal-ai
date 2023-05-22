@@ -127,7 +127,7 @@ export default function Account({ user }: { user: User }) {
 
   const AISection = () => {
     return (
-        <div className="flex-1 overflow-y-scroll">
+        <div className="flex-1 overflow-y-scroll w-full">
           {messageList && messageList.map((message, index) => (
             <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
               <p className={'mx-5 py-5'}>
@@ -170,7 +170,7 @@ export default function Account({ user }: { user: User }) {
   //const section2Class = activeSection === 2 ? "block" : "hidden";
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-screen ">
       <section className="bg-black h-full">
         <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
