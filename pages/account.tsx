@@ -130,7 +130,7 @@ export default function Account({ user }: { user: User }) {
       <div>
         {messageList && messageList.map((message, index) => (
           <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
-            <p my-2 py-2 >
+            <p mx-5 py-5 >
               {index % 2 === 0 ? "S   " : "B   "}
               {message}
             </p>
@@ -186,7 +186,7 @@ export default function Account({ user }: { user: User }) {
               <div className="flex overflow-x-scroll space-x-4">
 
                 <PlanCard
-                  title="Tuesday"
+                  title="Monday"
                   description={
                     subscription
                       ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
