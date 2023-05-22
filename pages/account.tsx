@@ -127,16 +127,16 @@ export default function Account({ user }: { user: User }) {
 
   const AISection = () => {
     return (
-        <div className="flex-1 overflow-y-scroll w-full break-words">
-          {messageList && messageList.map((message, index) => (
-            <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
-              <p className={'mx-5 py-5'}>
-                {index % 2 === 0 ? "S   " : "B   "}
-                {message}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="flex-1 overflow-y-scroll w-full break-words">
+        {messageList && messageList.map((message, index) => (
+          <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
+            <p className={'mx-5 py-5'}>
+              {index % 2 === 0 ? "S   " : "B   "}
+              {message}
+            </p>
+          </div>
+        ))}
+      </div>
     )
   }
   const ManualSection = () => {
@@ -170,238 +170,236 @@ export default function Account({ user }: { user: User }) {
   //const section2Class = activeSection === 2 ? "block" : "hidden";
 
   return (
-    <div className="h-screen ">
-      <section className="bg-black h-full">
-        <div className="sm:flex px-4 sm:flex-col sm:align-center">
-          <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
-            <div className="px-5">
-              <h3 className="text-xl my-1 font-medium">Hello Samuel</h3>
+    <section className="bg-black flex-auto h-screen">
+      <div className="sm:flex px-4 sm:flex-col sm:align-center">
+        <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
+          <div className="px-5">
+            <h3 className="text-xl my-1 font-medium">Hello Samuel</h3>
+          </div>
+        </div>
+      </div>
+
+      <div className="sm:flex px-4 sm:flex-col sm:align-center">
+        <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto mt-3">
+          <div className="px-5">
+            <div className="flex overflow-x-scroll space-x-4">
+
+              <PlanCard
+                title="Monday"
+                description={
+                  subscription
+                    ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
+                    : ''
+                }
+                footer={
+                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+
+                  </div>
+                }
+              >
+                <div className="text-m mt-8 mb-4 font-semibold">
+                  {isLoading ? (
+                    <div className="h-12 mb-6">
+                      <LoadingDots />
+                    </div>
+                  ) : subscription ? (
+                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : (
+                    <Link href="/">Select something</Link>
+                  )}
+                </div>
+              </PlanCard>
+
+              <PlanCard
+                title="Tuesday"
+                description={
+                  subscription
+                    ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
+                    : ''
+                }
+                footer={
+                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+
+                  </div>
+                }
+              >
+                <div className="text-m mt-8 mb-4 font-semibold">
+                  {isLoading ? (
+                    <div className="h-12 mb-6">
+                      <LoadingDots />
+                    </div>
+                  ) : subscription ? (
+                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : (
+                    <Link href="/">Select something</Link>
+                  )}
+                </div>
+              </PlanCard>
+
+              <PlanCard
+                title="Wednesday"
+                description={
+                  subscription
+                    ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
+                    : ''
+                }
+                footer={
+                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+
+                  </div>
+                }
+              >
+                <div className="text-xl mt-8 mb-4 font-semibold">
+                  {isLoading ? (
+                    <div className="h-12 mb-6">
+                      <LoadingDots />
+                    </div>
+                  ) : subscription ? (
+                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : (
+                    <Link href="/">Select something</Link>
+                  )}
+                </div>
+              </PlanCard>
+              <PlanCard
+                title="Thursday"
+                description={
+                  subscription
+                    ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
+                    : ''
+                }
+                footer={
+                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+
+                  </div>
+                }
+              >
+                <div className="text-xl mt-8 mb-4 font-semibold">
+                  {isLoading ? (
+                    <div className="h-12 mb-6">
+                      <LoadingDots />
+                    </div>
+                  ) : subscription ? (
+                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : (
+                    <Link href="/">Select something</Link>
+                  )}
+                </div>
+              </PlanCard>
+
+              <PlanCard
+                title="Friday"
+                description={
+                  subscription
+                    ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
+                    : ''
+                }
+                footer={
+                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+
+                  </div>
+                }
+              >
+                <div className="text-xl mt-8 mb-4 font-semibold">
+                  {isLoading ? (
+                    <div className="h-12 mb-6">
+                      <LoadingDots />
+                    </div>
+                  ) : subscription ? (
+                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : (
+                    <Link href="/">Select something</Link>
+                  )}
+                </div>
+              </PlanCard>
+
+
+              <PlanCard
+                title="Saturday"
+                description={
+                  subscription
+                    ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
+                    : ''
+                }
+                footer={
+                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+
+                  </div>
+                }
+              >
+                <div className="text-xl mt-8 mb-4 font-semibold">
+                  {isLoading ? (
+                    <div className="h-12 mb-6">
+                      <LoadingDots />
+                    </div>
+                  ) : subscription ? (
+                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : (
+                    <Link href="/">Select something</Link>
+                  )}
+                </div>
+              </PlanCard>
+
+            </div>
+          </div>
+
+          <div className="border-t h-96 overflow-hidden border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
+            <div >
+              <div className="h-80 text-gray-200">
+                <div className="flex flex-col">
+                  <div className="flex">
+                    <div className=" mx-auto">
+                      <div
+                        className={`py-2 cursor-pointer ${activeSection === 1 ? "underline" : ""
+                          }`}
+                        onClick={() => setActiveSection(1)}
+                      >
+                        <h2 className="text-xl font-bold text-gray-800">FITPAL AI</h2>
+                      </div>
+
+                    </div>
+                    <div className=" mx-auto">
+                      <div
+                        className={`py-2 cursor-pointer ${activeSection === 2 ? "underline" : ""
+                          }`}
+                        onClick={() => setActiveSection(2)}
+                      >
+                        <h2 className="text-xl font-bold text-gray-800">SAVED PLANS</h2>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pb-14 h-full flex flex-col">
+                  {activeSection === 1 ? (
+                    <AISection />
+                  ) : activeSection === 2 ? (
+                    <ManualSection />
+                  ) : null}
+                </div>
+
+              </div>
+
+              <div className="relative bg-black">
+                <input
+                  type="text"
+                  id="userInput"
+                  value={queryText} onChange={(e) => setQueryText(e.target.value)}
+                  className=" pl-5 bg-transparent rounded-md h-14 text-gray-200 w-9/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  placeholder="Make a workout plan for 4 days.."
+                />
+                <button
+                  className="absolute right-0 w-3/12 top-0 h-full px-2 bg-zinc-900 text-gray-100 rounded-r-md focus:outline-none hover:bg-gray-600"
+                  onClick={handleButtonClick}
+                >
+                  Generate
+                </button>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="sm:flex px-4 sm:flex-col sm:align-center">
-          <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto mt-3">
-            <div className="px-5">
-              <div className="flex overflow-x-scroll space-x-4">
-
-                <PlanCard
-                  title="Monday"
-                  description={
-                    subscription
-                      ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
-                      : ''
-                  }
-                  footer={
-                    <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
-                    </div>
-                  }
-                >
-                  <div className="text-m mt-8 mb-4 font-semibold">
-                    {isLoading ? (
-                      <div className="h-12 mb-6">
-                        <LoadingDots />
-                      </div>
-                    ) : subscription ? (
-                      `${subscriptionPrice}/${subscription?.prices?.interval}`
-                    ) : (
-                      <Link href="/">Select something</Link>
-                    )}
-                  </div>
-                </PlanCard>
-
-                <PlanCard
-                  title="Tuesday"
-                  description={
-                    subscription
-                      ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
-                      : ''
-                  }
-                  footer={
-                    <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
-                    </div>
-                  }
-                >
-                  <div className="text-m mt-8 mb-4 font-semibold">
-                    {isLoading ? (
-                      <div className="h-12 mb-6">
-                        <LoadingDots />
-                      </div>
-                    ) : subscription ? (
-                      `${subscriptionPrice}/${subscription?.prices?.interval}`
-                    ) : (
-                      <Link href="/">Select something</Link>
-                    )}
-                  </div>
-                </PlanCard>
-
-                <PlanCard
-                  title="Wednesday"
-                  description={
-                    subscription
-                      ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
-                      : ''
-                  }
-                  footer={
-                    <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
-                    </div>
-                  }
-                >
-                  <div className="text-xl mt-8 mb-4 font-semibold">
-                    {isLoading ? (
-                      <div className="h-12 mb-6">
-                        <LoadingDots />
-                      </div>
-                    ) : subscription ? (
-                      `${subscriptionPrice}/${subscription?.prices?.interval}`
-                    ) : (
-                      <Link href="/">Select something</Link>
-                    )}
-                  </div>
-                </PlanCard>
-                <PlanCard
-                  title="Thursday"
-                  description={
-                    subscription
-                      ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
-                      : ''
-                  }
-                  footer={
-                    <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
-                    </div>
-                  }
-                >
-                  <div className="text-xl mt-8 mb-4 font-semibold">
-                    {isLoading ? (
-                      <div className="h-12 mb-6">
-                        <LoadingDots />
-                      </div>
-                    ) : subscription ? (
-                      `${subscriptionPrice}/${subscription?.prices?.interval}`
-                    ) : (
-                      <Link href="/">Select something</Link>
-                    )}
-                  </div>
-                </PlanCard>
-
-                <PlanCard
-                  title="Friday"
-                  description={
-                    subscription
-                      ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
-                      : ''
-                  }
-                  footer={
-                    <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
-                    </div>
-                  }
-                >
-                  <div className="text-xl mt-8 mb-4 font-semibold">
-                    {isLoading ? (
-                      <div className="h-12 mb-6">
-                        <LoadingDots />
-                      </div>
-                    ) : subscription ? (
-                      `${subscriptionPrice}/${subscription?.prices?.interval}`
-                    ) : (
-                      <Link href="/">Select something</Link>
-                    )}
-                  </div>
-                </PlanCard>
-
-
-                <PlanCard
-                  title="Saturday"
-                  description={
-                    subscription
-                      ? `You are currently on the ${subscription?.prices?.products?.name} plan.`
-                      : ''
-                  }
-                  footer={
-                    <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
-                    </div>
-                  }
-                >
-                  <div className="text-xl mt-8 mb-4 font-semibold">
-                    {isLoading ? (
-                      <div className="h-12 mb-6">
-                        <LoadingDots />
-                      </div>
-                    ) : subscription ? (
-                      `${subscriptionPrice}/${subscription?.prices?.interval}`
-                    ) : (
-                      <Link href="/">Select something</Link>
-                    )}
-                  </div>
-                </PlanCard>
-
-              </div>
-            </div>
-
-            <div className="border-t h-96 overflow-hidden border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
-              <div >
-                <div className="h-80 text-gray-200">
-                  <div className="flex flex-col">
-                    <div className="flex">
-                      <div className=" mx-auto">
-                        <div
-                          className={`py-2 cursor-pointer ${activeSection === 1 ? "underline" : ""
-                            }`}
-                          onClick={() => setActiveSection(1)}
-                        >
-                          <h2 className="text-xl font-bold text-gray-800">FITPAL AI</h2>
-                        </div>
-
-                      </div>
-                      <div className=" mx-auto">
-                        <div
-                          className={`py-2 cursor-pointer ${activeSection === 2 ? "underline" : ""
-                            }`}
-                          onClick={() => setActiveSection(2)}
-                        >
-                          <h2 className="text-xl font-bold text-gray-800">SAVED PLANS</h2>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pb-14 h-full flex flex-col">
-                    {activeSection === 1 ? (
-                      <AISection />
-                    ) : activeSection === 2 ? (
-                      <ManualSection />
-                    ) : null}
-                  </div>
-
-                </div>
-
-                <div className="relative bg-black">
-                  <input
-                    type="text"
-                    id="userInput"
-                    value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                    className=" pl-5 bg-transparent rounded-md h-14 text-gray-200 w-9/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                    placeholder="Make a workout plan for 4 days.."
-                  />
-                  <button
-                    className="absolute right-0 w-3/12 top-0 h-full px-2 bg-zinc-900 text-gray-100 rounded-r-md focus:outline-none hover:bg-gray-600"
-                    onClick={handleButtonClick}
-                  >
-                    Generate
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section >
-    </div >
+      </div>
+    </section >
   )
 }
