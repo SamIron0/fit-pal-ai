@@ -18,7 +18,7 @@ type Intention = {
   response: string,
 }
 
-const [intentionData, setIntentionData] = useState<Intention>({ response: '' });
+//const [intentionData, setIntentionData] = useState<Intention>({ response: '' });
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
