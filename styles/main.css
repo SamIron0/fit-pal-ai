@@ -49,7 +49,7 @@ a {
 .blue-gradient-text {
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #1E3A8A, #acbedd);
+  background-image: linear-gradient(to right, #1E3A8A, #cad2df);
 }
 .blue-gradient-bg {
   background-image: linear-gradient(to right, #1E3A8A, #809ac5);

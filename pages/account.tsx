@@ -64,7 +64,7 @@ function MessageBox({ avatar, text }: Messages) {
 }
 function PlanCard({ title, description, footer, children }: Props) {
   return (
-    <div className="h-full w-l w-full p-2 rounded-md blue-gradient-bg">
+    <div className="h-full w-l w-full p-0.5 rounded-md blue-gradient-bg">
       <div className="bg-black h-full	w-l w-full p rounded-md m-auto">
         <div className="px-2 py-1">
           <h1 className="text-l mb-1 font-medium">{title}</h1>
