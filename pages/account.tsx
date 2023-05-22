@@ -84,11 +84,13 @@ export default function Account({ user }: { user: User }) {
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
   const [queryText, setQueryText] = useState('');
+  const [messageList, setMessages] = useState<string[]>();
+
   const fetchAIData = async () => {
     try {
       const response = await fetch(`/api/generate?AIquery=${queryText}`, { timeout: 20000 } as RequestInit & { timeout: number });
       const data = await response.json();
-      setResponseData(data);
+      //setResponseData(data);
       setMessages([...messageList?.concat(data) ?? [data]]);
     }
     catch (error) {
@@ -100,7 +102,6 @@ export default function Account({ user }: { user: User }) {
     fetchAIData();
     //populateChat();
   };
-  const [messageList, setMessages] = useState<string[]>();
 
   const AISection = () => {
     return (
