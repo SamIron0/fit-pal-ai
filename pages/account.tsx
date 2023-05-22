@@ -127,7 +127,7 @@ export default function Account({ user }: { user: User }) {
 
   const AISection = () => {
     return (
-      <div>
+      <div className="flex-1 overflow-y-scroll">
         {messageList && messageList.map((message, index) => (
           <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
             <p className={'mx-5 py-5'}>
