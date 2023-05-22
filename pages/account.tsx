@@ -170,7 +170,7 @@ export default function Account({ user }: { user: User }) {
   //const section2Class = activeSection === 2 ? "block" : "hidden";
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-screen ">
       <section className="bg-black h-full">
         <div className="sm:flex px-4 sm:flex-col sm:align-center">
           <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
@@ -382,12 +382,12 @@ export default function Account({ user }: { user: User }) {
 
                 </div>
 
-                <div className="relative  ">
+                <div className="flex  ">
                   <input
                     type="text"
                     id="userInput"
                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                    className="bg-black rounded-md h-16 pt-2 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className="bg-black placeholder-left-5 rounded-md h-16 pt-2 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Make a workout plan for 4 days.."
                   />
                   <button
