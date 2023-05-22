@@ -374,7 +374,7 @@ export default function Account({ user }: { user: User }) {
                     </div>
                   </div>
 
-                  <div className="mt-2 ">
+                  <div className="mt-2 h-full">
                     {activeSection === 1 ? (
                       <AISection />
                     ) : activeSection === 2 ? (
