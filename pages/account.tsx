@@ -1,4 +1,4 @@
-import { useState, ReactNode, useEffect } from 'react';
+import { useState, ReactNode, FC, useEffect } from 'react';
 import Link from 'next/link';
 import { GetServerSidePropsContext } from 'next';
 import {
@@ -33,6 +33,9 @@ type Response = {
   content: string,
 }
 
+type Chats = {
+  messages: string[];
+};
 
 function Card({ title, description, footer, children }: Props) {
   return (
@@ -96,17 +99,32 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     }
   };
 };
+const [messageList, setMessages] = useState<string[]>([]);
 
-function setAIResponse(inputText: string) {
-
+export const AISection: FC<Chats> = ({ messages }) => {
+  return (
+    <div>
+      {messages.map((message, index) => (
+        <p key={index} className="my-2">
+          {index % 2 === 0 ? "S " : "B"}
+          {message}
+        </p>
+      ))}
+    </div>
+  )
 }
+export const ManualSection = () => {
+  return (
+    <div> <p>saved</p> </div>
+  )
+}
+
 
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
-
   const [queryText, setQueryText] = useState('');
   const fetchAIData = async () => {
     try {
@@ -121,6 +139,8 @@ export default function Account({ user }: { user: User }) {
   }
   const handleButtonClick = () => {
     fetchAIData();
+    setMessages([...messageList, queryText]);
+    //populateChat();
   };
 
   const redirectToCustomerPortal = async () => {
@@ -144,19 +164,8 @@ export default function Account({ user }: { user: User }) {
       minimumFractionDigits: 0
     }).format((subscription?.prices?.unit_amount || 0) / 100);
 
-  const section1Class = activeSection === 1 ? "block" : "hidden";
-  const section2Class = activeSection === 2 ? "block" : "hidden";
-
-  function AISection() {
-    return (
-      <div> <p>here</p> </div>
-    )
-  }
-  function ManualSection() {
-    return (
-      <div> <p>saved</p> </div>
-    )
-  }
+  //const section1Class = activeSection === 1 ? "block" : "hidden";
+  //const section2Class = activeSection === 2 ? "block" : "hidden";
 
   return (
     <div className="h-screen overflow-hidden">
@@ -361,8 +370,7 @@ export default function Account({ user }: { user: User }) {
                     </div>
                   </div>
 
-
-                  <div className="mt-4">
+                  <div className="mt-2">
                     {activeSection === 1 ? (
                       <AISection />
                     ) : activeSection === 2 ? (
