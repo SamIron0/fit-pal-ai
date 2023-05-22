@@ -40,7 +40,7 @@ type Chats = {
 function PlanCard({ title, description, footer, children, completed }: Props) {
   const bgColor = completed ? "green-gradient-bg" : "bg-zinc-700";
   return (
-    <div className="h-full w-l w-full p-px rounded-md ${bgColor}">
+    <div className={`h-full w-l w-full p-px rounded-md ${bgColor}`}>
       <div className="bg-black h-full	w-l w-full p rounded-md m-auto">
         <div className="px-2 py-1">
           <h1 className="text-l mb-1 font-medium">{title}</h1>
