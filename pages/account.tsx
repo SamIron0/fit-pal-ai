@@ -10,7 +10,6 @@ import LoadingDots from '@/components/ui/LoadingDots';
 import Button from '@/components/ui/Button';
 import { useUser } from '@/utils/useUser';
 import { postData } from '@/utils/helpers';
-import { stringify } from 'node:querystring';
 
 interface Props {
   title: string;
@@ -65,14 +64,16 @@ function MessageBox({ avatar, text }: Messages) {
 }
 function PlanCard({ title, description, footer, children }: Props) {
   return (
-    <div className="border border-zinc-700 h-full	w-l w-full p rounded-md m-auto">
-      <div className="px-2 py-1">
-        <h1 className="text-l mb-1 font-medium">{title}</h1>
-        <p className="text-zinc-300">{description}</p>
-        {children}
-      </div>
-      <div className="border-t border-zinc-700 bg-zinc-900 p-2 text-zinc-500 rounded-b-md">
-        {footer}
+    <div className="h-full w-l w-full p-2 bg-gradient-to-r from-blue-500 to-#6d91ce">
+      <div className=" h-full	w-l w-full p rounded-md m-auto">
+        <div className="px-2 py-1">
+          <h1 className="text-l mb-1 font-medium">{title}</h1>
+          <p className="text-zinc-300">{description}</p>
+          {children}
+        </div>
+        <div className="border-t border-zinc-700 bg-zinc-900 p-2 text-zinc-500 rounded-b-md">
+          {footer}
+        </div>
       </div>
     </div>
   );
@@ -174,7 +175,7 @@ export default function Account({ user }: { user: User }) {
       <div className="sm:flex px-4 sm:flex-col sm:align-center">
         <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
           <div className="px-3">
-            <h3 className="text-xl my-1 font-medium">Hello Samuel</h3>
+            <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello Samuel</h3>
           </div>
         </div>
       </div>
@@ -401,11 +402,11 @@ export default function Account({ user }: { user: User }) {
         </div>
       </div>
       <div>
-      <h1 className="text-3xl font-bold gradient-text">
-        This is blue gradient text!
-      </h1>
+        <h1 className="text-3xl font-bold gradient-text">
+          This is blue gradient text!
+        </h1>
       </div>
-      
+
 
     </section >
   )

@@ -46,11 +46,12 @@ a {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-.gradient-text {
+.blue-gradient-text {
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #1E3A8A, #2A5298);
+  background-image: linear-gradient(to right, #1E3A8A, #6d91ce);
 }
+
 .height-screen-helper {
   height: calc(100vh - 80px);
 }
