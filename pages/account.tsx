@@ -65,13 +65,13 @@ function MessageBox({ avatar, text }: Messages) {
 }
 function PlanCard({ title, description, footer, children }: Props) {
   return (
-    <div className="border border-zinc-700	w-l w-full p rounded-md m-auto my-2">
-      <div className="px-5 py-2">
+    <div className="border border-zinc-700 h-xl	w-l w-full p rounded-md m-auto my-2">
+      <div className="px-2 py-1">
         <h1 className="text-l mb-1 font-medium">{title}</h1>
         <p className="text-zinc-300">{description}</p>
         {children}
       </div>
-      <div className="border-t border-zinc-700 bg-zinc-900 p-4 text-zinc-500 rounded-b-md">
+      <div className="border-t border-zinc-700 bg-zinc-900 p-2 text-zinc-500 rounded-b-md">
         {footer}
       </div>
     </div>
