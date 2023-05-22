@@ -86,7 +86,6 @@ export default function Account({ user }: { user: User }) {
   const [queryText, setQueryText] = useState('');
   const fetchAIData = async () => {
     try {
-
       const response = await fetch(`/api/generate?AIquery=${queryText}`, { timeout: 20000 } as RequestInit & { timeout: number });
       const data = await response.json();
       setResponseData(data);
@@ -97,8 +96,8 @@ export default function Account({ user }: { user: User }) {
     }
   }
   const handleButtonClick = () => {
-    fetchAIData();
     setMessages([...messageList?.concat(queryText) ?? [queryText]]);
+    fetchAIData();
     //populateChat();
   };
   const [messageList, setMessages] = useState<string[]>();
