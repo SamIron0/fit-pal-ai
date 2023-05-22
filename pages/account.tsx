@@ -84,14 +84,14 @@ export default function Account({ user }: { user: User }) {
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
   const [queryText, setQueryText] = useState('');
-  const [messageList, setMessages] = useState<string[]>();
+  const [messageList, setMessages] = useState<string[]>([]);
 
   const fetchAIData = async () => {
     try {
       const response = await fetch(`/api/generate?AIquery=${queryText}`, { timeout: 20000 } as RequestInit & { timeout: number });
       const data = await response.json();
       //setResponseData(data);
-      setMessages([...messageList?.concat(data) ?? [data]]);
+      setMessages((prevMessages) => [...prevMessages, ...data]);
     }
     catch (error) {
       console.log(error);
@@ -389,13 +389,7 @@ export default function Account({ user }: { user: User }) {
           </div>
         </div>
       </div>
-      <div>
-        <h1 className="text-3xl font-bold gradient-text">
-          This is blue gradient text!
-        </h1>
-      </div>
-
-
+      
     </section >
   )
 }
