@@ -99,25 +99,6 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     }
   };
 };
-const [messageList, setMessages] = useState<string[]>();
-
-export const AISection= () => {
-  return (
-    <div>
-      {messageList && messageList.map((message, index) => (
-        <p key={index} className="my-2">
-          {index % 2 === 0 ? "S " : "B"}
-          {message}
-        </p>
-      ))}
-    </div>
-  )
-}
-export const ManualSection = () => {
-  return (
-    <div> <p>saved</p> </div>
-  )
-}
 
 
 export default function Account({ user }: { user: User }) {
@@ -142,6 +123,25 @@ export default function Account({ user }: { user: User }) {
     setMessages([...messageList?.concat(queryText) ?? [queryText]]);
     //populateChat();
   };
+  const [messageList, setMessages] = useState<string[]>();
+
+  const AISection = () => {
+    return (
+      <div>
+        {messageList && messageList.map((message, index) => (
+          <p key={index} className="my-2">
+            {index % 2 === 0 ? "S " : "B"}
+            {message}
+          </p>
+        ))}
+      </div>
+    )
+  }
+  const ManualSection = () => {
+    return (
+      <div> <p>saved</p> </div>
+    )
+  }
 
   const redirectToCustomerPortal = async () => {
     setLoading(true);
