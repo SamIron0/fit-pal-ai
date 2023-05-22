@@ -382,12 +382,12 @@ export default function Account({ user }: { user: User }) {
 
                 </div>
 
-                <div className="relative  ">
+                <div className="relative bg-black">
                   <input
                     type="text"
                     id="userInput"
                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                    className="bg-black ml-5 rounded-md h-14 text-gray-200 w-10/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className=" ml-5 rounded-md h-14 text-gray-200 w-10/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Make a workout plan for 4 days.."
                   />
                   <button
