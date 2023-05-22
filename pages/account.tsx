@@ -181,7 +181,7 @@ export default function Account({ user }: { user: User }) {
 
       <div className="sm:flex px-4 sm:flex-col sm:align-center">
         <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto mt-3">
-          <div className="px-3 h-56">
+          <div className="px-3 py-3 h-56">
             <div className="flex h-full overflow-x-scroll space-x-3">
 
               <PlanCard
@@ -400,6 +400,7 @@ export default function Account({ user }: { user: User }) {
           </div>
         </div>
       </div>
+      <div className="h-20 bg-gradient-to-r from-blue-500 to-white"></div>
     </section >
   )
 }
