@@ -82,7 +82,7 @@ export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
   const { isLoading, subscription, userDetails } = useUser();
   const [activeSection, setActiveSection] = useState(1);
-  const [responseData, setResponseData] = useState<Response>({ role: '', content: '' });
+  const [responseData, setResponseData] = useState('');
   const [queryText, setQueryText] = useState('');
   const fetchAIData = async () => {
     try {
@@ -90,6 +90,7 @@ export default function Account({ user }: { user: User }) {
       const response = await fetch(`/api/generate?AIquery=${queryText}`, { timeout: 20000 } as RequestInit & { timeout: number });
       const data = await response.json();
       setResponseData(data);
+      setMessages([...messageList?.concat(data) ?? [data]]);
     }
     catch (error) {
       console.log(error);
