@@ -46,7 +46,7 @@ const handler: NextApiHandler = async (req, res) => {
         res.status(200).json(message);
         // Handle "delete" response
       } else {
-        res.status(200).json(query);
+        res.status(200).json(message);
       }
     }
     

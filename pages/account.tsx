@@ -92,12 +92,12 @@ export default function Account({ user }: { user: User }) {
       const data = await response.json();
       //setResponseData(data);
       //console.log('here');
-      setMessages([...messageList?.concat(data) ?? [data]]); }
+      await setMessages([...messageList?.concat(data) ?? [data]]); }
     catch (error) {
       console.log(error);
     }
   }
-  const handleButtonClick = () => {
+  const handleButtonClick = async () => {
     setMessages([...messageList?.concat(queryText) ?? [queryText]]);
     fetchAIData();
     //populateChat();
