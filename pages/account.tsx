@@ -348,23 +348,21 @@ export default function Account({ user }: { user: User }) {
                   <div className="flex">
                     <div className=" mx-auto">
                       <div
-                        className={`py-2 cursor-pointer ${activeSection === 1 ? "underline" : ""
+                        className={`py-2 cursor-pointer ${activeSection === 1 ? "border-b border-black" : ""
                           }`}
                         onClick={() => setActiveSection(1)}
                       >
-                        <h2 className="text-xl font-bold my-1 blue-gradient-text font-medium"
-                        >FITPAL AI</h2>
+                        <h2 className="text-xl font-bold text-zinc-300">FITPAL AI</h2>
                       </div>
 
                     </div>
                     <div className=" mx-auto">
                       <div
-                        className={`py-2 cursor-pointer ${activeSection === 2 ? "underline" : ""
+                        className={`py-2 cursor-pointer ${activeSection === 2 ? "border-b border-black" : ""
                           }`}
                         onClick={() => setActiveSection(2)}
                       >
-                        <h2 className="text-xl font-bold my-1 blue-gradient-text font-medium"
-                        >FITPAL AI</h2>
+                        <h2 className="text-xl font-bold text-zinc-300">SAVED PLANS</h2>
                       </div>
 
                     </div>
