@@ -22,12 +22,12 @@ type Intention = {
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
-    const { APIquery } = req.query; // Get queryText input from client request
-    const AIquery = "You are a helpful fitness AI bot called myfitpal that resides on a backend server, servicing a website's users looking to make meal plans. Reply only in json format. If the following statement is asking to make a meal plan,then response: make, message:some response saying youre working on it. if the statement is asking to edit a meal plan, then response: edit, message:some response saying youre working on it. if the statement is asking to delete a meal plan, then response:delete, message:some response saying youre working on it. else,response: invalid, message: A sentence or 2 about not being able to complete user's request asking user to try a different request. statement: " + APIquery?.toString?.() ?? '';
+    const { AIquery } = req.query; // Get queryText input from client request
+    const query = "You are a helpful fitness AI bot called myfitpal that resides on a backend server, servicing a website's users looking to make meal plans. Reply only in json format. If the following statement is asking to make a meal plan,then response: make, message:some response saying youre working on it. if the statement is asking to edit a meal plan, then response: edit, message:some response saying youre working on it. if the statement is asking to delete a meal plan, then response:delete, message:some response saying youre working on it. else,response: invalid, message: A sentence or 2 about not being able to complete user's request asking user to try a different request. statement: " + AIquery?.toString?.() ?? '';
     // evaluate if intention of text is to make or edit a meal plan or if its out of context.
     const aiResponse = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: AIquery?.toString?.() ?? '', name: "Samuel" }], // Use queryText input in messages array
+      messages: [{ role: "user", content: query?.toString?.() ?? '', name: "Samuel" }], // Use queryText input in messages array
     });
 
     const text = aiResponse.data.choices[0].message?.content;
@@ -46,7 +46,7 @@ const handler: NextApiHandler = async (req, res) => {
         res.status(200).json(message);
         // Handle "delete" response
       } else {
-        res.status(200).json(APIquery);
+        res.status(200).json(AIquery);
       }
     }
     
