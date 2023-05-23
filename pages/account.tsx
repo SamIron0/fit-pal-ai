@@ -1,4 +1,4 @@
-import { useState, ReactNode, FC, useEffect } from 'react';
+import { useState, ReactNode, FC, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { GetServerSidePropsContext } from 'next';
 import {
@@ -92,12 +92,19 @@ export default function Account({ user }: { user: User }) {
       const data = await response.json();
       //setResponseData(data);
       //console.log('here');
-      await setMessages([...messageList?.concat(data) ?? [data]]); }
+      await setMessages([...messageList?.concat(data) ?? [data]]);
+    }
     catch (error) {
       console.log(error);
     }
   }
-  const handleButtonClick = async () => {
+  const aiSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleButtonClick = () => {
+    // scroll into view
+    if (aiSectionRef.current) {
+      (aiSectionRef.current as HTMLElement).scrollIntoView({ behavior: "smooth" });
+    }
     setMessages([...messageList?.concat(queryText) ?? [queryText]]);
     fetchAIData();
     //populateChat();
@@ -360,7 +367,8 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 </div>
 
-                <div className="pb-14 h-full flex flex-col">
+                <div className="pb-14 h-full flex flex-col"
+                  ref={aiSectionRef}>
                   {activeSection === 1 ? (
                     <AISection />
                   ) : activeSection === 2 ? (
@@ -389,7 +397,7 @@ export default function Account({ user }: { user: User }) {
           </div>
         </div>
       </div>
-      
+
     </section >
   )
 }
