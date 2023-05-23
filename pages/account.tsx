@@ -84,7 +84,7 @@ export default function Account({ user }: { user: User }) {
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
   const [queryText, setQueryText] = useState('');
-  const [messageList, setMessages] = useState<string[]>();
+  const [messageList, setMessages] = useState<string[]>([]);
 
   const fetchAIData = async () => {
     try {
