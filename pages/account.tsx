@@ -164,7 +164,7 @@ export default function Account({ user }: { user: User }) {
   //const section2Class = activeSection === 2 ? "block" : "hidden";
 
   return (
-    <section className="bg-black flex-auto mt-20 h-screen" ref={aiSectionRef}>
+    <section className="bg-black flex-auto mt-5 h-screen" ref={aiSectionRef}>
       <div className="sm:flex px-4 sm:flex-col sm:align-center">
         <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
           <div className="px-3">
