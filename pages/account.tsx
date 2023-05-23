@@ -91,7 +91,7 @@ export default function Account({ user }: { user: User }) {
       const response = await fetch(`/api/generate?AIquery=${queryText}`);
       const data = await response.json();
       //setResponseData(data);
-      console.log(data);
+      console.log('here');
       setMessages([...messageList?.concat(data) ?? [data]]); }
     catch (error) {
       console.log(error);
