@@ -348,7 +348,7 @@ export default function Account({ user }: { user: User }) {
                   <div className="flex">
                     <div className="pb-2 mx-auto">
                       <div
-                        className={`pt-2  cursor-pointer ${activeSection === 1 ? "border-b border-black" : ""
+                        className={`pt-2  cursor-pointer ${activeSection === 1 ? "border-b-3 border-black" : ""
                           }`}
                         onClick={() => setActiveSection(1)}
                       >
