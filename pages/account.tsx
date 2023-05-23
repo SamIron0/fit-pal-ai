@@ -92,7 +92,10 @@ export default function Account({ user }: { user: User }) {
       const data = await response.json();
       //setResponseData(data);
       //console.log('here');
-      await setMessages([...messageList?.concat(data) ?? [data]]);
+      const handleMessage = () => {
+        setMessages((prevList) => [...prevList, data]);
+      };
+      handleMessage();
     }
     catch (error) {
       console.log(error);
@@ -109,10 +112,16 @@ export default function Account({ user }: { user: User }) {
     fetchAIData();
     //populateChat();
   };
+  const messageBoxRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (messageBoxRef.current) {
+      messageBoxRef.current.scrollTop = messageBoxRef.current.scrollHeight;
+    }
+  }, [messageList]);
 
   const AISection = () => {
     return (
-      <div className="flex-1 overflow-y-scroll w-full break-words">
+      <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageBoxRef}>
         {messageList && messageList.map((message, index) => (
           <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
             <p className={'mx-5 py-5'}>
