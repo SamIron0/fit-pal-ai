@@ -352,7 +352,8 @@ export default function Account({ user }: { user: User }) {
                           }`}
                         onClick={() => setActiveSection(1)}
                       >
-                        <h2 className="text-xl font-bold text-gray-800">FITPAL AI</h2>
+                        <h2 className="text-xl font-bold my-1 blue-gradient-text font-medium"
+                        >FITPAL AI</h2>
                       </div>
 
                     </div>
@@ -362,7 +363,8 @@ export default function Account({ user }: { user: User }) {
                           }`}
                         onClick={() => setActiveSection(2)}
                       >
-                        <h2 className="text-xl font-bold text-gray-800">SAVED PLANS</h2>
+                        <h2 className="text-xl font-bold my-1 blue-gradient-text font-medium"
+                        >FITPAL AI</h2>
                       </div>
 
                     </div>
