@@ -91,7 +91,7 @@ export default function Account({ user }: { user: User }) {
       const response = await fetch(`/api/generate?AIquery=${queryText}`, { timeout: 20000 } as RequestInit & { timeout: number });
       const data = await response.json();
       //setResponseData(data);
-      setMessages([...messageList?.concat(queryText) ?? [queryText]]);    }
+      setMessages([...messageList?.concat(data) ?? [data]]);    }
     catch (error) {
       console.log(error);
     }
