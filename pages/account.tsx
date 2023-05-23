@@ -159,7 +159,9 @@ export default function Account({ user }: { user: User }) {
       <div className="sm:flex px-4 sm:flex-col sm:align-center">
         <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
           <div className="px-3">
-            <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello Samuel</h3>
+            <h3 className="text-xl my-1 blue-gradient-text font-medium"
+              ref={aiSectionRef}
+            >Hello Samuel</h3>
           </div>
         </div>
       </div>
@@ -367,8 +369,7 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 </div>
 
-                <div className="pb-14 h-full flex flex-col"
-                  ref={aiSectionRef}>
+                <div className="pb-14 h-full flex flex-col">
                   {activeSection === 1 ? (
                     <AISection />
                   ) : activeSection === 2 ? (
