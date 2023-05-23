@@ -36,7 +36,10 @@ const handler: NextApiHandler = async (req, res) => {
       let aiJson = JSON.parse(text);
       const intent = aiJson.response;
       const message = aiJson.message;
-      if (intent === "make") {
+      if (intent === "edit") {
+        res.status(200).json(message);
+      }
+      else if (intent === "make") {
         res.status(200).json(message);
         // Handle "make" response
       } else if (intent === "edit") {
@@ -49,7 +52,7 @@ const handler: NextApiHandler = async (req, res) => {
         res.status(200).json(message);
       }
     }
-    
+
 
 
     //    
