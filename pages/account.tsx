@@ -88,10 +88,11 @@ export default function Account({ user }: { user: User }) {
 
   const fetchAIData = async () => {
     try {
-      const response = await fetch(`/api/generate?AIquery=${queryText}`, { timeout: 20000 } as RequestInit & { timeout: number });
+      const response = await fetch(`/api/generate?AIquery=${queryText}`);
       const data = await response.json();
       //setResponseData(data);
-      setMessages([...messageList?.concat(data) ?? [data]]);    }
+      console.log(data);
+      setMessages([...messageList?.concat(data) ?? [data]]); }
     catch (error) {
       console.log(error);
     }
