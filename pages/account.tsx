@@ -346,9 +346,9 @@ export default function Account({ user }: { user: User }) {
               <div className="h-80 text-gray-200">
                 <div className="flex flex-col">
                   <div className="flex">
-                    <div className=" mx-auto">
+                    <div className="mx-auto">
                       <div
-                        className={`py-1 cursor-pointer ${activeSection === 1 ? "border-b border-black" : ""
+                        className={`pt-2  cursor-pointer ${activeSection === 1 ? "border-b border-black" : ""
                           }`}
                         onClick={() => setActiveSection(1)}
                       >
@@ -358,7 +358,7 @@ export default function Account({ user }: { user: User }) {
                     </div>
                     <div className=" mx-auto">
                       <div
-                        className={`py-2 cursor-pointer ${activeSection === 2 ? "border-b border-black" : ""
+                        className={`pt-2 cursor-pointer ${activeSection === 2 ? "border-b border-black" : ""
                           }`}
                         onClick={() => setActiveSection(2)}
                       >
