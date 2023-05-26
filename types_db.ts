@@ -48,6 +48,34 @@ export interface Database {
           stripe_customer_id?: string | null;
         };
       };
+
+      meal_plans: {
+        Row: {
+          id: string;
+          owner: string | null;
+          name: string | null;
+          description: string | null;
+          weeks: number | null;
+          plan: Json | null;
+        };
+        Insert: {
+          id: string;
+          owner?: string | null;
+          name?: string | null;
+          description?: string | null;
+          weeks?: number | null;
+          plan?: Json | null;
+        };
+        Update: {
+          id?: string;
+          owner?: string | null;
+          name?: string | null;
+          description?: string | null;
+          weeks?: number | null;
+          plan?: Json | null;
+        };
+      };
+
       prices: {
         Row: {
           active: boolean | null;
@@ -68,8 +96,8 @@ export interface Database {
           description?: string | null;
           id: string;
           interval?:
-            | Database['public']['Enums']['pricing_plan_interval']
-            | null;
+          | Database['public']['Enums']['pricing_plan_interval']
+          | null;
           interval_count?: number | null;
           metadata?: Json | null;
           product_id?: string | null;
@@ -83,8 +111,8 @@ export interface Database {
           description?: string | null;
           id?: string;
           interval?:
-            | Database['public']['Enums']['pricing_plan_interval']
-            | null;
+          | Database['public']['Enums']['pricing_plan_interval']
+          | null;
           interval_count?: number | null;
           metadata?: Json | null;
           product_id?: string | null;
@@ -179,6 +207,7 @@ export interface Database {
           full_name: string | null;
           id: string;
           payment_method: Json | null;
+          mealPlans: string[] | null;
         };
         Insert: {
           avatar_url?: string | null;
@@ -186,6 +215,7 @@ export interface Database {
           full_name?: string | null;
           id: string;
           payment_method?: Json | null;
+          mealPlans?: string[] | null;
         };
         Update: {
           avatar_url?: string | null;
@@ -193,6 +223,7 @@ export interface Database {
           full_name?: string | null;
           id?: string;
           payment_method?: Json | null;
+          mealPlans?: string[] | null;
         };
       };
     };
@@ -206,14 +237,14 @@ export interface Database {
       pricing_plan_interval: 'day' | 'week' | 'month' | 'year';
       pricing_type: 'one_time' | 'recurring';
       subscription_status:
-        | 'trialing'
-        | 'active'
-        | 'canceled'
-        | 'incomplete'
-        | 'incomplete_expired'
-        | 'past_due'
-        | 'unpaid'
-        | 'paused';
+      | 'trialing'
+      | 'active'
+      | 'canceled'
+      | 'incomplete'
+      | 'incomplete_expired'
+      | 'past_due'
+      | 'unpaid'
+      | 'paused';
     };
     CompositeTypes: {
       [_ in never]: never;

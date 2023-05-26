@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+import { Json } from './types_db';
 export interface PageMeta {
   title: string;
   description: string;
@@ -18,6 +19,14 @@ export interface Product {
   image?: string;
   metadata?: Stripe.Metadata;
 }
+export interface MealPlan {
+  id: string /* primary key */;
+  owner: string | null; /* foreign key to users.id */
+  name?: string;
+  description?: string;
+  weeks: number;
+  plan: Json;
+}
 
 export interface ProductWithPrice extends Product {
   prices?: Price[];
@@ -31,6 +40,7 @@ export interface UserDetails {
   avatar_url?: string;
   billing_address?: Stripe.Address;
   payment_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type];
+  meal_plans?: MealPlan[];
 }
 
 export interface Price {

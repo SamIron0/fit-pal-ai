@@ -3,7 +3,7 @@ import {
   User
 } from '@supabase/auth-helpers-nextjs';
 
-import { ProductWithPrice } from 'types';
+import { MealPlan, ProductWithPrice, UserDetails } from 'types';
 import type { Database } from 'types_db';
 
 export const supabase = createBrowserSupabaseClient<Database>();
@@ -25,6 +25,39 @@ export const getActiveProductsWithPrices = async (): Promise<
   // TODO: improve the typing here.
   return (data as any) || [];
 };
+
+export const getMealPlan = async (user: UserDetails): Promise<Record<string, any>[] | undefined> => {
+  const mealPlanIds = user.meal_plans || [];
+  const mealPlanData: Record<string, any>[] = [];
+
+  for (const id of mealPlanIds) {
+    const { data, error } = await supabase
+    .from('meal_plans')
+    .select('plan')
+    .eq('id', id)
+    .single();
+ 
+    if (error) {
+      console.error(`Failed to retrieve meal plan with ID ${id}: ${error.message}`);
+      continue;
+    }
+
+    if (data?.plan) {
+      mealPlanData.push(data.plan as Record<string, any>);
+    } 
+  }
+
+  if (mealPlanData.length > 0) {
+    return mealPlanData;
+  }
+
+  return undefined;
+};
+
+
+
+
+
 
 export const updateUserName = async (user: User, name: string) => {
   await supabase

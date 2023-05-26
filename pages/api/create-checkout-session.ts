@@ -8,7 +8,7 @@ import { getURL } from '@/utils/helpers';
 const CreateCheckoutSession: NextApiHandler = async (req, res) => {
   if (req.method === 'POST') {
     const { price, quantity = 1, metadata = {} } = req.body;
-
+ 
     try {
       const supabase = createServerSupabaseClient({ req, res });
       const {
@@ -20,7 +20,7 @@ const CreateCheckoutSession: NextApiHandler = async (req, res) => {
         email: user?.email || ''
       });
 
-      const session = await stripe.checkout.sessions.create({
+       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         billing_address_collection: 'required',
         customer,
