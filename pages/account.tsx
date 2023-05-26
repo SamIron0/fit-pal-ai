@@ -263,7 +263,6 @@ export default function Account({ user }: { user: User }) {
           <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto mt-3">
             <div className="px-3 py-3 h-56">
               <div className="flex h-full overflow-x-scroll space-x-3">
-                {PlanCardSection()}
               </div>
             </div>
 
