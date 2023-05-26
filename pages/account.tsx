@@ -202,130 +202,130 @@ export default function Account({ user }: { user: User }) {
         <>{day1Card}{day2Card}{day3Card}</>
       );
     };
+  }
 
-    const AISection = () => {
-      return (
-        <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageBoxRef}>
-          {messageList && messageList.map((message, index) => (
-            <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
-              <p className={'mx-5 py-5'}>
-                {index % 2 === 0 ? "S   " : "B   "}
-                {message}
-              </p>
-            </div>
-          ))}
-        </div>
-      )
-    }
-    const ManualSection = () => {
-      return (
-        <div> <p>saved</p> </div>
-      )
-    }
-
-    const redirectToCustomerPortal = async () => {
-      setLoading(true);
-      try {
-        const { url, error } = await postData({
-          url: '/api/create-portal-link'
-        });
-        window.location.assign(url);
-      } catch (error) {
-        if (error) return alert((error as Error).message);
-      }
-      setLoading(false);
-    };
-
-    const subscriptionPrice =
-      subscription &&
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: subscription?.prices?.currency,
-        minimumFractionDigits: 0
-      }).format((subscription?.prices?.unit_amount || 0) / 100);
-
-    //const section1Class = activeSection === 1 ? "block" : "hidden";
-    //const section2Class = activeSection === 2 ? "block" : "hidden";
-
+  const AISection = () => {
     return (
-      <section className="bg-black flex-auto h-screen" ref={aiSectionRef}>
-        <div className="sm:flex px-4 sm:flex-col sm:align-center">
-          <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
-            <div className="px-3">
-              <h3 className="text-xl my-1 blue-gradient-text font-medium"
-
-              >Hello Samuel</h3>
-            </div>
+      <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageBoxRef}>
+        {messageList && messageList.map((message, index) => (
+          <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
+            <p className={'mx-5 py-5'}>
+              {index % 2 === 0 ? "S   " : "B   "}
+              {message}
+            </p>
           </div>
-        </div>
-
-        <div className="sm:flex px-4 sm:flex-col sm:align-center">
-          <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto mt-3">
-            <div className="px-3 py-3 h-56">
-              <div className="flex h-full overflow-x-scroll space-x-3">
-              </div>
-            </div>
-
-            <div className="border-t h-96 overflow-hidden border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
-              <div >
-                <div className="h-80 text-gray-200">
-                  <div className="flex flex-col">
-                    <div className="flex">
-                      <div className="pb-2 mx-auto">
-                        <div
-                          className={`pt-2  cursor-pointer ${activeSection === 1 ? "border-b-2 border-black" : ""
-                            }`}
-                          onClick={() => setActiveSection(1)}
-                        >
-                          <h2 className="text-xl font-bold text-zinc-300">FITPAL AI</h2>
-                        </div>
-
-                      </div>
-                      <div className=" mx-auto">
-                        <div
-                          className={`pt-2 cursor-pointer ${activeSection === 2 ? "border-b-2 border-black" : ""
-                            }`}
-                          onClick={() => setActiveSection(2)}
-                        >
-                          <h2 className="text-xl font-bold text-zinc-300">SAVED PLANS</h2>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pb-14 h-full flex flex-col">
-                    {activeSection === 1 ? (
-                      <AISection />
-                    ) : activeSection === 2 ? (
-                      <ManualSection />
-                    ) : null}
-                  </div>
-
-                </div>
-
-                <div className="relative bg-black">
-                  <input
-                    type="text"
-                    id="userInput"
-                    ref={inputRef}
-                    value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                    className=" pl-5 bg-transparent rounded-md h-14 text-gray-200 w-9/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                    placeholder="Make a workout plan for 4 days.."
-                  />
-                  <button
-                    className="absolute right-0 w-3/12 top-0 h-full px-2 bg-zinc-900 text-gray-100 rounded-r-md focus:outline-none hover:bg-gray-600"
-                    onClick={handleButtonClick}
-                  >
-                    Generate
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section >
+        ))}
+      </div>
     )
   }
+  const ManualSection = () => {
+    return (
+      <div> <p>saved</p> </div>
+    )
+  }
+
+  const redirectToCustomerPortal = async () => {
+    setLoading(true);
+    try {
+      const { url, error } = await postData({
+        url: '/api/create-portal-link'
+      });
+      window.location.assign(url);
+    } catch (error) {
+      if (error) return alert((error as Error).message);
+    }
+    setLoading(false);
+  };
+
+  const subscriptionPrice =
+    subscription &&
+    new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: subscription?.prices?.currency,
+      minimumFractionDigits: 0
+    }).format((subscription?.prices?.unit_amount || 0) / 100);
+
+  //const section1Class = activeSection === 1 ? "block" : "hidden";
+  //const section2Class = activeSection === 2 ? "block" : "hidden";
+
+  return (
+    <section className="bg-black flex-auto h-screen" ref={aiSectionRef}>
+      <div className="sm:flex px-4 sm:flex-col sm:align-center">
+        <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
+          <div className="px-3">
+            <h3 className="text-xl my-1 blue-gradient-text font-medium"
+
+            >Hello Samuel</h3>
+          </div>
+        </div>
+      </div>
+
+      <div className="sm:flex px-4 sm:flex-col sm:align-center">
+        <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto mt-3">
+          <div className="px-3 py-3 h-56">
+            <div className="flex h-full overflow-x-scroll space-x-3">
+            </div>
+          </div>
+
+          <div className="border-t h-96 overflow-hidden border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
+            <div >
+              <div className="h-80 text-gray-200">
+                <div className="flex flex-col">
+                  <div className="flex">
+                    <div className="pb-2 mx-auto">
+                      <div
+                        className={`pt-2  cursor-pointer ${activeSection === 1 ? "border-b-2 border-black" : ""
+                          }`}
+                        onClick={() => setActiveSection(1)}
+                      >
+                        <h2 className="text-xl font-bold text-zinc-300">FITPAL AI</h2>
+                      </div>
+
+                    </div>
+                    <div className=" mx-auto">
+                      <div
+                        className={`pt-2 cursor-pointer ${activeSection === 2 ? "border-b-2 border-black" : ""
+                          }`}
+                        onClick={() => setActiveSection(2)}
+                      >
+                        <h2 className="text-xl font-bold text-zinc-300">SAVED PLANS</h2>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pb-14 h-full flex flex-col">
+                  {activeSection === 1 ? (
+                    <AISection />
+                  ) : activeSection === 2 ? (
+                    <ManualSection />
+                  ) : null}
+                </div>
+
+              </div>
+
+              <div className="relative bg-black">
+                <input
+                  type="text"
+                  id="userInput"
+                  ref={inputRef}
+                  value={queryText} onChange={(e) => setQueryText(e.target.value)}
+                  className=" pl-5 bg-transparent rounded-md h-14 text-gray-200 w-9/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  placeholder="Make a workout plan for 4 days.."
+                />
+                <button
+                  className="absolute right-0 w-3/12 top-0 h-full px-2 bg-zinc-900 text-gray-100 rounded-r-md focus:outline-none hover:bg-gray-600"
+                  onClick={handleButtonClick}
+                >
+                  Generate
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section >
+  )
 }
