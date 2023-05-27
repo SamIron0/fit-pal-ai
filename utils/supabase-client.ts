@@ -27,12 +27,12 @@ export const getActiveProductsWithPrices = async (): Promise<
 };
 
 export const getMealPlan = async (user: UserDetails): Promise<Record<string, any>[] | undefined> => {
-  const mealPlanIds = user.meal_plans || [];
+  const mealPlanIds = user.mealplans || [];
   const mealPlanData: Record<string, any>[] = [];
 
   for (const id of mealPlanIds) {
     const { data, error } = await supabase
-    .from('meal_plans')
+    .from('mealplans')
     .select('plan')
     .eq('id', id)
     .single();

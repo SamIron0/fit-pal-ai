@@ -26,7 +26,7 @@ const upsertMealPlanRecord = async (mealPlan: MealPlan) => {
     plan: mealPlan.plan
   };
 
-  const { error } = await supabaseAdmin.from('meal_plans').upsert([mealPlanData]);
+  const { error } = await supabaseAdmin.from('mealplans').upsert([mealPlanData]);
   
   if (error) throw error;
   console.log(`Meal Plan inserted/updated: ${mealPlan.id}`);
