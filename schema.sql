@@ -1,6 +1,6 @@
 create table mealplans (
   id text not null primary key,
-  owner text references auth.users not null,
+  owner text,
   name text,
   description text,
   weeks integer,
