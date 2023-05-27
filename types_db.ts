@@ -49,7 +49,7 @@ export interface Database {
         };
       };
 
-      meal_plans: {
+      mealplans: {
         Row: {
           id: string;
           owner: string;

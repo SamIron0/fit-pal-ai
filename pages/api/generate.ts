@@ -138,8 +138,9 @@ const handler: NextApiHandler = async (req, res) => {
           plan: testPlan as Json,
           owner: user.toString(), /* foreign key to users.id */
         };
-        await upsertMealPlanRecord(newMealPlan);
         res.status(200).json(message);
+
+        await upsertMealPlanRecord(newMealPlan);
 
         // Handle "make" response
       } else if (intent === "delete") {
