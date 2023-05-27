@@ -149,11 +149,7 @@ const handler: NextApiHandler = async (req, res) => {
       } else {
         res.status(200).json(message);
       }
-    }
-
-
-
-    //    
+    }    //    
     /*
       const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
