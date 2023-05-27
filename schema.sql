@@ -1,3 +1,15 @@
+create table mealplans (
+  id text not null primary key,
+  owner text references auth.users not null,
+  name text,
+  description text,
+  weeks integer,
+  plan jsonb,
+);
+alter table users enable row level security;
+create policy "Can view own user mealplans." on users for select using (auth.uid() = id);
+create policy "Can update own user mealplans." on users for update using (auth.uid() = id);
+
 /** 
 * USERS
 * Note: This table contains user data. Users should only be able to view and update their own data.
@@ -11,6 +23,8 @@ create table users (
   billing_address jsonb,
   -- Stores your customer's payment instruments.
   payment_method jsonb
+  -- Stores customer's meal plans
+  mealplans jsonb[]
 );
 alter table users enable row level security;
 create policy "Can view own user data." on users for select using (auth.uid() = id);
@@ -142,4 +156,4 @@ create policy "Can only view own subs data." on subscriptions for select using (
  * Only allow realtime listening on public tables.
  */
 drop publication if exists supabase_realtime;
-create publication supabase_realtime for table products, prices;
+create publication supabase_realtime for table products, prices, mealplans;

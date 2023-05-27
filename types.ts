@@ -21,7 +21,7 @@ export interface Product {
 }
 export interface MealPlan {
   id: string /* primary key */;
-  owner: string | null; /* foreign key to users.id */
+  owner: string; /* foreign key to users.id */
   name?: string;
   description?: string;
   weeks: number;

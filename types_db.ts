@@ -52,7 +52,7 @@ export interface Database {
       meal_plans: {
         Row: {
           id: string;
-          owner: string | null;
+          owner: string;
           name: string | null;
           description: string | null;
           weeks: number | null;
@@ -60,7 +60,7 @@ export interface Database {
         };
         Insert: {
           id: string;
-          owner?: string | null;
+          owner: string;
           name?: string | null;
           description?: string | null;
           weeks?: number | null;
@@ -68,7 +68,7 @@ export interface Database {
         };
         Update: {
           id?: string;
-          owner?: string | null;
+          owner: string;
           name?: string | null;
           description?: string | null;
           weeks?: number | null;

@@ -12,11 +12,12 @@ import type { Database } from 'types_db';
 const supabaseAdmin = createClient<Database>(
   process.env.NEXT_PUBLIC_SUPABASE_URL || '',
   process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-);
+
+  );
 
 
 const upsertMealPlanRecord = async (mealPlan: MealPlan) => {
-  const mealPlanData: MealPlan = {
+    const mealPlanData: MealPlan = {
     id: mealPlan.id,
     owner: mealPlan.owner,
     name: mealPlan.name,
@@ -24,8 +25,9 @@ const upsertMealPlanRecord = async (mealPlan: MealPlan) => {
     weeks: mealPlan.weeks,
     plan: mealPlan.plan
   };
-  
+
   const { error } = await supabaseAdmin.from('meal_plans').upsert([mealPlanData]);
+  
   if (error) throw error;
   console.log(`Meal Plan inserted/updated: ${mealPlan.id}`);
 }
