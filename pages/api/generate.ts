@@ -2,7 +2,7 @@ import { NextApiHandler } from 'next'
 import { Configuration, OpenAIApi } from "openai";
 import { useState } from 'react';
 import {
-  upsertMealPlanRecord,
+  createorRetrieveMealPlan
 } from '@/utils/supabase-admin';
 import { Json } from '@/types_db';
 import { MealPlan } from '@/types';
@@ -140,7 +140,7 @@ const handler: NextApiHandler = async (req, res) => {
         };
         res.status(200).json(message);
 
-        await upsertMealPlanRecord(newMealPlan);
+        await createorRetrieveMealPlan(newMealPlan);
 
         // Handle "make" response
       } else if (intent === "delete") {
