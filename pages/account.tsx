@@ -53,7 +53,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
-  const { isLoading, mealplans, subscription, userDetails } = useUser();
+  const { isLoading, mealplans, userDetails } = useUser();
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
   const [queryText, setQueryText] = useState('');
@@ -236,7 +236,7 @@ export default function Account({ user }: { user: User }) {
     }
     setLoading(false);
   };
-
+/*
   const subscriptionPrice =
     subscription &&
     new Intl.NumberFormat('en-US', {
@@ -244,7 +244,7 @@ export default function Account({ user }: { user: User }) {
       currency: subscription?.prices?.currency,
       minimumFractionDigits: 0
     }).format((subscription?.prices?.unit_amount || 0) / 100);
-
+*/
   //const section1Class = activeSection === 1 ? "block" : "hidden";
   //const section2Class = activeSection === 2 ? "block" : "hidden";
 
