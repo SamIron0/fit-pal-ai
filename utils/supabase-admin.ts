@@ -13,24 +13,7 @@ const supabaseAdmin = createClient<Database>(
   process.env.NEXT_PUBLIC_SUPABASE_URL || '',
   process.env.SUPABASE_SERVICE_ROLE_KEY || ''
 
-  );
-
-
-const upsertMealPlanRecord = async (mealPlan: MealPlan) => {
-    const mealPlanData: MealPlan = {
-    id: mealPlan.id,
-    owner: mealPlan.owner,
-    name: mealPlan.name,
-    description: mealPlan.description,
-    weeks: mealPlan.weeks,
-    plan: mealPlan.plan
-  };
-
-  const { error } = await supabaseAdmin.from('mealplans').upsert([mealPlanData]);
-  
-  if (error) throw error;
-  console.log(`Meal Plan inserted/updated: ${mealPlan.id}`);
-}
+);
 
 const upsertProductRecord = async (product: Stripe.Product) => {
   const productData: Product = {
@@ -65,6 +48,24 @@ const upsertPriceRecord = async (price: Stripe.Price) => {
   const { error } = await supabaseAdmin.from('prices').upsert([priceData]);
   if (error) throw error;
   console.log(`Price inserted/updated: ${price.id}`);
+};
+
+const createorRetrieveMealPlan = async (mealPlan: MealPlan) => {
+  const mealPlanData: MealPlan = {
+    id: mealPlan.id,
+    owner: mealPlan.owner,
+    name: mealPlan.name,
+    description: mealPlan.description,
+    weeks: mealPlan.weeks,
+    plan: mealPlan.plan
+  };
+
+  const { error: supabaseError } = await supabaseAdmin
+    .from('mealplans')
+    .insert([mealPlanData]);
+  if (supabaseError) throw supabaseError;
+  console.log(`New mealplan inserted for ${mealPlanData.owner}.`);
+  return mealPlanData.id;
 };
 
 const createOrRetrieveCustomer = async ({
@@ -201,5 +202,5 @@ export {
   upsertPriceRecord,
   createOrRetrieveCustomer,
   manageSubscriptionStatusChange,
-  upsertMealPlanRecord
+  createorRetrieveMealPlan
 };
