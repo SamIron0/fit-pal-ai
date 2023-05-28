@@ -53,7 +53,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 
 export default function Account({ user }: { user: User }) {
   const [loading, setLoading] = useState(false);
-  const { isLoading, mealplans, userDetails } = useUser();
+  const { isLoading, userDetails } = useUser();
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
   const [queryText, setQueryText] = useState('');
@@ -130,15 +130,15 @@ export default function Account({ user }: { user: User }) {
   }
 
   const PlanCardSection = () => {
-    if (!mealplans) return null;
-    let count = mealplans.length;
+    //if (!mealplans) return null;
+    let count = 1;//mealplans.length;
     //const planCards = [];
     // iterate throught all the plans belonging to user
     // for now, we will just display the first plan and first week
     for (let i = 0; i < count; i++) {
       //get the current plan object based on the index
-      const plan = mealplans[i % mealplans.length];
-      const planinJson = plan.plan as Plan;
+      const plan = null;//mealplans[i % mealplans.length];
+      const planinJson = null;//plan.plan as Plan;
       let day1Card = null;
       let day2Card = null;
       let day3Card = null;
