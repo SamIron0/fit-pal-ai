@@ -9,7 +9,7 @@ import { MealPlan } from '@/types';
 
 // Create a new configuration object
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 // method to add two numbers
