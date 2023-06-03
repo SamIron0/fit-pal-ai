@@ -10,7 +10,7 @@ import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 
 // Create a new configuration object
 const configuration = new Configuration({
-  apiKey: "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",//process.env.OPENAI_API_KEY,
+  apiKey: "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",//process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 // method to add two numbers
