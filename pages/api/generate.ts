@@ -116,6 +116,7 @@ const handler: NextApiHandler = async (req, res) => {
       if (intent === "edit") {
         res.status(200).json(message);
       }
+      
       else if (intent === "make" && user) {
         /*
         // call gpt to generate a mealplan.
