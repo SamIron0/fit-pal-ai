@@ -10,7 +10,7 @@ import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 
 // Create a new configuration object
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: "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",//process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 // method to add two numbers
@@ -139,10 +139,6 @@ const handler: NextApiHandler = async (req, res) => {
           owner: user.toString(), /* foreign key to users.id */
         };
         res.status(200).json(message);
-
-          
-          
-    
         //await createorRetrieveMealPlan(newMealPlan);
 
         // Handle "make" response
