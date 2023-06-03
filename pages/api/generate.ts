@@ -6,6 +6,7 @@ import {
 } from '@/utils/supabase-admin';
 import { Json } from '@/types_db';
 import { MealPlan } from '@/types';
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 
 // Create a new configuration object
 const configuration = new Configuration({
@@ -13,7 +14,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 // method to add two numbers
-
 async function getAIResponse() {
 
   //console.log(cmessage);
@@ -140,7 +140,10 @@ const handler: NextApiHandler = async (req, res) => {
         };
         res.status(200).json(message);
 
-        await createorRetrieveMealPlan(newMealPlan);
+          
+          
+    
+        //await createorRetrieveMealPlan(newMealPlan);
 
         // Handle "make" response
       } else if (intent === "delete") {
