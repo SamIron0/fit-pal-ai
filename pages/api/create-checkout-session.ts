@@ -10,7 +10,7 @@ const CreateCheckoutSession: NextApiHandler = async (req, res) => {
     const { price, quantity = 1, metadata = {} } = req.body;
  
     try {
-      const supabase = createServerSupabaseClient({ req, res });
+      const supabase = createServerSupabaseClient({ req, res }); 
       const {
         data: { user }
       } = await supabase.auth.getUser();
