@@ -14,10 +14,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 // method to add two numbers
-async function getAIResponse() {
 
-  //console.log(cmessage);
-}
 
 type Intention = {
   response: string,
@@ -141,7 +138,7 @@ const handler: NextApiHandler = async (req, res) => {
         };
         res.status(200).json(message);
         //await createorRetrieveMealPlan(newMealPlan);
-
+        res.status(200).json(testPlan);
         // Handle "make" response
       } else if (intent === "delete") {
         res.status(200).json(message);

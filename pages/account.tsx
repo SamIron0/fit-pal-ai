@@ -83,6 +83,7 @@ export default function Account({ user }: { user: User }) {
   const { isLoading, subscription, userDetails } = useUser();
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
+  const [mealPlan, setMealPlan] = useState('');
   const [queryText, setQueryText] = useState('');
   const [messageList, setMessages] = useState<string[]>([]);
 
@@ -92,6 +93,9 @@ export default function Account({ user }: { user: User }) {
       const data = await response.json();
       setResponseData(data);
       //console.log('here');
+      if(typeof data != "string") {
+        setMealPlan(data);
+      }
       const handleMessage = () => {
         setMessages((prevList) => [...prevList, data]);
       };
@@ -188,7 +192,9 @@ export default function Account({ user }: { user: User }) {
                   ) : subscription ? (
                     `${subscriptionPrice}/${subscription?.prices?.interval}`
                   ) : (
-                    <Link href="/">Select something</Link>
+                    <Link href="/">
+                      Select something
+                    </Link>
                   )}
                 </div>
               </PlanCard>
