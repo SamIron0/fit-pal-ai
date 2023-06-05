@@ -2,7 +2,7 @@ import { NextApiHandler } from 'next'
 import { Configuration, OpenAIApi } from "openai";
 import { useState } from 'react';
 import {
-  createorRetrieveMealPlan
+  //createorRetrieveMealPlan
 } from '@/utils/supabase-admin';
 import { Json } from '@/types_db';
 import { Meal, MealPlan } from '@/types';

@@ -49,15 +49,14 @@ const upsertPriceRecord = async (price: Stripe.Price) => {
   if (error) throw error;
   console.log(`Price inserted/updated: ${price.id}`);
 };
-
+/*
 const createorRetrieveMealPlan = async (mealPlan: MealPlan) => {
   const mealPlanData: MealPlan = {
-    id: mealPlan.id,
-    owner: mealPlan.owner,
-    name: mealPlan.name,
-    description: mealPlan.description,
-    weeks: mealPlan.weeks,
-    plan: mealPlan.plan
+    day1: mealPlan.day1, 
+    day2: mealPlan.day2,
+    day3: mealPlan.day3,
+    day4: mealPlan.day4,
+    day5: mealPlan.day5,
   };
 
   const { error: supabaseError } = await supabaseAdmin
@@ -67,7 +66,7 @@ const createorRetrieveMealPlan = async (mealPlan: MealPlan) => {
   console.log(`New mealplan inserted for ${mealPlanData.owner}.`);
   return mealPlanData.id;
 };
-
+*/
 const createOrRetrieveCustomer = async ({
   email,
   uuid
@@ -201,6 +200,6 @@ export {
   upsertProductRecord,
   upsertPriceRecord,
   createOrRetrieveCustomer,
-  manageSubscriptionStatusChange,
-  createorRetrieveMealPlan
+  manageSubscriptionStatusChange
+  //createorRetrieveMealPlan
 };
