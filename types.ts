@@ -19,13 +19,42 @@ export interface Product {
   image?: string;
   metadata?: Stripe.Metadata;
 }
+export interface Meal{
+  meal: string | null,
+  item: string | null,
+  calories: number | null
+}
 export interface MealPlan {
-  id: string /* primary key */;
-  owner: string; /* foreign key to users.id */
-  name?: string;
-  description?: string;
-  weeks: number;
-  plan: Json;
+  day1 : [
+    Meal,
+    Meal,
+    Meal,
+    Meal,
+  ],
+  day2 : [
+    Meal,
+    Meal,
+    Meal,
+    Meal,
+  ],
+  day3: [
+    Meal,
+    Meal,
+    Meal,
+    Meal,
+  ],
+  day4: [
+    Meal,
+    Meal,
+    Meal,
+    Meal,
+  ],
+  day5: [
+    Meal,
+    Meal,
+    Meal,
+    Meal,
+  ],
 }
 
 export interface ProductWithPrice extends Product {

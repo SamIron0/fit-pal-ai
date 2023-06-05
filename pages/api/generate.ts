@@ -5,9 +5,8 @@ import {
   createorRetrieveMealPlan
 } from '@/utils/supabase-admin';
 import { Json } from '@/types_db';
-import { MealPlan } from '@/types';
+import { Meal, MealPlan } from '@/types';
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
-
 // Create a new configuration object
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -21,76 +20,44 @@ type Intention = {
 }
 
 //const [intentionData, setIntentionData] = useState<Intention>({ response: '' });
-const testPlan =
-{
-  "Day 1": [
-    {
-      "Meal": "Breakfast",
-      "Item": "Oatmeal with banana and almond milk",
-      "Calories": 350
-    },
-    {
-      "Meal": "Lunch",
-      "Item": "Turkey and cheese sandwich on whole wheat bread with a side of carrots and hummus",
-      "Calories": 500
-    },
-    {
-      "Meal": "Dinner",
-      "Item": "Grilled salmon with roasted Brussels sprouts and quinoa",
-      "Calories": 700
-    },
-    {
-      "Meal": "Snack",
-      "Item": "Apple with peanut butter",
-      "Calories": 150
-    }
-  ],
-  "Day 2": [
-    {
-      "Meal": "Breakfast",
-      "Item": "Greek yogurt with mixed berries and granola",
-      "Calories": 350
-    },
-    {
-      "Meal": "Lunch",
-      "Item": "Chicken and vegetable stir-fry with brown rice",
-      "Calories": 500
-    },
-    {
-      "Meal": "Dinner",
-      "Item": "Whole wheat pasta with homemade marinara sauce and a side salad",
-      "Calories": 700
-    },
-    {
-      "Meal": "Snack",
-      "Item": "Air-popped popcorn",
-      "Calories": 150
-    }
-  ],
-  "Day 3": [
-    {
-      "Meal": "Breakfast",
-      "Item": "Smoothie bowl with spinach, banana, berries, and almond milk",
-      "Calories": 350
-    },
-    {
-      "Meal": "Lunch",
-      "Item": "Black bean and sweet potato tacos with avocado and salsa",
-      "Calories": 500
-    },
-    {
-      "Meal": "Dinner",
-      "Item": "Grilled chicken with roasted vegetables and quinoa",
-      "Calories": 700
-    },
-    {
-      "Meal": "Snack",
-      "Item": "Carrots and cucumbers with tzatziki dip",
-      "Calories": 150
-    }
-  ],
-  "Total Calories": 6000
+const testMeal: Meal = {
+  meal: "Breakfast",
+  item: "Oatmeal with banana and almond milk",
+  calories: 350
+}
 
+const testPlan: MealPlan =
+{
+  day1: [
+    testMeal,
+    testMeal,
+    testMeal,
+    testMeal,
+  ],
+  day2: [
+    testMeal,
+    testMeal,
+    testMeal,
+    testMeal,
+  ],
+  day3: [
+    testMeal,
+    testMeal,
+    testMeal,
+    testMeal,
+  ],
+ day4: [
+    testMeal,
+    testMeal,
+    testMeal,
+    testMeal,
+  ],
+  day5: [
+    testMeal,
+    testMeal,
+    testMeal,
+    testMeal,
+  ],
 }
 
 const handler: NextApiHandler = async (req, res) => {
@@ -128,14 +95,7 @@ const handler: NextApiHandler = async (req, res) => {
           const mkEditDelIntent = mkEditDelJson.response;
           const mkEditDelMessage = mkEditDelJson.message;
 */
-        const newMealPlan: MealPlan = {
-          id: "test",
-          name: "test",
-          description: "test",
-          weeks: 1,
-          plan: testPlan as Json,
-          owner: user.toString(), /* foreign key to users.id */
-        };
+
         res.status(200).json(message);
         //await createorRetrieveMealPlan(newMealPlan);
         res.status(200).json(testPlan);
@@ -159,6 +119,3 @@ const handler: NextApiHandler = async (req, res) => {
 
 
 export default handler;
-
-
-
