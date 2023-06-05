@@ -91,19 +91,17 @@ export default function Account({ user }: { user: User }) {
       const response = await fetch(`/api/generate?AIquery=${queryText}`);
       const data = await response.json();
       // if instruction is make/edit then we are receiving a meal plan
-      const mealPlanData = await response.json();
-      if (mealPlanData != null) {
-        setMealPlan(mealPlanData);
-      }
-      setResponseData(data);
-      //console.log('here');
-      if (typeof data != "string") {
-        setMealPlan(data);
-      }
+      //const mealPlanData = await response.json();
       const handleMessage = () => {
-        setMessages((prevList) => [...prevList, data]);
+        setMessages((prevList) => [...prevList, data[0]]);
       };
       handleMessage();
+      if (data[1] != null) {
+        setMealPlan(data[1] as MealPlan );
+      }
+      //setResponseData(data);
+      //console.log('here');
+      
     }
     catch (error) {
       console.log(error);

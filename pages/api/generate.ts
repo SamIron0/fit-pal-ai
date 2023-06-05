@@ -76,7 +76,10 @@ const handler: NextApiHandler = async (req, res) => {
       let aiJson = JSON.parse(text);
       const intent = aiJson.response;
       const message = aiJson.message;
-
+      const response ={
+        chat: message,
+        mealPlan: testPlan,
+      }
       if (intent === "edit") {
         res.status(200).json(message);
       }
@@ -95,10 +98,9 @@ const handler: NextApiHandler = async (req, res) => {
           const mkEditDelIntent = mkEditDelJson.response;
           const mkEditDelMessage = mkEditDelJson.message;
 */
-
-        res.status(200).json(message);
+        res.status(200).json(response);
         //await createorRetrieveMealPlan(newMealPlan);
-        res.status(200).json(testPlan);
+        //res.status(200).json(testPlan);
         // Handle "make" response
       } else if (intent === "delete") {
         res.status(200).json(message);
