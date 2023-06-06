@@ -191,9 +191,9 @@ export default function Account({ user }: { user: User }) {
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : meal ? (
+                  ) : meal?.item ? (
                     <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-                      {meal?.item}
+                      meal?.item
                     </div>
                   ) : (
                     <p>GhostCard</p>
