@@ -83,6 +83,7 @@ export default function Account({ user }: { user: User }) {
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
   const [mealPlan, setMealPlan] = useState<MealPlan>();
+  const [meal, setMeal] = useState<Meal>();
   const [queryText, setQueryText] = useState('');
   const [messageList, setMessages] = useState<string[]>([]);
 
@@ -183,7 +184,6 @@ export default function Account({ user }: { user: User }) {
                         </div>
                         : <div> </div>
                       }
-
                   </div>
                 }
                 completed={true}
