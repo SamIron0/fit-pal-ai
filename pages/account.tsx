@@ -100,9 +100,11 @@ export default function Account({ user }: { user: User }) {
       if (data.mealplan != null) {
         setMealPlan(data.mealplan);
       }
+      else {
+        console.log('no meal plan');
+      }
       //setResponseData(data);
       //console.log('here');
-      
     }
     catch (error) {
       console.log(error);
