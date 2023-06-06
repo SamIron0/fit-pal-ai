@@ -95,6 +95,9 @@ export default function Account({ user }: { user: User }) {
       //const mealPlanData = await response.json();
       const handleMessage = () => {
         setMessages((prevList) => [...prevList, data.chat]);
+        if(data.chat == null){
+          console.log('no chat');
+        }
       };
       handleMessage();
       if (data.mealplan != null) {
