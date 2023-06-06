@@ -94,20 +94,13 @@ export default function Account({ user }: { user: User }) {
       // if instruction is make/edit then we are receiving a meal plan
       //const mealPlanData = await response.json();
       const handleMessage = () => {
-        setMessages((prevList) => [...prevList, data.chat]);
-        if(data.chat == null){
-          console.log('no chat');
-        }
-      };
-      handleMessage();
-      if (data != null) {
-        setMealPlan(data);
+        setMessages((prevList) => [...prevList, data.message]);
+        //if(data.chat == null){
+        //console.log('no chat');
       }
-      else {
-        console.log('no meal plan');
-      }
-      //setResponseData(data);
-      //console.log('here');
+      //handleMessage();
+      //if (data != null) {
+      setMeal(data);
     }
     catch (error) {
       console.log(error);
@@ -188,7 +181,7 @@ export default function Account({ user }: { user: User }) {
                           {mealPlan.day1[0].calories}
                         </div>
                         : <div> </div>
-                      }
+                    }
                   </div>
                 }
                 completed={true}
@@ -198,9 +191,9 @@ export default function Account({ user }: { user: User }) {
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : mealPlan ? (
+                  ) : meal ? (
                     <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-                      {mealPlan.day1[0].item}
+                      {meal?.calories}
                     </div>
                   ) : (
                     <p>GhostCard</p>

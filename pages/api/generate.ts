@@ -20,10 +20,10 @@ type Intention = {
 }
 
 //const [intentionData, setIntentionData] = useState<Intention>({ response: '' });
-const testMeal: Meal = {
-  meal: "Breakfast",
-  item: "Oatmeal with banana and almond milk",
-  calories: 350
+const testMeal = {
+  "meal": "Breakfast",
+  "item": "Oatmeal with banana and almond milk",
+  "calories": 350
 }
 
 const testPlan: MealPlan =
@@ -98,7 +98,7 @@ const handler: NextApiHandler = async (req, res) => {
           const mkEditDelIntent = mkEditDelJson.response;
           const mkEditDelMessage = mkEditDelJson.message;
 */
-        res.status(200).json(testPlan);
+        res.status(200).json(testMeal);
         //await createorRetrieveMealPlan(newMealPlan);
         //res.status(200).json(testPlan);
         // Handle "make" response
