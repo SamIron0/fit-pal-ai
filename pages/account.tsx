@@ -100,8 +100,8 @@ export default function Account({ user }: { user: User }) {
         }
       };
       handleMessage();
-      if (data.mealplan != null) {
-        setMealPlan(data.mealplan);
+      if (data != null) {
+        setMealPlan(data);
       }
       else {
         console.log('no meal plan');
