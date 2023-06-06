@@ -83,7 +83,7 @@ export default function Account({ user }: { user: User }) {
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
   const [mealPlan, setMealPlan] = useState<MealPlan>();
-  const [meal, setMeal] = useState<Meal>();
+  const [meal, setMeal] = useState(null);
   const [queryText, setQueryText] = useState('');
   const [messageList, setMessages] = useState<string[]>([]);
 
@@ -191,9 +191,9 @@ export default function Account({ user }: { user: User }) {
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : meal?.item ? (
+                  ) : meal? (
                     <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-                      meal?.item
+                      meal
                     </div>
                   ) : (
                     <p>GhostCard</p>
