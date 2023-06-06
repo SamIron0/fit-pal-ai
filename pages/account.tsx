@@ -176,9 +176,9 @@ export default function Account({ user }: { user: User }) {
                 footer={
                   <div>
                     {
-                      mealPlan ?
+                      meal ?
                         <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-                          {mealPlan.day1[0].calories}
+                          {}
                         </div>
                         : <div> </div>
                     }
