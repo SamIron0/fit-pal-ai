@@ -52,7 +52,7 @@ function PlanCard({ title, footer, children, completed }: Props) {
       </div>
     </div>
   );
-}
+} // PlanCard
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const supabase = createServerSupabaseClient(ctx);
@@ -93,11 +93,11 @@ export default function Account({ user }: { user: User }) {
       // if instruction is make/edit then we are receiving a meal plan
       //const mealPlanData = await response.json();
       const handleMessage = () => {
-        setMessages((prevList) => [...prevList, data[0]]);
+        setMessages((prevList) => [...prevList, data.chat]);
       };
       handleMessage();
-      if (data[1] != null) {
-        setMealPlan(data[1] as MealPlan );
+      if (data.mealplan != null) {
+        setMealPlan(data.mealplan as MealPlan );
       }
       //setResponseData(data);
       //console.log('here');
