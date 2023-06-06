@@ -97,7 +97,7 @@ export default function Account({ user }: { user: User }) {
       };
       handleMessage();
       if (data.mealplan != null) {
-        setMealPlan(data.mealplan as MealPlan );
+        setMealPlan(data.mealplan);
       }
       //setResponseData(data);
       //console.log('here');
