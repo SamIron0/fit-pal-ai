@@ -193,7 +193,7 @@ export default function Account({ user }: { user: User }) {
                     </div>
                   ) : meal ? (
                     <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-                      {meal?.calories}
+                      {meal?.item}
                     </div>
                   ) : (
                     <p>GhostCard</p>
