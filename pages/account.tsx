@@ -40,7 +40,7 @@ type Chats = {
 function PlanCard({ title, footer, children, completed }: Props) {
   const bgColor = completed ? "green-gradient-bg" : "bg-zinc-700";
   return (
-    <div className={`h-full w-l w-full p-px rounded-md ${bgColor}`}>
+    <div className={`h-full w-xl w-full p-px rounded-md ${bgColor}`}>
       <div className="bg-black h-full	w-l w-full p rounded-md m-auto">
         <div className="px-2 py-1">
           <h1 className="text-l mb-1 font-medium">{title}</h1>
@@ -179,7 +179,7 @@ export default function Account({ user }: { user: User }) {
                   <div>
                     {
                       meal ?
-                        <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+                        <div className="flex items-start justify-between flex-col ">
                           {meal.calories}
                         </div>
                         : <div> </div>
