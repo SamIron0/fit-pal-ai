@@ -188,15 +188,14 @@ export default function Account({ user }: { user: User }) {
                 }
                 completed={true}
               >
-                <div className="text-s mt-8 mb-4 font-semibold">
+                <div className="mt-1 mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
                   ) : meal? (
                     <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-                      {meal.meal}
-                      {meal.item}
+                      {meal.meal} {meal.item}
                     </div>
                   ) : (
                     <p>GhostCard</p>
