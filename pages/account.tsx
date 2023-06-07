@@ -194,7 +194,7 @@ export default function Account({ user }: { user: User }) {
                       <LoadingDots />
                     </div>
                   ) : meal ? (
-                    <div className="flex text-xs flex-col">
+                    <div className="text-xs ">
                       {meal.meal} {meal.item}
                     </div>
                   ) : (
