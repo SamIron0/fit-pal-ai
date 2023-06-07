@@ -93,11 +93,11 @@ export default function Account({ user }: { user: User }) {
       const data = await response.json();
       // if instruction is make/edit then we are receiving a meal plan
       //const mealPlanData = await response.json();
-      const handleMessage = () => {
-        setMessages((prevList) => [...prevList, data.message]);
+      //const handleMessage = () => {
+        //setMessages((prevList) => [...prevList, data.message]);
         //if(data.chat == null){
         //console.log('no chat');
-      }
+      //}
       //handleMessage();
       //if (data != null) {
       setMeal(data);
