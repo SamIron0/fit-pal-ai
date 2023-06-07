@@ -94,15 +94,15 @@ export default function Account({ user }: { user: User }) {
       // if instruction is make/edit then we are receiving a meal plan
       //const mealPlanData = await response.json();
       //const handleMessage = () => {
-        //setMessages((prevList) => [...prevList, data.message]);
-        //if(data.chat == null){
-        //console.log('no chat');
+      //setMessages((prevList) => [...prevList, data.message]);
+      //if(data.chat == null){
+      //console.log('no chat');
       //}
       //handleMessage();
       //if (data != null) {
-        if(typeof data === 'object'){
-          setMeal(data);
-        }
+      if (typeof data === 'object') {
+        setMeal(data);
+      }
     }
     catch (error) {
       console.log(error);
@@ -193,8 +193,8 @@ export default function Account({ user }: { user: User }) {
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : meal? (
-                    <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+                  ) : meal ? (
+                    <div className="flex text-xs justify-between flex-col sm:flex-row sm:items-center">
                       {meal.meal} {meal.item}
                     </div>
                   ) : (
