@@ -180,7 +180,7 @@ export default function Account({ user }: { user: User }) {
                     {
                       meal ?
                         <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-                          {}
+                          {meal.calories}
                         </div>
                         : <div> </div>
                     }
@@ -188,13 +188,14 @@ export default function Account({ user }: { user: User }) {
                 }
                 completed={true}
               >
-                <div className="text-m mt-8 mb-4 font-semibold">
+                <div className="text-s mt-8 mb-4 font-semibold">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
                   ) : meal? (
                     <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
+                      {meal.meal}
                       {meal.item}
                     </div>
                   ) : (
