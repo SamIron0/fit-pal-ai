@@ -194,7 +194,7 @@ export default function Account({ user }: { user: User }) {
                       <LoadingDots />
                     </div>
                   ) : meal ? (
-                    <div className="flex text-xs justify-between flex-col sm:flex-row sm:items-center">
+                    <div className="flex text-xs justify-between flex-col sm:flex-row">
                       {meal.meal} {meal.item}
                     </div>
                   ) : (
