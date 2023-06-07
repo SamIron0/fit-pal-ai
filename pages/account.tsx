@@ -83,7 +83,7 @@ export default function Account({ user }: { user: User }) {
   const [activeSection, setActiveSection] = useState(1);
   const [responseData, setResponseData] = useState('');
   const [mealPlan, setMealPlan] = useState<MealPlan>();
-  const [meal, setMeal] = useState(null);
+  const [meal, setMeal] = useState<Meal>();
   const [queryText, setQueryText] = useState('');
   const [messageList, setMessages] = useState<string[]>([]);
 
@@ -100,7 +100,9 @@ export default function Account({ user }: { user: User }) {
       //}
       //handleMessage();
       //if (data != null) {
-      setMeal(data);
+        if(typeof data === 'object'){
+          setMeal(data);
+        }
     }
     catch (error) {
       console.log(error);
@@ -193,7 +195,7 @@ export default function Account({ user }: { user: User }) {
                     </div>
                   ) : meal? (
                     <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-                      {meal}
+                      {meal.item}
                     </div>
                   ) : (
                     <p>GhostCard</p>

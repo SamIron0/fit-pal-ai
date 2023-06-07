@@ -20,10 +20,10 @@ type Intention = {
 }
 
 //const [intentionData, setIntentionData] = useState<Intention>({ response: '' });
-let testMeal = {
+let testMeal: Meal = {
   "meal": "Breakfast",
   "item": "Oatmeal with banana and almond milk",
-  "calories": "350"
+  "calories": 350
 }
 /*
 const testPlan: MealPlan =
