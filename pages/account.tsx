@@ -188,7 +188,7 @@ export default function Account({ user }: { user: User }) {
                 }
                 completed={true}
               >
-                <div className="mt-1 w-full mb-1">
+                <div className="mt-2 w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
