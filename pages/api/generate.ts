@@ -20,12 +20,12 @@ type Intention = {
 }
 
 //const [intentionData, setIntentionData] = useState<Intention>({ response: '' });
-const testMeal = {
+let testMeal = {
   "meal": "Breakfast",
   "item": "Oatmeal with banana and almond milk",
-  "calories": 350
+  "calories": "350"
 }
-
+/*
 const testPlan: MealPlan =
 {
   day1: [
@@ -59,7 +59,7 @@ const testPlan: MealPlan =
     testMeal,
   ],
 }
-
+*/
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
     const { AIquery, user } = req.query;
@@ -78,7 +78,7 @@ const handler: NextApiHandler = async (req, res) => {
       const message = aiJson.message;
       const response ={
         chat: message,
-        mealPlan: testPlan,
+        //mealPlan: testPlan,
       }
       if (intent === "edit") {
         res.status(200).json(message);
