@@ -42,7 +42,7 @@ function PlanCard({ title, footer, children, completed }: Props) {
   return (
     <div className={`h-full w-48 p-px rounded-md ${bgColor}`}>
       <div className="bg-black h-full w-full p rounded-md m-auto">
-        <div className='w-full'>
+        <div className='w-full bg-700'>
           <div className="px-2 py-1">
             <h1 className="text-l mb-1 font-medium">{title}</h1>
             {children}
@@ -103,7 +103,8 @@ export default function Account({ user }: { user: User }) {
       //handleMessage();
       //if (data != null) {
       if (typeof data === 'object') {
-        setMeal(data);
+        //setMeal(data);
+        setMealPlan(data);
       }
     }
     catch (error) {
@@ -180,9 +181,9 @@ export default function Account({ user }: { user: User }) {
                 footer={
                   <div>
                     {
-                      meal ?
+                      mealPlan ?
                         <div className="flex items-start justify-between flex-col ">
-                          {meal.calories}
+                          {mealPlan.day1[0].calories}
                         </div>
                         : <div> </div>
                     }
@@ -195,9 +196,23 @@ export default function Account({ user }: { user: User }) {
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : meal ? (
+                  ) : mealPlan ? (
                     <div className="text-xs ">
-                      {meal.meal} {meal.item}
+                      <div className="row">
+                        {mealPlan.day1[0].meal + ":"} {mealPlan.day1[0].item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                      {mealPlan.day1[1].meal + ":"} {mealPlan.day1[1].item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                      {mealPlan.day1[2].meal + ":"} {mealPlan.day1[2].item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                      {mealPlan.day1[3].meal + ":"} {mealPlan.day1[3].item}
+                      </div>
                     </div>
                   ) : (
                     <p>GhostCard</p>
