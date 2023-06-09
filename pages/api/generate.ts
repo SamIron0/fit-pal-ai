@@ -25,7 +25,7 @@ let testMeal: Meal = {
   "item": "Oatmeal with banana and almond milk",
   "calories": 350
 }
-/*
+
 const testPlan: MealPlan =
 {
   day1: [
@@ -59,7 +59,7 @@ const testPlan: MealPlan =
     testMeal,
   ],
 }
-*/
+
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
     const { AIquery, user } = req.query;
@@ -98,7 +98,7 @@ const handler: NextApiHandler = async (req, res) => {
           const mkEditDelIntent = mkEditDelJson.response;
           const mkEditDelMessage = mkEditDelJson.message;
 */
-        res.status(200).json(testMeal);
+        res.status(200).json(testPlan);
         //await createorRetrieveMealPlan(newMealPlan);
         //res.status(200).json(testPlan);
         // Handle "make" response
