@@ -215,7 +215,7 @@ export default function Account({ user }: { user: User }) {
                       </div>
                     </div>
                   ) : (
-                    <p>GhostCard</p>
+                    <p></p>
                   )}
                 </div>
               </PlanCard>
