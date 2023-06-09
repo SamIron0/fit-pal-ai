@@ -43,8 +43,8 @@ function PlanCard({ title, footer, children, completed }: Props) {
     <div className={`h-full w-48 p-px rounded-md ${bgColor}`}>
       <div className="bg-black h-full w-full p rounded-md m-auto">
         <div className='w-48 bg-zinc-700 box-border h-4/5'>
-          <div className="px-2 py-1">
-            <h1 className="text-l mb-1 font-medium">{title}</h1>
+          <div className="px-2 ">
+            <h1 className="text-l  font-medium">{title}</h1>
             {children}
           </div>
           <div className="border-t h-1/5 border-zinc-700 bg-zinc-900 p-2 text-zinc-500 rounded-b-md">
