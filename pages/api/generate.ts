@@ -73,14 +73,14 @@ const handler: NextApiHandler = async (req, res) => {
           "chat": message,
           "plan": undefined,
         }
-        res.status(200).json(message);
+        res.status(200).json(response);
         // Handle "delete" response
       } else {
         response = {
           "chat": message,
           "plan": undefined,
         }
-        res.status(200).json(message);
+        res.status(200).json(response);
       }
     }    //    
     /*
