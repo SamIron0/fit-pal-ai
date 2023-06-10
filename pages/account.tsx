@@ -40,7 +40,7 @@ type Chats = {
 function PlanCard({ title, footer, children, completed }: Props) {
   const bgColor = completed ? "green-gradient-bg" : "bg-zinc-700";
   return (
-    <div className={`h-full w-80 p-px rounded-md flex-shrink-0 flex-grow-0 ${bgColor}`}>
+    <div className={`h-full w-48 p-px rounded-md flex-shrink-0 flex-grow-0 ${bgColor}`}>
       <div className="bg-black h-full w-full  rounded-md m-auto">
         <div className='w-full h-full flex flex-col rounded-md  bg-zinc-700 '>
           <div className="px-2  h-4/5 ">
@@ -91,20 +91,20 @@ export default function Account({ user }: { user: User }) {
 
   const fetchAIData = async () => {
     try {
-      const response = await fetch(`/api/generate?AIquery=${queryText}`);
+      const response = await fetch(`/api/generate?AIquery=${queryText}&userPlan=${mealPlan}`);
       const data = await response.json();
       // if instruction is make/edit then we are receiving a meal plan
       //const mealPlanData = await response.json();
       //const handleMessage = () => {
-      //setMessages((prevList) => [...prevList, data.message]);
+      setMessages((prevList) => [...prevList,data.chat]);
       //if(data.chat == null){
       //console.log('no chat');
       //}
       //handleMessage();
       //if (data != null) {
-      if (typeof data === 'object') {
+      if (data.plan != null) {
         //setMeal(data);
-        setMealPlan(data);
+        setMealPlan(data.plan);
       }
     }
     catch (error) {
@@ -183,7 +183,7 @@ export default function Account({ user }: { user: User }) {
                     {
                       mealPlan ?
                         <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day1[0].calories}
+                          {mealPlan.day1[0].calories + ":"} {mealPlan.day1[0].calories}
                         </div>
                         : <div> </div>
                     }

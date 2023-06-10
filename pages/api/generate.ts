@@ -18,52 +18,34 @@ const openai = new OpenAIApi(configuration);
 type Intention = {
   response: string,
 }
-
-//const [intentionData, setIntentionData] = useState<Intention>({ response: '' });
-let testMeal: Meal = {
-  "meal": "Breakfast",
-  "item": "Oatmeal with banana and almond milk",
-  "calories": 350
+const testPlan = {
+  "response": "make",
+  "mealPlan": {
+    "day1":
+    {
+      "meal": "Breakfast",
+      "item": "Oatmeal with banana and almond milk",
+      "calories": 350
+    },
+    "day2":
+    {
+      "meal": "Lunch",
+      "item": "Grilled Chicken Salad",
+      "calories": 400
+    },
+    "day3":
+    {
+      "meal": "Dinner",
+      "item": "Salmon with roasted vegetables",
+      "calories": 450
+    }
+  },
+  "message": "I have created your meal plan for the next 3 days."
 }
-
-const testPlan: MealPlan =
-{
-  day1: [
-    testMeal,
-    testMeal,
-    testMeal,
-    testMeal,
-  ],
-  day2: [
-    testMeal,
-    testMeal,
-    testMeal,
-    testMeal,
-  ],
-  day3: [
-    testMeal,
-    testMeal,
-    testMeal,
-    testMeal,
-  ],
- day4: [
-    testMeal,
-    testMeal,
-    testMeal,
-    testMeal,
-  ],
-  day5: [
-    testMeal,
-    testMeal,
-    testMeal,
-    testMeal,
-  ],
-}
-
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
-    const { AIquery, user } = req.query;
-    const chatResponseQuery = "You are a helpful fitness AI bot called myfitpal that resides on a backend server, servicing a website's users looking to make meal plans. Reply only in json format and remove all newline characters(backslash n) that may exist in the json. If the following statement is asking to make a meal plan,then response: make, message:some response saying youre working on it.else, if the statement is asking to edit a meal plan, then response: edit, message:some response saying youre working on it. else if the statement is asking to delete a meal plan, then response:delete, message:some response saying youre working on it. else,response: invalid, message: A sentence or 2 about not being able to complete user's request asking user to try a different request. statement: " + AIquery?.toString?.() ?? '';
+    const { AIquery, userPlan } = req.query;
+    const chatResponseQuery = "You are a helpful fitness AI bot that resides on a backend server, servicing a website's users looking to make meal plans. Reply only in json format and remove all newline characters(backslash n) that may exist in the json. If the following statement is asking to make a meal plan,then response: make, mealPlan: the created mealplan, message:a response to be displayed to user saying you've created it. else, if the statement is asking to edit a meal plan, then response: edit, mealPlan: the edited mealPlan created using the given mealplan and users instructions, message:some response saying youre done editing it. else if the statement is asking to delete a meal plan, then response:delete, mealPlan:null, message:some response saying you've done it. else if it is just a chat message that is within the context of your job, then response:chat, mealPlan:null, message: A response to the user's chat message. else,response:invalid, mealPlan:null, message: A sentence or 2 about not being able to complete user's request asking user to try a different message. User's input query: " + AIquery?.toString?.() ?? '' + " ,User's mealPlan: " + userPlan?.toString?.() ?? '' + ". each day in the mealplan  should have: meal: Breakfast or lunch or dinner, item: for example, Oatmeal with banana and almond mil, calories: e.g 350";
     // evaluate if intention of text is to make or edit a meal plan or if its out of context.
     const chatResponse = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
@@ -76,9 +58,10 @@ const handler: NextApiHandler = async (req, res) => {
       let aiJson = JSON.parse(text);
       const intent = aiJson.response;
       const message = aiJson.message;
-      const response ={
-        chat: message,
-        //mealPlan: testPlan,
+      const mealplan = aiJson.mealPlan;
+      const response = {
+        "chat": message,
+        "plan": mealplan,
       }
       if (intent === "edit") {
         res.status(200).json(message);
@@ -98,7 +81,7 @@ const handler: NextApiHandler = async (req, res) => {
           const mkEditDelIntent = mkEditDelJson.response;
           const mkEditDelMessage = mkEditDelJson.message;
 */
-        res.status(200).json(testPlan);
+        res.status(200).json(response);
         //await createorRetrieveMealPlan(newMealPlan);
         //res.status(200).json(testPlan);
         // Handle "make" response

@@ -25,36 +25,11 @@ export interface Meal{
   calories: number | null
 }
 export interface MealPlan {
-  day1 : [
-    Meal,
-    Meal,
-    Meal,
-    Meal,
-  ],
-  day2 : [
-    Meal,
-    Meal,
-    Meal,
-    Meal,
-  ],
-  day3: [
-    Meal,
-    Meal,
-    Meal,
-    Meal,
-  ],
-  day4: [
-    Meal,
-    Meal,
-    Meal,
-    Meal,
-  ],
-  day5: [
-    Meal,
-    Meal,
-    Meal,
-    Meal,
-  ],
+  day1: Meal[],
+  day2: Meal[],
+  day3: Meal[],
+  day4: Meal[],
+  day5: Meal[],
 }
 
 export interface ProductWithPrice extends Product {
