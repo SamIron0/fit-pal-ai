@@ -93,16 +93,10 @@ export default function Account({ user }: { user: User }) {
     try {
       const response = await fetch(`/api/generate?AIquery=${queryText}&userPlan=${mealPlan}`);
       const data = await response.json();
-      // if instruction is make/edit then we are receiving a meal plan
-      //const mealPlanData = await response.json();
-      //const handleMessage = () => {
-      setMessages((prevList) => [...prevList,data.chat]);
-      //if(data.chat == null){
-      //console.log('no chat');
-      //}
-      //handleMessage();
-      //if (data != null) {
-      if (data.plan != null) {
+      if (data.chat != undefined) {
+        setMessages((prevList) => [...prevList, data.chat]);
+      }
+      if (data.plan != undefined) {
         //setMeal(data);
         setMealPlan(data.plan);
       }
@@ -203,15 +197,15 @@ export default function Account({ user }: { user: User }) {
                       </div>
                       <hr />
                       <div className="row">
-                      {mealPlan.day1[1].meal + ":"} {mealPlan.day1[1].item}
+                        {mealPlan.day1[1].meal + ":"} {mealPlan.day1[1].item}
                       </div>
                       <hr />
                       <div className="row">
-                      {mealPlan.day1[2].meal + ":"} {mealPlan.day1[2].item}
+                        {mealPlan.day1[2].meal + ":"} {mealPlan.day1[2].item}
                       </div>
                       <hr />
                       <div className="row">
-                      {mealPlan.day1[3].meal + ":"} {mealPlan.day1[3].item}
+                        {mealPlan.day1[3].meal + ":"} {mealPlan.day1[3].item}
                       </div>
                     </div>
                   ) : (

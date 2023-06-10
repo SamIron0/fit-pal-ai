@@ -45,7 +45,7 @@ const testPlan = {
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
     const { AIquery, userPlan } = req.query;
-    const chatResponseQuery = "You are a helpful fitness AI bot that resides on a backend server, servicing a website's users looking to make meal plans. Reply only in json format and remove all newline characters(backslash n) that may exist in the json. If the following statement is asking to make a meal plan,then response: make, mealPlan: the created mealplan, message:a response to be displayed to user saying you've created it. else, if the statement is asking to edit a meal plan, then response: edit, mealPlan: the edited mealPlan created using the given mealplan and users instructions, message:some response saying youre done editing it. else if the statement is asking to delete a meal plan, then response:delete, mealPlan:null, message:some response saying you've done it. else if it is just a chat message that is within the context of your job, then response:chat, mealPlan:null, message: A response to the user's chat message. else,response:invalid, mealPlan:null, message: A sentence or 2 about not being able to complete user's request asking user to try a different message. User's input query: " + AIquery?.toString?.() ?? '' + " ,User's exisiting mealPlan(empty or a json): " + userPlan?.toString?.() ?? '' + ". each day in the mealplan  should have: meal: Breakfast or lunch or dinner, item: for example, Oatmeal with banana and almond mil, calories: e.g 350";
+    const chatResponseQuery = "You are a helpful fitness AI bot that resides on a backend server, servicing a website's users looking to make meal plans. Reply only in json format and remove all newline characters(backslash n) that may exist in the json. If the following statement is asking to make a meal plan,then response: make, mealPlan: {input the created mealplan here}, message:a response to be displayed to user saying you've created it. else, if the statement is asking to edit a meal plan, then response: edit, mealPlan: the edited mealPlan created using the given mealplan and users instructions, message:some response saying youre done editing it. else if the statement is asking to delete a meal plan, then response:delete, mealPlan:null, message:some response saying you've done it. else if it is just a chat message that is within the context of your job, then response:chat, mealPlan:null, message: A response to the user's chat message. else,response:invalid, mealPlan:null, message: A sentence or 2 about not being able to complete user's request asking user to try a different message. User's input query: " + AIquery?.toString?.() ?? '' + " ,User's exisiting mealPlan(empty or a json): " + userPlan?.toString?.() ?? '' + ". each day in the mealplan  should have: meal: Breakfast or lunch or dinner, item: for example, Oatmeal with banana and almond mil, calories: e.g 350";
     // evaluate if intention of text is to make or edit a meal plan or if its out of context.
     const chatResponse = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
@@ -59,36 +59,27 @@ const handler: NextApiHandler = async (req, res) => {
       const intent = aiJson.response;
       const message = aiJson.message;
       const mealplan = aiJson.mealPlan;
-      const response = {
+      let response = {
         "chat": message,
         "plan": mealplan,
       }
       if (intent === "edit") {
-        res.status(200).json(message);
-      }
-
-      else if (intent === "make") {
-        /*
-        // call gpt to generate a mealplan.
-        const mkEditDelQuery = "You are a helpful fitness AI bot called myfitpal that resides on a backend server, servicing a website's users looking to make meal plans. Reply only in json format and remove all newline characters(backslash n) that may exist in the json. If the following statement is asking to make a meal plan,then response: make, message:some response saying youre working on it.else, if the statement is asking to edit a meal plan, then response: edit, message:some response saying youre working on it. else if the statement is asking to delete a meal plan, then response:delete, message:some response saying youre working on it. else,response: invalid, message: A sentence or 2 about not being able to complete user's request asking user to try a different request. statement: " + AIquery?.toString?.() ?? '';
-        const mkEditDelResponse = await openai.createChatCompletion({
-          model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: mkEditDelQuery?.toString?.() ?? '', name: "Samuel" }], // Use queryText input in messages array
-        });
-        const mkEditDelText = mkEditDelResponse.data.choices[0].message?.content;
-        if (typeof mkEditDelText === 'string') {
-          let mkEditDelJson = JSON.parse(mkEditDelText);
-          const mkEditDelIntent = mkEditDelJson.response;
-          const mkEditDelMessage = mkEditDelJson.message;
-*/
         res.status(200).json(response);
-        //await createorRetrieveMealPlan(newMealPlan);
-        //res.status(200).json(testPlan);
-        // Handle "make" response
+      }
+      else if (intent === "make") {
+        res.status(200).json(response);
       } else if (intent === "delete") {
+        response = {
+          "chat": message,
+          "plan": undefined,
+        }
         res.status(200).json(message);
         // Handle "delete" response
       } else {
+        response = {
+          "chat": message,
+          "plan": undefined,
+        }
         res.status(200).json(message);
       }
     }    //    
@@ -98,6 +89,7 @@ const handler: NextApiHandler = async (req, res) => {
         messages: [{ role: "user", content: AIquery?.toString?.() ?? '',name:"Samuel"}], // Use queryText input in messages array
       });res.status(200).json(completion.data.choices[0].message);*/
   } else {
+
     res.status(405).json({ message: 'Method Not Allowed' });
   }
 };
