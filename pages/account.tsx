@@ -108,7 +108,7 @@ export default function Account({ user }: { user: User }) {
     }
   }
   const handleButtonClick = () => {
-    setQueryText('')
+    setQueryText('e.target.value')
     setMessages([...messageList?.concat(queryText) ?? [queryText]]);
     fetchAIData();
     //populateChat();
@@ -164,6 +164,7 @@ export default function Account({ user }: { user: User }) {
 
   //const section1Class = activeSection === 1 ? "block" : "hidden";
   //const section2Class = activeSection === 2 ? "block" : "hidden";
+
 
   return (
     <section className="bg-black overflow-hidden flex-auto h-screen">
@@ -501,7 +502,7 @@ export default function Account({ user }: { user: User }) {
                           }`}
                         onClick={() => setActiveSection(1)}
                       >
-                        <h2 className="text-xl font-bold text-gray-800">FITPAL AI</h2>
+                        <h2 className="text-xl font-bold white-gradient-bg text-gray-800">FITPAL AI</h2>
                       </div>
 
                     </div>
@@ -511,7 +512,7 @@ export default function Account({ user }: { user: User }) {
                           }`}
                         onClick={() => setActiveSection(2)}
                       >
-                        <h2 className="text-xl font-bold text-gray-800">SAVED PLANS</h2>
+                        <h2 className="text-xl white-gradient-bg font-bold text-gray-800">SAVED PLANS</h2>
                       </div>
 
                     </div>

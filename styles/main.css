@@ -54,6 +54,11 @@ a {
 .green-gradient-bg {
   background-image: linear-gradient(to right, #23e24c, #87df9a);
 }
+grey-gradient-text {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #989898, #f9f9fa);
+}
 
 .height-screen-helper {
   height: calc(100vh - 80px);
