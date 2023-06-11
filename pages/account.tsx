@@ -46,10 +46,10 @@ function PlanCard({ title, footer, children, completed }: Props) {
   return (
     <div className={`h-full w-48 p-px rounded-md flex-shrink-0 flex-grow-0 ${bgColor}`}>
       <div className="bg-black  h-full w-full  rounded-md m-auto">
-        <div className='w-full h-full flex flex-col rounded-md  '>
-          <div className="px-2 overflow-hidden h-4/5 ">
+        <div className='w-full h-full overflow-hidden flex flex-col rounded-md  '>
+          <div className="px-2 flex-1 overflow-y-scroll h-4/5 ">
             <h1 className="text-l font-medium">{title}</h1>
-            <div className="flex-1 overflow-y-scroll" >
+            <div className="" >
               {children}
             </div>
           </div>
@@ -419,7 +419,7 @@ export default function Account({ user }: { user: User }) {
 
           <div className="border-t h-96 overflow-hidden border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
             <div >
-              <div className="h-80 pb-11 text-gray-200">
+              <div className="h-80 pb-9 text-gray-200">
                 <div className="flex flex-col">
                   <div className="flex">
                     <div className=" mx-auto">
