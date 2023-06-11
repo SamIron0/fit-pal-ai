@@ -62,6 +62,11 @@ a {
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(to right, #989898, #c4c3c3);
 }
+.circle-div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
 
 .height-screen-helper {
   height: calc(100vh - 80px);

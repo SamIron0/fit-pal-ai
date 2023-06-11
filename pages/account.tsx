@@ -1,5 +1,7 @@
 import { useState, ReactNode, FC, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import React from 'react';
+
 import { GetServerSidePropsContext } from 'next';
 import {
   createServerSupabaseClient,
@@ -11,6 +13,8 @@ import Button from '@/components/ui/Button';
 import { useUser } from '@/utils/useUser';
 import { postData } from '@/utils/helpers';
 import { Meal, MealPlan } from '@/types';
+import robotImage from './robot-icon.avif';
+import userImage from './ai-icon.jpg';
 
 interface Props {
   title: string;
@@ -44,12 +48,12 @@ function PlanCard({ title, footer, children, completed }: Props) {
       <div className="bg-black h-full w-full  rounded-md m-auto">
         <div className='w-full h-full flex flex-col rounded-md  '>
           <div className="px-2  h-4/5 ">
-            <h1 className="text-l  font-medium">{title}</h1>
+            <h1 className="text-l font-medium">{title}</h1>
             <div overflow-y-scroll >
               {children}
             </div>
           </div>
-          <div className="border-t h-1/5 border-zinc-700 bg-zinc-900 p-2 text-zinc-500 rounded-b-md">
+          <div className="h-1/5 border-zinc-700 bg-zinc-900 p-2 text-zinc-500 rounded-b-md">
             {footer}
           </div>
         </div>
@@ -108,7 +112,7 @@ export default function Account({ user }: { user: User }) {
     }
   }
   const handleButtonClick = () => {
-    setQueryText('e.target.value')
+    setQueryText('')
     setMessages([...messageList?.concat(queryText) ?? [queryText]]);
     fetchAIData();
     //populateChat();
@@ -121,20 +125,34 @@ export default function Account({ user }: { user: User }) {
         messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
       }
     }, [messageList]);
+
     return (
-      <div className="flex-1 overflow-y-scroll w-full break-words"  ref={messageListRef}>
+      <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
         {messageList && messageList.map((message, index) => (
           <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
             <p className={'mx-5 py-5'}>
-              {index % 2 === 0 ? "S   " : "B   "}
-              {message}
+              <div className="column-1 w-1/5">
+
+                {index % 2 === 0 ?
+                  <div className="circle-div">
+                    <img src={userImage.src} alt="user Image" />
+                  </div>
+                  :
+                  <div>
+                    <img src={robotImage.src} alt="ai Image" />
+                  </div>
+                }
+              </div>
+              <div className="column-2 w-4/5">
+                {message}
+              </div>
             </p>
           </div>
         ))}
       </div>
     )
   }
-  
+
   const ManualSection = () => {
     return (
       <div> <p>saved</p> </div>
