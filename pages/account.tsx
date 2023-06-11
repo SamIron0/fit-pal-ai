@@ -130,7 +130,7 @@ export default function Account({ user }: { user: User }) {
       <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
         {messageList && messageList.map((message, index) => (
           <div className={`flex ${index % 2 === 0 ? 'bg-black' : 'bg'} `}>
-              <div className="pl-5 px-2 w-1/10">
+              <div className="px-5 py-2 w-1/10">
                 {index % 2 === 0 ?
                   <div className="circle-div overflow-hidden">
                     <img src={userImage.src} alt="user Image" />
