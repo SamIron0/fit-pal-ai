@@ -136,7 +136,7 @@ export default function Account({ user }: { user: User }) {
                     <img src={userImage.src} alt="user Image" />
                   </div>
                   :
-                  <div className="circle-div">
+                  <div className="circle-div overflow-hidden">
                     <img src={robotImage.src} alt="ai Image" />
                   </div>
                 }
