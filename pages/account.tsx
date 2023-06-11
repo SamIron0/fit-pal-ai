@@ -1,4 +1,4 @@
-import { useState, ReactNode, FC, useEffect } from 'react';
+import { useState, ReactNode, FC, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { GetServerSidePropsContext } from 'next';
 import {
@@ -108,14 +108,21 @@ export default function Account({ user }: { user: User }) {
     }
   }
   const handleButtonClick = () => {
+    setQueryText('')
     setMessages([...messageList?.concat(queryText) ?? [queryText]]);
     fetchAIData();
     //populateChat();
   };
 
   const AISection = () => {
+    const messageListRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+      if (messageListRef.current) {
+        messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+      }
+    }, [messageList]);
     return (
-      <div className="flex-1 overflow-y-scroll w-full break-words">
+      <div className="flex-1 overflow-y-scroll w-full break-words"  ref={messageListRef}>
         {messageList && messageList.map((message, index) => (
           <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
             <p className={'mx-5 py-5'}>
@@ -127,6 +134,7 @@ export default function Account({ user }: { user: User }) {
       </div>
     )
   }
+  
   const ManualSection = () => {
     return (
       <div> <p>saved</p> </div>
