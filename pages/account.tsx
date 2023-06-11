@@ -100,7 +100,7 @@ export default function Account({ user }: { user: User }) {
       const response = await fetch(`/api/generate?AIquery=${queryText}&userPlan=${mealPlan}`);
       const data = await response.json();
       if (data.chat != undefined) {
-        setMessages((prevList) => [...prevList, data.chat]);
+        setMessages((prevList) => [...prevList, "A" + data.chat]);
       }
       if (data.plan != undefined) {
         //setMeal(data);
@@ -113,7 +113,7 @@ export default function Account({ user }: { user: User }) {
   }
   const handleButtonClick = () => {
     setQueryText('')
-    setMessages([...messageList?.concat(queryText) ?? [queryText]]);
+    setMessages([...messageList?.concat("U" + queryText) ?? ["U" + queryText]]);
     fetchAIData();
     //populateChat();
   };
@@ -131,7 +131,7 @@ export default function Account({ user }: { user: User }) {
         {messageList && messageList.map((message, index) => (
           <div className={`flex ${index % 2 === 0 ? 'bg-black' : 'bg'} `}>
               <div className="px-5 py-2 w-1/10">
-                {index % 2 === 0 ?
+                {message.charAt(0) ===  "U"?
                   <div className="circle-div overflow-hidden">
                     <img src={userImage.src} alt="user Image" />
                   </div>
@@ -141,8 +141,8 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 }
               </div>
-              <div className="pt-3 pr-3 w-9/10">
-                <p>{message}</p>
+              <div className="py-3 pr-3 w-9/10">
+                <p>{message.slice(1)}</p>
               </div>
           </div>
         ))}
