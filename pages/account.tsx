@@ -246,7 +246,7 @@ export default function Account({ user }: { user: User }) {
                     {
                       mealPlan ?
                         <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day2.totalCalories}
+                          {"Calories: " + mealPlan.day2.totalCalories}
                         </div>
                         : <div> </div>
                     }
@@ -254,7 +254,7 @@ export default function Account({ user }: { user: User }) {
                 }
                 completed={true}
               >
-                <div className="mt-2 w-full mb-1">
+                <div className="mt-1  w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
@@ -262,19 +262,19 @@ export default function Account({ user }: { user: User }) {
                   ) : mealPlan ? (
                     <div className="text-xs ">
                       <div className="row">
-                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                        {"Breakfast: "} {mealPlan.day2.breakfast.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                        {"Lunch: "} {mealPlan.day2.lunch.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                        {"Dinner: "} {mealPlan.day2.dinner.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Snack: "} {mealPlan.day1.snack.item}
+                        {"Snack: "} {mealPlan.day2.snack.item}
                       </div>
                     </div>
                   ) : (
@@ -282,7 +282,6 @@ export default function Account({ user }: { user: User }) {
                   )}
                 </div>
               </PlanCard>
-
               <PlanCard
                 title="Wednesday"
                 footer={
@@ -290,7 +289,7 @@ export default function Account({ user }: { user: User }) {
                     {
                       mealPlan ?
                         <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day1.totalCalories}
+                          {"Calories: " + mealPlan.day3.totalCalories}
                         </div>
                         : <div> </div>
                     }
@@ -298,7 +297,7 @@ export default function Account({ user }: { user: User }) {
                 }
                 completed={true}
               >
-                <div className="mt-2 w-full mb-1">
+                <div className="mt-1  w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
@@ -306,19 +305,19 @@ export default function Account({ user }: { user: User }) {
                   ) : mealPlan ? (
                     <div className="text-xs ">
                       <div className="row">
-                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                        {"Breakfast: "} {mealPlan.day3.breakfast.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                        {"Lunch: "} {mealPlan.day3.lunch.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                        {"Dinner: "} {mealPlan.day3.dinner.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Snack: "} {mealPlan.day1.snack.item}
+                        {"Snack: "} {mealPlan.day3.snack.item}
                       </div>
                     </div>
                   ) : (
@@ -326,7 +325,6 @@ export default function Account({ user }: { user: User }) {
                   )}
                 </div>
               </PlanCard>
-
               <PlanCard
                 title="Thursday"
                 footer={
@@ -334,7 +332,7 @@ export default function Account({ user }: { user: User }) {
                     {
                       mealPlan ?
                         <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day1.totalCalories}
+                          {"Calories: " + mealPlan.day4.totalCalories}
                         </div>
                         : <div> </div>
                     }
@@ -342,7 +340,7 @@ export default function Account({ user }: { user: User }) {
                 }
                 completed={true}
               >
-                <div className="mt-2 w-full mb-1">
+                <div className="mt-1  w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
@@ -350,19 +348,19 @@ export default function Account({ user }: { user: User }) {
                   ) : mealPlan ? (
                     <div className="text-xs ">
                       <div className="row">
-                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                        {"Breakfast: "} {mealPlan.day4.breakfast.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                        {"Lunch: "} {mealPlan.day4.lunch.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                        {"Dinner: "} {mealPlan.day4.dinner.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Snack: "} {mealPlan.day1.snack.item}
+                        {"Snack: "} {mealPlan.day4.snack.item}
                       </div>
                     </div>
                   ) : (
@@ -370,7 +368,6 @@ export default function Account({ user }: { user: User }) {
                   )}
                 </div>
               </PlanCard>
-
               <PlanCard
                 title="Friday"
                 footer={
@@ -378,7 +375,7 @@ export default function Account({ user }: { user: User }) {
                     {
                       mealPlan ?
                         <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day1.totalCalories}
+                          {"Calories: " + mealPlan.day5.totalCalories}
                         </div>
                         : <div> </div>
                     }
@@ -386,7 +383,7 @@ export default function Account({ user }: { user: User }) {
                 }
                 completed={true}
               >
-                <div className="mt-2 w-full mb-1">
+                <div className="mt-1  w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
@@ -394,19 +391,19 @@ export default function Account({ user }: { user: User }) {
                   ) : mealPlan ? (
                     <div className="text-xs ">
                       <div className="row">
-                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                        {"Breakfast: "} {mealPlan.day5.breakfast.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                        {"Lunch: "} {mealPlan.day5.lunch.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                        {"Dinner: "} {mealPlan.day5.dinner.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {"Snack: "} {mealPlan.day1.snack.item}
+                        {"Snack: "} {mealPlan.day5.snack.item}
                       </div>
                     </div>
                   ) : (
@@ -414,95 +411,6 @@ export default function Account({ user }: { user: User }) {
                   )}
                 </div>
               </PlanCard>
-
-              <PlanCard
-                title="Saturday"
-                footer={
-                  <div>
-                    {
-                      mealPlan ?
-                        <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day1.totalCalories}
-                        </div>
-                        : <div> </div>
-                    }
-                  </div>
-                }
-                completed={true}
-              >
-                <div className="mt-2 w-full mb-1">
-                  {isLoading ? (
-                    <div className="h-12 mb-6">
-                      <LoadingDots />
-                    </div>
-                  ) : mealPlan ? (
-                    <div className="text-xs ">
-                      <div className="row">
-                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
-                      </div>
-                      <hr />
-                      <div className="row">
-                        {"Lunch: "} {mealPlan.day1.lunch.item}
-                      </div>
-                      <hr />
-                      <div className="row">
-                        {"Dinner: "} {mealPlan.day1.dinner.item}
-                      </div>
-                      <hr />
-                      <div className="row">
-                        {"Snack: "} {mealPlan.day1.snack.item}
-                      </div>
-                    </div>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              </PlanCard>
-
-              <PlanCard
-                title="Sunday"
-                footer={
-                  <div>
-                    {
-                      mealPlan ?
-                        <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day1.totalCalories}
-                        </div>
-                        : <div> </div>
-                    }
-                  </div>
-                }
-                completed={true}
-              >
-                <div className="mt-2 w-full mb-1">
-                  {isLoading ? (
-                    <div className="h-12 mb-6">
-                      <LoadingDots />
-                    </div>
-                  ) : mealPlan ? (
-                    <div className="text-xs ">
-                      <div className="row">
-                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
-                      </div>
-                      <hr />
-                      <div className="row">
-                        {"Lunch: "} {mealPlan.day1.lunch.item}
-                      </div>
-                      <hr />
-                      <div className="row">
-                        {"Dinner: "} {mealPlan.day1.dinner.item}
-                      </div>
-                      <hr />
-                      <div className="row">
-                        {"Snack: "} {mealPlan.day1.snack.item}
-                      </div>
-                    </div>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
-              </PlanCard>
-
             </div>
           </div>
 
