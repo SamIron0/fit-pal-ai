@@ -131,7 +131,6 @@ export default function Account({ user }: { user: User }) {
         {messageList && messageList.map((message, index) => (
           <div className={`flex ${index % 2 === 0 ? 'bg-black' : 'bg'} `}>
               <div className="w-1/5">
-
                 {index % 2 === 0 ?
                   <div className="circle-div">
                     <img src={userImage.src} alt="user Image" />
