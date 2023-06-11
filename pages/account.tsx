@@ -141,7 +141,7 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 }
               </div>
-              <div className="w-9/10">
+              <div className=" py-3 w-9/10">
                 {message}
               </div>
           </div>
