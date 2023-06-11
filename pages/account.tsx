@@ -42,7 +42,7 @@ function PlanCard({ title, footer, children, completed }: Props) {
   return (
     <div className={`h-full w-48 p-px rounded-md flex-shrink-0 flex-grow-0 ${bgColor}`}>
       <div className="bg-black h-full w-full  rounded-md m-auto">
-        <div className='w-full h-full flex flex-col rounded-md  bg-zinc-700 '>
+        <div className='w-full h-full flex flex-col rounded-md  '>
           <div className="px-2  h-4/5 ">
             <h1 className="text-l  font-medium">{title}</h1>
             <div overflow-y-scroll >
