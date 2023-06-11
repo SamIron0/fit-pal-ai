@@ -502,7 +502,7 @@ export default function Account({ user }: { user: User }) {
                           }`}
                         onClick={() => setActiveSection(1)}
                       >
-                        <h2 className="text-xl font-bold grey-gradient-bg text-gray-800">FITPAL AI</h2>
+                        <h2 className="text-xl font-bold grey-gradient-text text-gray-800">FITPAL AI</h2>
                       </div>
 
                     </div>
