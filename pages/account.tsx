@@ -45,7 +45,7 @@ function PlanCard({ title, footer, children, completed }: Props) {
         <div className='w-full h-full flex flex-col rounded-md  bg-zinc-700 '>
           <div className="px-2  h-4/5 ">
             <h1 className="text-l  font-medium">{title}</h1>
-            <div className="overflow-x-scroll ">
+            <div className="overflow-y-scroll ">
               {children}
             </div>
           </div>
