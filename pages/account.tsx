@@ -49,7 +49,7 @@ function PlanCard({ title, footer, children, completed }: Props) {
         <div className='w-full h-full flex flex-col rounded-md  '>
           <div className="px-2  h-4/5 ">
             <h1 className="text-l font-medium">{title}</h1>
-            <div className="overflow-y-scroll" >
+            <div className="flex-1 overflow-y-scroll" >
               {children}
             </div>
           </div>
@@ -419,7 +419,7 @@ export default function Account({ user }: { user: User }) {
 
           <div className="border-t h-96 overflow-hidden border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
             <div >
-              <div className="h-80 pb-16 text-gray-200">
+              <div className="h-80 pb-14 text-gray-200">
                 <div className="flex flex-col">
                   <div className="flex">
                     <div className=" mx-auto">
