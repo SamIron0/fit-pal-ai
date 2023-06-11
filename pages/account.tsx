@@ -130,7 +130,7 @@ export default function Account({ user }: { user: User }) {
       <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
         {messageList && messageList.map((message, index) => (
           <div className={`flex ${index % 2 === 0 ? 'bg-black' : 'bg'} `}>
-              <div className="px-5 py-2 w-1/10">
+              <div className="px-3 py-2 w-1/10">
                 {message.charAt(0) ===  "U"?
                   <div className="circle-div overflow-hidden">
                     <img src={userImage.src} alt="user Image" />
@@ -457,7 +457,7 @@ export default function Account({ user }: { user: User }) {
                   type="text"
                   id="userInput"
                   value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                  className=" pl-5 bg-transparent rounded-md h-16 text-gray-200 w-9/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className=" pl-5 bg-transparent rounded-md h-18 text-gray-200 w-9/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   placeholder="Make a workout plan for 4 days.."
                 />
                 <button
