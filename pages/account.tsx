@@ -129,8 +129,8 @@ export default function Account({ user }: { user: User }) {
     return (
       <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
         {messageList && messageList.map((message, index) => (
-          <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
-              <div className="column-1 w-1/5">
+          <div className={`flex ${index % 2 === 0 ? 'bg-black' : 'bg'} `}>
+              <div className="w-1/5">
 
                 {index % 2 === 0 ?
                   <div className="circle-div">
@@ -142,7 +142,7 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 }
               </div>
-              <div className="column-2 w-4/5">
+              <div className="w-4/5">
                 {message}
               </div>
           </div>
