@@ -38,7 +38,7 @@ type Chats = {
 };
 
 function PlanCard({ title, footer, children, completed }: Props) {
-  const bgColor = completed ? "green-gradient-bg" : "bg-zinc-700";
+  const bgColor = completed ? "blue-gradient-bg" : "bg-zinc-700";
   return (
     <div className={`h-full w-48 p-px rounded-md flex-shrink-0 flex-grow-0 ${bgColor}`}>
       <div className="bg-black h-full w-full  rounded-md m-auto">
