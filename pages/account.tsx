@@ -141,7 +141,7 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 }
               </div>
-              <div className="pt-2 pr-3 w-9/10">
+              <div className="pt-3 pr-3 w-9/10">
                 <p>{message}</p>
               </div>
           </div>
