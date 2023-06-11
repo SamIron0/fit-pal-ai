@@ -45,9 +45,9 @@ function PlanCard({ title, footer, children, completed }: Props) {
   const bgColor = completed ? "blue-gradient-bg" : "bg-zinc-700";
   return (
     <div className={`h-full w-48 p-px rounded-md flex-shrink-0 flex-grow-0 ${bgColor}`}>
-      <div className="bg-black overflow-hidden h-full w-full  rounded-md m-auto">
+      <div className="bg-black  h-full w-full  rounded-md m-auto">
         <div className='w-full h-full flex flex-col rounded-md  '>
-          <div className="px-2  h-4/5 ">
+          <div className="px-2 overflow-hidden h-4/5 ">
             <h1 className="text-l font-medium">{title}</h1>
             <div className="flex-1 overflow-y-scroll" >
               {children}
