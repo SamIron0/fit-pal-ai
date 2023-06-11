@@ -177,7 +177,7 @@ export default function Account({ user }: { user: User }) {
                     {
                       mealPlan ?
                         <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day1[0].calories + ":"} {mealPlan.day1[0].calories}
+                          {mealPlan.day1.totalCalories}
                         </div>
                         : <div> </div>
                     }
@@ -193,19 +193,19 @@ export default function Account({ user }: { user: User }) {
                   ) : mealPlan ? (
                     <div className="text-xs ">
                       <div className="row">
-                        {mealPlan.day1[0].meal + ":"} {mealPlan.day1[0].item}
+                        { + "Breakfast: "} {mealPlan.day1.breakfast.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {mealPlan.day1[1].meal + ":"} {mealPlan.day1[1].item}
+                      { + "Lunch: "} {mealPlan.day1.lunch.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {mealPlan.day1[2].meal + ":"} {mealPlan.day1[2].item}
+                      { + "Dinner: "} {mealPlan.day1.dinner.item}
                       </div>
                       <hr />
                       <div className="row">
-                        {mealPlan.day1[3].meal + ":"} {mealPlan.day1[3].item}
+                      { + "Snack: "} {mealPlan.day1.snack.item}
                       </div>
                     </div>
                   ) : (

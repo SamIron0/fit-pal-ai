@@ -24,7 +24,29 @@ export interface Meal{
   item: string | null,
   calories: number | null
 }
-export interface MealPlan {
+export interface MealPlan{
+  [day: string]: { // day1, day2, ...
+    breakfast: {
+      item: string;
+      calories: string;
+    };
+    lunch: {
+      item: string;
+      calories: string;
+    };
+    dinner: {
+      item: string;
+      calories: string;
+    };
+    snack: {
+      item: string;
+      calories: string;
+    };
+    totalCalories: string;
+  };
+}
+
+export interface MealPlans {
   day1: Meal[],
   day2: Meal[],
   day3: Meal[],
@@ -44,7 +66,7 @@ export interface UserDetails {
   avatar_url?: string;
   billing_address?: Stripe.Address;
   payment_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type];
-  mealplans?: MealPlan[];
+  mealplans?: MealPlans[];
 }
 
 export interface Price {
