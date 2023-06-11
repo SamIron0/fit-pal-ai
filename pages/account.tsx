@@ -45,7 +45,7 @@ function PlanCard({ title, footer, children, completed }: Props) {
         <div className='w-full h-full flex flex-col rounded-md  bg-zinc-700 '>
           <div className="px-2  h-4/5 ">
             <h1 className="text-l  font-medium">{title}</h1>
-            <div >
+            <div overflow-y-scroll >
               {children}
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function Account({ user }: { user: User }) {
                       <LoadingDots />
                     </div>
                   ) : mealPlan ? (
-                    <div className="text-xs overflow-y-scroll">
+                    <div className="text-xs ">
                       <div className="row">
                         {"Breakfast: "} {mealPlan.day1.breakfast.item}
                       </div>
