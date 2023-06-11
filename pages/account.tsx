@@ -130,7 +130,6 @@ export default function Account({ user }: { user: User }) {
       <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
         {messageList && messageList.map((message, index) => (
           <div className={`${index % 2 === 0 ? 'bg-black' : 'bg'}`}>
-            <p className={'mx-5 py-5'}>
               <div className="column-1 w-1/5">
 
                 {index % 2 === 0 ?
@@ -138,7 +137,7 @@ export default function Account({ user }: { user: User }) {
                     <img src={userImage.src} alt="user Image" />
                   </div>
                   :
-                  <div>
+                  <div className="circle-div">
                     <img src={robotImage.src} alt="ai Image" />
                   </div>
                 }
@@ -146,7 +145,6 @@ export default function Account({ user }: { user: User }) {
               <div className="column-2 w-4/5">
                 {message}
               </div>
-            </p>
           </div>
         ))}
       </div>
