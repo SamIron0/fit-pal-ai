@@ -97,7 +97,9 @@ export default function Account({ user }: { user: User }) {
 
   const fetchAIData = async () => {
     try {
+      setLoading(true);
       const response = await fetch(`/api/generate?AIquery=${queryText}&userPlan=${mealPlan}`);
+      
       const data = await response.json();
       if (data.chat != undefined) {
         setMessages((prevList) => [...prevList, "A" + data.chat]);
@@ -106,6 +108,7 @@ export default function Account({ user }: { user: User }) {
         //setMeal(data);
         setMealPlan(data.plan);
       }
+      setLoading(false);
     }
     catch (error) {
       console.log(error);
