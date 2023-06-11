@@ -179,7 +179,7 @@ export default function Account({ user }: { user: User }) {
                     {
                       mealPlan ?
                         <div className="flex items-start justify-between flex-col ">
-                          {mealPlan.day1.totalCalories}
+                          {"Calories: " + mealPlan.day1.totalCalories}
                         </div>
                         : <div> </div>
                     }
@@ -187,13 +187,13 @@ export default function Account({ user }: { user: User }) {
                 }
                 completed={true}
               >
-                <div className="mt-1 overflow-y-scroll w-full mb-1">
+                <div className="mt-1  w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
                   ) : mealPlan ? (
-                    <div className="text-xs ">
+                    <div className="text-xs overflow-y-scroll">
                       <div className="row">
                         {"Breakfast: "} {mealPlan.day1.breakfast.item}
                       </div>
