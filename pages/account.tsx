@@ -414,7 +414,7 @@ export default function Account({ user }: { user: User }) {
             </div>
           </div>
 
-          <div className="border-t h-96 overflow-hidden border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
+          <div className="border-t h-screen overflow-hidden border-zinc-700 bg-zinc-900 text-zinc-500 rounded-b-md">
             <div >
               <div className="h-80 text-gray-200">
                 <div className="flex flex-col">
