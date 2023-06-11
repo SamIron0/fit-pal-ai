@@ -512,7 +512,7 @@ export default function Account({ user }: { user: User }) {
                           }`}
                         onClick={() => setActiveSection(2)}
                       >
-                        <h2 className="text-xl grey-gradient-bg font-bold ">SAVED PLANS</h2>
+                        <h2 className="text-xl grey-gradient-text font-bold ">SAVED PLANS</h2>
                       </div>
 
                     </div>
