@@ -193,19 +193,19 @@ export default function Account({ user }: { user: User }) {
                   ) : mealPlan ? (
                     <div className="text-xs ">
                       <div className="row">
-                        { + "Breakfast: "} {mealPlan.day1.breakfast.item}
+                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
                       </div>
                       <hr />
                       <div className="row">
-                      { + "Lunch: "} {mealPlan.day1.lunch.item}
+                      {"Lunch: "} {mealPlan.day1.lunch.item}
                       </div>
                       <hr />
                       <div className="row">
-                      { + "Dinner: "} {mealPlan.day1.dinner.item}
+                      {"Dinner: "} {mealPlan.day1.dinner.item}
                       </div>
                       <hr />
                       <div className="row">
-                      { + "Snack: "} {mealPlan.day1.snack.item}
+                      {"Snack: "} {mealPlan.day1.snack.item}
                       </div>
                     </div>
                   ) : (
