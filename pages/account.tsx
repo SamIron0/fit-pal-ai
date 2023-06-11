@@ -45,7 +45,9 @@ function PlanCard({ title, footer, children, completed }: Props) {
         <div className='w-full h-full flex flex-col rounded-md  bg-zinc-700 '>
           <div className="px-2  h-4/5 ">
             <h1 className="text-l  font-medium">{title}</h1>
-            {children}
+            <div className="overflow-x-scroll ">
+              {children}
+            </div>
           </div>
           <div className="border-t h-1/5 border-zinc-700 bg-zinc-900 p-2 text-zinc-500 rounded-b-md">
             {footer}
@@ -197,15 +199,58 @@ export default function Account({ user }: { user: User }) {
                       </div>
                       <hr />
                       <div className="row">
-                      {"Lunch: "} {mealPlan.day1.lunch.item}
+                        {"Lunch: "} {mealPlan.day1.lunch.item}
                       </div>
                       <hr />
                       <div className="row">
-                      {"Dinner: "} {mealPlan.day1.dinner.item}
+                        {"Dinner: "} {mealPlan.day1.dinner.item}
                       </div>
                       <hr />
                       <div className="row">
-                      {"Snack: "} {mealPlan.day1.snack.item}
+                        {"Snack: "} {mealPlan.day1.snack.item}
+                      </div>
+                    </div>
+                  ) : (
+                    <p></p>
+                  )}
+                </div>
+              </PlanCard>
+              <PlanCard
+                title="Tuesday"
+                footer={
+                  <div>
+                    {
+                      mealPlan ?
+                        <div className="flex items-start justify-between flex-col ">
+                          {mealPlan.day2.totalCalories}
+                        </div>
+                        : <div> </div>
+                    }
+                  </div>
+                }
+                completed={true}
+              >
+                <div className="mt-2 w-full mb-1">
+                  {isLoading ? (
+                    <div className="h-12 mb-6">
+                      <LoadingDots />
+                    </div>
+                  ) : mealPlan ? (
+                    <div className="text-xs ">
+                      <div className="row">
+                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Snack: "} {mealPlan.day1.snack.item}
                       </div>
                     </div>
                   ) : (
@@ -215,121 +260,221 @@ export default function Account({ user }: { user: User }) {
               </PlanCard>
 
               <PlanCard
-                title="Tuesday"
-
+                title="Wednesday"
                 footer={
-                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
+                  <div>
+                    {
+                      mealPlan ?
+                        <div className="flex items-start justify-between flex-col ">
+                          {mealPlan.day1.totalCalories}
+                        </div>
+                        : <div> </div>
+                    }
                   </div>
                 }
                 completed={true}
-
               >
-                <div className="text-m mt-8 mb-4 font-semibold">
+                <div className="mt-2 w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : subscription ? (
-                    `${subscriptionPrice}/${subscription?.prices?.interval}`
-                  ) : (
-                    <Link href="/">Select something</Link>
-                  )}
-                </div>
-              </PlanCard>
-
-              <PlanCard
-                title="Wednesday"
-
-                footer={
-                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
-                  </div>
-                }
-                completed={false}
-
-              >
-                <div className="text-xl mt-8 mb-4 font-semibold">
-                  {isLoading ? (
-                    <div className="h-12 mb-6">
-                      <LoadingDots />
+                  ) : mealPlan ? (
+                    <div className="text-xs ">
+                      <div className="row">
+                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Snack: "} {mealPlan.day1.snack.item}
+                      </div>
                     </div>
-                  ) : subscription ? (
-                    `${subscriptionPrice}/${subscription?.prices?.interval}`
                   ) : (
-                    <Link href="/">Select somethingjhjkhkkjnkjn</Link>
+                    <p></p>
                   )}
                 </div>
               </PlanCard>
+
               <PlanCard
                 title="Thursday"
-
                 footer={
-                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
+                  <div>
+                    {
+                      mealPlan ?
+                        <div className="flex items-start justify-between flex-col ">
+                          {mealPlan.day1.totalCalories}
+                        </div>
+                        : <div> </div>
+                    }
                   </div>
                 }
-                completed={false}
-
+                completed={true}
               >
-                <div className="text-xl mt-8 mb-4 font-semibold">
+                <div className="mt-2 w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : subscription ? (
-                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : mealPlan ? (
+                    <div className="text-xs ">
+                      <div className="row">
+                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Snack: "} {mealPlan.day1.snack.item}
+                      </div>
+                    </div>
                   ) : (
-                    <Link href="/">Select something</Link>
+                    <p></p>
                   )}
                 </div>
               </PlanCard>
 
               <PlanCard
                 title="Friday"
-
                 footer={
-                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
+                  <div>
+                    {
+                      mealPlan ?
+                        <div className="flex items-start justify-between flex-col ">
+                          {mealPlan.day1.totalCalories}
+                        </div>
+                        : <div> </div>
+                    }
                   </div>
                 }
-                completed={false}
-
+                completed={true}
               >
-                <div className="text-xl mt-8 mb-4 font-semibold">
+                <div className="mt-2 w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : subscription ? (
-                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : mealPlan ? (
+                    <div className="text-xs ">
+                      <div className="row">
+                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Snack: "} {mealPlan.day1.snack.item}
+                      </div>
+                    </div>
                   ) : (
-                    <Link href="/">Select something</Link>
+                    <p></p>
                   )}
                 </div>
               </PlanCard>
 
-
               <PlanCard
                 title="Saturday"
-
                 footer={
-                  <div className="flex items-start justify-between flex-col sm:flex-row sm:items-center">
-
+                  <div>
+                    {
+                      mealPlan ?
+                        <div className="flex items-start justify-between flex-col ">
+                          {mealPlan.day1.totalCalories}
+                        </div>
+                        : <div> </div>
+                    }
                   </div>
                 }
-                completed={false}
-
+                completed={true}
               >
-                <div className="text-xl mt-8 mb-4 font-semibold">
+                <div className="mt-2 w-full mb-1">
                   {isLoading ? (
                     <div className="h-12 mb-6">
                       <LoadingDots />
                     </div>
-                  ) : subscription ? (
-                    `${subscriptionPrice}/${subscription?.prices?.interval}`
+                  ) : mealPlan ? (
+                    <div className="text-xs ">
+                      <div className="row">
+                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Snack: "} {mealPlan.day1.snack.item}
+                      </div>
+                    </div>
                   ) : (
-                    <Link href="/">Select something</Link>
+                    <p></p>
+                  )}
+                </div>
+              </PlanCard>
+
+              <PlanCard
+                title="Sunday"
+                footer={
+                  <div>
+                    {
+                      mealPlan ?
+                        <div className="flex items-start justify-between flex-col ">
+                          {mealPlan.day1.totalCalories}
+                        </div>
+                        : <div> </div>
+                    }
+                  </div>
+                }
+                completed={true}
+              >
+                <div className="mt-2 w-full mb-1">
+                  {isLoading ? (
+                    <div className="h-12 mb-6">
+                      <LoadingDots />
+                    </div>
+                  ) : mealPlan ? (
+                    <div className="text-xs ">
+                      <div className="row">
+                        {"Breakfast: "} {mealPlan.day1.breakfast.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Lunch: "} {mealPlan.day1.lunch.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Dinner: "} {mealPlan.day1.dinner.item}
+                      </div>
+                      <hr />
+                      <div className="row">
+                        {"Snack: "} {mealPlan.day1.snack.item}
+                      </div>
+                    </div>
+                  ) : (
+                    <p></p>
                   )}
                 </div>
               </PlanCard>
