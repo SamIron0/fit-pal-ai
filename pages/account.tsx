@@ -13,8 +13,8 @@ import Button from '@/components/ui/Button';
 import { useUser } from '@/utils/useUser';
 import { postData } from '@/utils/helpers';
 import { Meal, MealPlan } from '@/types';
-import robotImage from './robot-icon.avif';
-import userImage from './ai-icon.jpg';
+import robotImage from '../robot-icon.avif';
+import userImage from '../ai-icon.jpg';
 
 interface Props {
   title: string;
