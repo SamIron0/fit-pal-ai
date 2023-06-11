@@ -424,7 +424,7 @@ export default function Account({ user }: { user: User }) {
                   <div className="flex">
                     <div className=" mx-auto">
                       <div
-                        className={`py-2 cursor-pointer ${activeSection === 1 ? "underline" : ""
+                        className={`py-2 pb-16 cursor-pointer ${activeSection === 1 ? "underline" : ""
                           }`}
                         onClick={() => setActiveSection(1)}
                       >
