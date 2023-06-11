@@ -141,8 +141,8 @@ export default function Account({ user }: { user: User }) {
                   </div>
                 }
               </div>
-              <div className=" py-3 w-9/10">
-                {message}
+              <div className="py-2 pr-3 w-9/10">
+                <p>{message}</p>
               </div>
           </div>
         ))}
