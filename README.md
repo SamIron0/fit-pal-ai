@@ -9,9 +9,13 @@ A software service for making custom meal plans by querying the OPENAI API.
 
 ## Demo
 
--  https://fitpal-ai-samiron0.vercel.app/
+-  https://fitpal-ai-samiron0-s-team.vercel.app
 
-[![Screenshot of demo](./public/demo.png)](https://fitpal-ai-samiron0.vercel.app/)
+[![Screenshot of demo](./public/demo1.png)](https://fitpal-ai-samiron0-s-team.vercel.app)
+[![Screenshot of demo](./public/demo2.png)](https://fitpal-ai-samiron0-s-team.vercel.app)
+[![Screenshot of demo](./public/demo3.png)](https://fitpal-ai-samiron0-s-team.vercel.app)
+[![Screenshot of demo](./public/demo4.png)](https://fitpal-ai-samiron0-s-team.vercel.app)
+
 
 ## Architecture
 
