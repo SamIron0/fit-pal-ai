@@ -139,7 +139,7 @@ export default function HomePage() {
     }
     return (
         <section className="bg-black overflow-hidden flex-auto">
-            <div className='sm:h-screen'>
+            <div className='h-screen'>
                 <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
                     <div className=" mt-8 sm:align-center ">
                         <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
@@ -153,7 +153,7 @@ export default function HomePage() {
                     </div>
                 </div>
 
-                <div className="bg-black pb-24 px-8">
+                <div className="bg-black px-8">
                     <div className="rounded-full border h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="relative h-full ">
                             <input
@@ -285,7 +285,7 @@ export default function HomePage() {
                                 completed={true}
                             >
                                 <div className="mt-1  w-full mb-1">
-                                    {isLoading ? (
+                                    {loading ? (
                                         <div className="h-12 mb-6">
                                             <LoadingDots />
                                         </div>
@@ -328,7 +328,7 @@ export default function HomePage() {
                                 completed={true}
                             >
                                 <div className="mt-1  w-full mb-1">
-                                    {isLoading ? (
+                                    {loading ? (
                                         <div className="h-12 mb-6">
                                             <LoadingDots />
                                         </div>
@@ -371,7 +371,7 @@ export default function HomePage() {
                                 completed={true}
                             >
                                 <div className="mt-1  w-full mb-1">
-                                    {isLoading ? (
+                                    {loading ? (
                                         <div className="h-12 mb-6">
                                             <LoadingDots />
                                         </div>
@@ -439,7 +439,7 @@ export default function HomePage() {
 
                             </div>
 
-                            <div className="relative bg-black">
+                            <div className="relative border-t bg-black">
                                 <input
                                     type="text"
                                     id="userInput"
