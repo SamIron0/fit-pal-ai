@@ -139,26 +139,7 @@ export default function HomePage() {
     }
     return (
         <section className="bg-black overflow-hidden flex-auto">
-            <div className='h-screen'>
-                
-
-                <div className="bg-black px-8">
-                    <div className="rounded-full border h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
-                        <div className="relative h-full ">
-                            <input
-                                type="text"
-                                className=" rounded-full py-2 h-full px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                                placeholder="Email address"
-                            />
-                            <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
-                                Button
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-            </div>
+            
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
                     <div className="px-3">
