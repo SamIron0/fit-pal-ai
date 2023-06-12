@@ -198,7 +198,7 @@ export default function HomePage() {
                                 completed={true}
                             >
                                 <div className="mt-1  w-full mb-1">
-                                    {isLoading ? (
+                                    {loading ? (
                                         <div className="h-12 mb-6">
                                             <LoadingDots />
                                         </div>
@@ -241,7 +241,7 @@ export default function HomePage() {
                                 completed={true}
                             >
                                 <div className="mt-1  w-full mb-1">
-                                    {isLoading ? (
+                                    {loading ? (
                                         <div className="h-12 mb-6">
                                             <LoadingDots />
                                         </div>
