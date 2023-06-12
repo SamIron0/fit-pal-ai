@@ -439,7 +439,7 @@ export default function HomePage() {
 
                             </div>
 
-                            <div className="relative border-t bg-black">
+                            <div className="relative border-zinc-700 border-t bg-black">
                                 <input
                                     type="text"
                                     id="userInput"
