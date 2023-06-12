@@ -139,7 +139,7 @@ export default function HomePage() {
     }
     return (
         <section className="bg-black overflow-hidden flex-auto">
-            <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto h-screen py-8 px-4 sm:px-6 lg:px-8">
                 <div className=" mt-8 sm:align-center ">
                     <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
                         Create. Track. Achieve.
