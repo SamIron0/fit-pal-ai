@@ -13,7 +13,7 @@ import Button from '@/components/ui/Button';
 import { useUser } from '@/utils/useUser';
 import { postData } from '@/utils/helpers';
 import { Meal, MealPlan } from '@/types';
-import robotImage from '../robot-icon.avif';
+import robotImage from '../robot-icon.jpg';
 import userImage from '../ai-icon.jpg';
 
 interface Props {
@@ -185,7 +185,7 @@ export default function Account({ user }: { user: User }) {
 
 
   return (
-    <section className="bg-black overflow-hidden flex-auto">
+    <div className="bg-black overflow-hidden flex-auto">
       <div className="sm:flex px-4 sm:flex-col sm:align-center">
         <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
           <div className="px-3">
@@ -475,6 +475,6 @@ export default function Account({ user }: { user: User }) {
         </div>
       </div >
 
-    </section >
+    </div >
   )
 }

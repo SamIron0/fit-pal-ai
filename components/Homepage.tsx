@@ -13,7 +13,7 @@ import Button from '@/components/ui/Button';
 import { useUser } from '@/utils/useUser';
 import { postData } from '@/utils/helpers';
 import { Meal, MealPlan } from '@/types';
-import robotImage from '../robot-icon.avif';
+import robotImage from '../robot-icon.jpg';
 import userImage from '../ai-icon.jpg';
 
 interface Props {
@@ -65,8 +65,6 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     };
 };
 export default function HomePage() {
-
-
     const [loading, setLoading] = useState(false);
     const { isLoading, subscription, userDetails } = useUser();
     const [activeSection, setActiveSection] = useState(1);
@@ -174,13 +172,13 @@ export default function HomePage() {
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
                     <div className="px-3">
-                        <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello Samuel</h3>
+                        <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
                 </div>
             </div>
 
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
-                <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto mt-3">
+                <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto my-3">
                     <div className="px-3 py-3 h-56">
                         <div className="flex h-full overflow-x-scroll space-x-3">
 
