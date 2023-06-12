@@ -415,7 +415,7 @@ export default function HomePage() {
                                     id="userInput"
                                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
                                     className=" pl-5 bg-transparent rounded-md h-16 text-gray-200 w-9/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                                    placeholder="Make a workout plan for 4 days.."
+                                    placeholder="Make a mealplan plan..."
                                 />
                                 <button
                                     className="absolute right-0 w-3/12 top-0 h-full px-2 bg-zinc-900 text-gray-100  focus:outline-none hover:bg-gray-600"
