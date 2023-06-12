@@ -64,81 +64,81 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
         }
     };
 };
-
-
-const [loading, setLoading] = useState(false);
-const { isLoading, subscription, userDetails } = useUser();
-const [activeSection, setActiveSection] = useState(1);
-const [responseData, setResponseData] = useState('');
-const [mealPlan, setMealPlan] = useState<MealPlan>();
-const [meal, setMeal] = useState<Meal>();
-const [queryText, setQueryText] = useState('');
-const [messageList, setMessages] = useState<string[]>([]);
-
-const fetchAIData = async () => {
-    try {
-        setLoading(true);
-        const response = await fetch(`/api/generate?AIquery=${queryText}&userPlan=${mealPlan}`);
-
-        const data = await response.json();
-        if (data.chat != undefined) {
-            setMessages((prevList) => [...prevList, "A" + data.chat]);
-        }
-        if (data.plan != undefined) {
-            //setMeal(data);
-            setMealPlan(data.plan);
-        }
-        setLoading(false);
-    }
-    catch (error) {
-        console.log(error);
-    }
-}
-const handleButtonClick = () => {
-    setQueryText('')
-    setMessages([...messageList?.concat("U" + queryText) ?? ["U" + queryText]]);
-    fetchAIData();
-    //populateChat();
-};
-
-const AISection = () => {
-    const messageListRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
-        if (messageListRef.current) {
-            messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
-        }
-    }, [messageList]);
-
-    return (
-        <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
-            {messageList && messageList.map((message, index) => (
-                <div className={`flex ${index % 2 === 0 ? 'bg-black' : 'bg'} `}>
-                    <div className="px-3 py-2 w-1/10">
-                        {message.charAt(0) === "U" ?
-                            <div className="circle-div overflow-hidden">
-                                <img src={userImage.src} alt="user Image" />
-                            </div>
-                            :
-                            <div className="circle-div overflow-hidden">
-                                <img src={robotImage.src} alt="ai Image" />
-                            </div>
-                        }
-                    </div>
-                    <div className="py-3 pr-3 w-9/10">
-                        <p>{message.slice(1)}</p>
-                    </div>
-                </div>
-            ))}
-        </div>
-    )
-}
-
-const ManualSection = () => {
-    return (
-        <div> <p>saved</p> </div>
-    )
-}
 export default function HomePage() {
+
+
+    const [loading, setLoading] = useState(false);
+    const { isLoading, subscription, userDetails } = useUser();
+    const [activeSection, setActiveSection] = useState(1);
+    const [responseData, setResponseData] = useState('');
+    const [mealPlan, setMealPlan] = useState<MealPlan>();
+    const [meal, setMeal] = useState<Meal>();
+    const [queryText, setQueryText] = useState('');
+    const [messageList, setMessages] = useState<string[]>([]);
+
+    const fetchAIData = async () => {
+        try {
+            setLoading(true);
+            const response = await fetch(`/api/generate?AIquery=${queryText}&userPlan=${mealPlan}`);
+
+            const data = await response.json();
+            if (data.chat != undefined) {
+                setMessages((prevList) => [...prevList, "A" + data.chat]);
+            }
+            if (data.plan != undefined) {
+                //setMeal(data);
+                setMealPlan(data.plan);
+            }
+            setLoading(false);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+    const handleButtonClick = () => {
+        setQueryText('')
+        setMessages([...messageList?.concat("U" + queryText) ?? ["U" + queryText]]);
+        fetchAIData();
+        //populateChat();
+    };
+
+    const AISection = () => {
+        const messageListRef = useRef<HTMLDivElement>(null);
+        useEffect(() => {
+            if (messageListRef.current) {
+                messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+            }
+        }, [messageList]);
+
+        return (
+            <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
+                {messageList && messageList.map((message, index) => (
+                    <div className={`flex ${index % 2 === 0 ? 'bg-black' : 'bg'} `}>
+                        <div className="px-3 py-2 w-1/10">
+                            {message.charAt(0) === "U" ?
+                                <div className="circle-div overflow-hidden">
+                                    <img src={userImage.src} alt="user Image" />
+                                </div>
+                                :
+                                <div className="circle-div overflow-hidden">
+                                    <img src={robotImage.src} alt="ai Image" />
+                                </div>
+                            }
+                        </div>
+                        <div className="py-3 pr-3 w-9/10">
+                            <p>{message.slice(1)}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        )
+    }
+
+    const ManualSection = () => {
+        return (
+            <div> <p>saved</p> </div>
+        )
+    }
     return (
         <section className="bg-black overflow-hidden flex-auto">
             <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
