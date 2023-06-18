@@ -8,13 +8,12 @@ import { getURL } from '@/utils/helpers';
 const CreateCheckoutSession: NextApiHandler = async (req, res) => {
   if (req.method === 'POST') {
     const { price, quantity = 1, metadata = {} } = req.body;
- 
     try {
       const supabase = createServerSupabaseClient({ req, res }); 
       const {
         data: { user }
       } = await supabase.auth.getUser();
-
+ 
       const customer = await createOrRetrieveCustomer({
         uuid: user?.id || '',
         email: user?.email || ''

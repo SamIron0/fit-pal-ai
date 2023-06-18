@@ -74,6 +74,14 @@ export interface Database {
           weeks?: number | null;
           plan?: Json | null;
         };
+        Relationships: [
+          {
+            foreignKeyName: "mealplans_owner_fkey"
+            columns: ["owner"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
       };
 
       prices: {

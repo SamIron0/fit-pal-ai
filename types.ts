@@ -57,7 +57,6 @@ export interface MealPlans {
 export interface ProductWithPrice extends Product {
   prices?: Price[];
 }
-
 export interface UserDetails {
   id: string /* primary key */;
   first_name: string;

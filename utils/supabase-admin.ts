@@ -3,16 +3,13 @@ import Stripe from 'stripe';
 
 import { stripe } from './stripe';
 import { toDateTime } from './helpers';
-
+import {v4 as uuidv4} from 'uuid';
 import { Customer, UserDetails, Price, Product, MealPlan } from 'types';
 import type { Database } from 'types_db';
 
-// Note: supabaseAdmin uses the SERVICE_ROLE_KEY which you must only use in a secure server-side context
-// as it has admin priviliges and overwrites RLS policies!
 const supabaseAdmin = createClient<Database>(
   process.env.NEXT_PUBLIC_SUPABASE_URL || '',
   process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-
 );
 
 const upsertProductRecord = async (product: Stripe.Product) => {
@@ -49,24 +46,25 @@ const upsertPriceRecord = async (price: Stripe.Price) => {
   if (error) throw error;
   console.log(`Price inserted/updated: ${price.id}`);
 };
-/*
-const createorRetrieveMealPlan = async (mealPlan: MealPlan) => {
-  const mealPlanData: MealPlan = {
-    day1: mealPlan.day1, 
-    day2: mealPlan.day2,
-    day3: mealPlan.day3,
-    day4: mealPlan.day4,
-    day5: mealPlan.day5,
-  };
 
-  const { error: supabaseError } = await supabaseAdmin
+const createOrRetrieveMealPlan = async (mealPlan: MealPlan, owner_id: string, planName: string, planDescription: string) => {
+  const { data, error: supabaseError } = await supabaseAdmin
     .from('mealplans')
-    .insert([mealPlanData]);
+    .insert([
+      {
+        id: uuidv4(),
+        owner: owner_id,
+        name: planName,
+        description: planDescription,
+        weeks: 1,
+        plan: mealPlan
+      },
+    ])
   if (supabaseError) throw supabaseError;
-  console.log(`New mealplan inserted for ${mealPlanData.owner}.`);
-  return mealPlanData.id;
+  console.log(`New mealplan inserted for ${mealPlan.owner}.`);
+  return mealPlan.id;
 };
-*/
+
 const createOrRetrieveCustomer = async ({
   email,
   uuid
@@ -200,6 +198,6 @@ export {
   upsertProductRecord,
   upsertPriceRecord,
   createOrRetrieveCustomer,
-  manageSubscriptionStatusChange
-  //createorRetrieveMealPlan
+  manageSubscriptionStatusChange,
+  createOrRetrieveMealPlan
 };
