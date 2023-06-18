@@ -73,7 +73,7 @@ export default function ChatWindow() {
     const [meal, setMeal] = useState<Meal>();
     const [queryText, setQueryText] = useState('');
     const [messageList, setMessages] = useState<string[]>([]);
-    const [mealPlanSaved, setMealPlanSaved] = useState(false)
+    const [mealPlanSaved, setMealPlanSaved] = useState(false);
     const planName = '';
     const planDescription = '';
 
