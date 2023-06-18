@@ -52,6 +52,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.2.7
     version: 3.2.7(postcss@8.4.21)
+  uuid:
+    specifier: ^9.0.0
+    version: 9.0.0
 
 devDependencies:
   '@types/node':
@@ -60,6 +63,9 @@ devDependencies:
   '@types/react':
     specifier: ^18.0.28
     version: 18.0.28
+  '@types/uuid':
+    specifier: ^9.0.2
+    version: 9.0.2
   autoprefixer:
     specifier: ^10.4.13
     version: 10.4.13(postcss@8.4.21)
@@ -318,6 +324,10 @@ packages:
 
   /@types/scheduler@0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+    dev: true
+
+  /@types/uuid@9.0.2:
+    resolution: {integrity: sha512-kNnC1GFBLuhImSnV7w4njQkUiJi0ZXUycu1rUaouPqiKlXkh77JKgdRnTAp1x5eBwcIwbtI+3otwzuIDEuDoxQ==}
     dev: true
 
   /acorn-node@1.8.2:
@@ -1224,6 +1234,11 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: false
+
+  /uuid@9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
     dev: false
 
   /webidl-conversions@3.0.1:
