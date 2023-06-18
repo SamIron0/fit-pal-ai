@@ -1,7 +1,6 @@
 import { useState, ReactNode, FC, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import React from 'react';
-
 import { GetServerSidePropsContext } from 'next';
 import {
     createServerSupabaseClient,
@@ -24,7 +23,7 @@ interface Props {
     completed: boolean;
 }
 function PlanCard({ title, footer, children, completed }: Props) {
-    const bgColor = completed ? "blue-gradient-bg" : "bg-zinc-700";
+    const bgColor = completed ? "bg-zinc-700" : "bg-zinc-700";
     return (
         <div className={`h-full w-48 p-px rounded-md flex-shrink-0 flex-grow-0 ${bgColor}`}>
             <div className="bg-black  h-full w-full  rounded-md m-auto">
@@ -74,6 +73,7 @@ export default function ChatWindow() {
     const [meal, setMeal] = useState<Meal>();
     const [queryText, setQueryText] = useState('');
     const [messageList, setMessages] = useState<string[]>([]);
+    const [mealPlanSaved, setMealPlanSaved] = useState(false)
     const planName = '';
     const planDescription = '';
 
@@ -148,6 +148,7 @@ export default function ChatWindow() {
                 data: { mealplan, planName, planDescription }
             });
             setLoading(false);
+            setMealPlanSaved(true);
         }
         catch (error) {
             console.log(error);
@@ -161,6 +162,25 @@ export default function ChatWindow() {
                 <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
                     <div className="px-3">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
+                    </div>
+                    <div className='float-right'>
+                        {mealPlan ? (
+                            mealPlanSaved ? (
+                                <></>
+                            ) :
+                                <Button
+                                    variant="slim"
+                                    type="button"
+                                    disabled={isLoading}
+                                    loading={false}
+                                    onClick={() => saveMealPlan(mealPlan)}
+                                    className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-900"
+                                >
+                                    Save
+                                </Button>
+                        ) :
+                            <></>
+                        }
                     </div>
                 </div>
             </div>
