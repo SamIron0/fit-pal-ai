@@ -165,10 +165,10 @@ export default function ChatWindow() {
         <section className="bg-black overflow-hidden flex-auto">
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
-                    <div className="px-3 ">
+                    <div className="px-3 w-1/2">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
-                    <div>
+                    <div className='w-1/2'>
                         {mealPlan ? (
                             <button
                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
