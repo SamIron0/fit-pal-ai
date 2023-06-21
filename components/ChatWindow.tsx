@@ -176,7 +176,7 @@ export default function ChatWindow() {
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
                     <div className='w-1/2'>
-                        <div className='float-right'>
+                        <div className=''>
                             {mealPlan ? (
                                 <button
                                     onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
