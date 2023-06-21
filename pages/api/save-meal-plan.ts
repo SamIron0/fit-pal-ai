@@ -33,3 +33,4 @@ const SaveMealPlan: NextApiHandler = async (req, res) => {
 
     }
 }
+export default SaveMealPlan;
