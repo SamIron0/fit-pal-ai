@@ -21,6 +21,13 @@ interface Props {
     children: ReactNode;
     completed: boolean;
 }
+interface ResponseData {
+    error?: {
+        statusCode: number;
+        message: string;
+    };
+    data?: any;
+}
 function PlanCard({ title, footer, children, completed }: Props) {
     const bgColor = completed ? "bg-zinc-700" : "bg-zinc-700";
     return (
@@ -139,7 +146,7 @@ export default function ChatWindow() {
             <div> <p>saved</p> </div>
         )
     }
-    const saveMealPlan = async (mealplan: MealPlan) => {
+    const saveMealPlan = async (mealplan: MealPlan): Promise<ResponseData> => {
 
         const url = '/api/save-meal-plan';
         const body = { mealplan, planName, planDescription };
