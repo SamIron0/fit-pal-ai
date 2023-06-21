@@ -120,7 +120,7 @@ export default function ChatWindow() {
         return (
             <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
                 {messageList && messageList.map((message, index) => (
-                    <div className={`flex ${index % 2 === 0 ? 'bg-zinc-700' : 'bg'} `}>
+                    <div className={`flex ${index % 2 === 0 ? 'bg-zinc-900' : 'bg'} `}>
                         <div className="px-3 py-2 w-1/10">
                             {message.charAt(0) === "U" ?
                                 <div className="circle-div overflow-hidden">
