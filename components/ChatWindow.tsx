@@ -162,7 +162,22 @@ export default function ChatWindow() {
                     <div className="px-3">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
-                    
+                    <div>
+                        {mealPlan ? (
+                            <Button
+                                variant="slim"
+                                type="button"
+                                disabled={isLoading}
+                                loading={false}
+                                onClick={() => saveMealPlan(mealPlan)}
+                                className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-900"
+                            >
+                                Save
+                            </Button>
+                        )
+                            : <></>
+                        }
+                    </div>
                 </div>
             </div>
 
