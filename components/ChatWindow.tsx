@@ -169,20 +169,21 @@ export default function ChatWindow() {
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
                     <div className='w-1/2'>
-                        <div className='justify-left'
-                        {mealPlan ? (
-                            <button
-                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
-                                    // Execute logic after saveMealPlan Promise resolves
-                                }).catch(error => {
-                                    // Handle error here
-                                })}>
+                        <div className='justify-left'>
+                            {mealPlan ? (
+                                <button
+                                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
+                                        // Execute logic after saveMealPlan Promise resolves
+                                    }).catch(error => {
+                                        // Handle error here
+                                    })}>
 
-                                Save
-                            </button>
-                        )
-                            : <></>
-                        }
+                                    Save
+                                </button>
+                            )
+                                : <></>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
