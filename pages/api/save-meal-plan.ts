@@ -28,7 +28,6 @@ const SaveMealPlan: NextApiHandler = async (req, res) => {
                 .json({ error: { statusCode: 500, message: err.message } });
         }
     } else {
-
         res.status(401).end('Method Not Allowed');
 
     }
