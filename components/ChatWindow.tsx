@@ -102,7 +102,7 @@ export default function ChatWindow() {
         //populateChat();
     };
 
-    const AISection = () => {
+    const AiSection = () => {
         const messageListRef = useRef<HTMLDivElement>(null);
         useEffect(() => {
             if (messageListRef.current) {
@@ -162,7 +162,9 @@ export default function ChatWindow() {
                     <div className="px-3">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
-                    
+                    <Button>
+                        Save
+                    </Button>
                 </div>
             </div>
 
@@ -430,7 +432,7 @@ export default function ChatWindow() {
 
                                 <div className=" h-full flex flex-col">
                                     {activeSection === 1 ? (
-                                        <AISection />
+                                        <AiSection />
                                     ) : activeSection === 2 ? (
                                         <ManualSection />
                                     ) : null}
