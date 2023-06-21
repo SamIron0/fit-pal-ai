@@ -146,7 +146,7 @@ export default function ChatWindow() {
             <div> <p>saved</p> </div>
         )
     }
-    const saveMealPlan = async (mealplan: MealPlan): Promise<ResponseData> => {
+    const saveMealPlan = async (mealplan: MealPlan)=> {
 
         const url = '/api/save-meal-plan';
         const body = { mealplan, planName, planDescription };
@@ -162,10 +162,10 @@ export default function ChatWindow() {
 //        const data = await response.json();
 
         if (!response.ok) {
-            throw new Error(data?.error?.message ?? 'An error occurred while saving meal plan.');
+            //throw new Error(data?.error?.message ?? 'An error occurred while saving meal plan.');
         }
 
-        return data;
+        //return data;
     };
 
     return (
