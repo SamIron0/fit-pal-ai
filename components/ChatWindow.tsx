@@ -164,16 +164,15 @@ export default function ChatWindow() {
                     </div>
                     <div>
                         {mealPlan ? (
-                            <Button
-                                variant="slim"
-                                type="button"
-                                disabled={isLoading}
-                                loading={false}
-                                onClick={() => saveMealPlan(mealPlan)}
-                                className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-900"
-                            >
+                            <button
+                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
+                                // Execute logic after saveMealPlan Promise resolves
+                              }).catch(error => {
+                                // Handle error here
+                              })}>
+                                
                                 Save
-                            </Button>
+                            </button>
                         )
                             : <></>
                         }
