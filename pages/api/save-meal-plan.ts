@@ -29,8 +29,7 @@ const SaveMealPlan: NextApiHandler = async (req, res) => {
         }
     } else {
 
-        res.setHeader('Allow', 'POST');
-        res.status(405).end('Method Not Allowed');
+        res.status(401).end('Method Not Allowed');
 
     }
 }

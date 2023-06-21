@@ -140,19 +140,26 @@ export default function ChatWindow() {
         )
     }
     const saveMealPlan = async (mealplan: MealPlan) => {
-        try {
-            setLoading(true);
-            const response = await postMealPlan({
-                url: '/api/save-meal-plan',
-                data: { mealplan, planName, planDescription }
-            });
-            setLoading(false);
-            setMealPlanSaved(true);
+
+        const url = '/api/savemealplan';
+        const body = { mealplan, planName, planDescription };
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        };
+
+        const response = await fetch(url, options);
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data?.error?.message ?? 'An error occurred while saving meal plan.');
         }
-        catch (error) {
-            console.log(error);
-        }
-    }
+
+        return data;
+    };
 
     return (
         <section className="bg-black overflow-hidden flex-auto">
@@ -165,12 +172,12 @@ export default function ChatWindow() {
                     <div>
                         {mealPlan ? (
                             <button
-                            onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
-                                // Execute logic after saveMealPlan Promise resolves
-                              }).catch(error => {
-                                // Handle error here
-                              })}>
-                                
+                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
+                                    // Execute logic after saveMealPlan Promise resolves
+                                }).catch(error => {
+                                    // Handle error here
+                                })}>
+
                                 Save
                             </button>
                         )
