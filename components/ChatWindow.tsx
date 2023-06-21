@@ -162,9 +162,7 @@ export default function ChatWindow() {
                     <div className="px-3">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
-                    <Button>
-                        Save
-                    </Button>
+                    
                 </div>
             </div>
 
