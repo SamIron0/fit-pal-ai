@@ -141,7 +141,7 @@ export default function ChatWindow() {
     }
     const saveMealPlan = async (mealplan: MealPlan) => {
 
-        const url = '/api/savemealplan';
+        const url = '/api/save-meal-plan';
         const body = { mealplan, planName, planDescription };
         const options = {
             method: 'POST',
@@ -165,7 +165,7 @@ export default function ChatWindow() {
         <section className="bg-black overflow-hidden flex-auto">
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto">
-                    <div className="px-3">
+                    <div className="px-3 ">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
                     <div>
