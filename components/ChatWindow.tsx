@@ -182,7 +182,7 @@ export default function ChatWindow() {
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border flex border-zinc-700	max-w-3xl w-full rounded-md m-auto">
                     <div className="px-3 w-1/2">
-                        <h3 className="text-xl my-1 font-medium">Hello User</h3>
+                        <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
                     {mealPlan ? (
 
