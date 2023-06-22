@@ -77,9 +77,9 @@ export default function ChatWindow() {
     const [responseData, setResponseData] = useState('');
     const [mealPlan, setMealPlan] = useState<MealPlan>();
     const [meal, setMeal] = useState<Meal>();
-    const [queryText, setQueryText] = useState(''); 
-    const [heightFtText, setHeightFtText] = useState('');    
-   
+    const [queryText, setQueryText] = useState('');
+    const [heightFtText, setHeightFtText] = useState('');
+
     const [messageList, setMessages] = useState<string[]>([]);
     const [mealPlanSaved, setMealPlanSaved] = useState(false);
     const planName = '';
@@ -162,9 +162,14 @@ export default function ChatWindow() {
                                     placeholder="Make a mealplan..."
                                 />
                             </div>
-                            <div className='w-1/2 pl-3'>
-                                <input className='bg-blue w-md' />
-
+                            <div className='w-1/2 '>
+                                <input
+                                    type="number"
+                                    id="heightFtInput"
+                                    value={heightFtText} onChange={(e) => setHeightFtText(e.target.value)}
+                                    className=" bg-transparent border border-blue rounded-md h-8 text-gray-200 w-md "
+                                    placeholder="Make a mealplan..."
+                                />
                             </div>
                         </div>
                     </div>
