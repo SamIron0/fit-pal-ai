@@ -141,12 +141,21 @@ export default function ChatWindow() {
         )
     }
 
-    const ManualSection = () => {
+    const SavedSection = () => {
         return (
             <div> <p>saved</p> </div>
         )
     }
-    const saveMealPlan = async (mealplan: MealPlan)=> {
+    const SettingsSection = () => {
+        return (
+            <div>
+                <p>saved</p>
+            </div>
+        )
+    }
+
+
+    const saveMealPlan = async (mealplan: MealPlan) => {
 
         const url = '/api/save-meal-plan';
         const body = { mealplan, planName, planDescription };
@@ -175,26 +184,26 @@ export default function ChatWindow() {
                     <div className="px-3 w-1/2">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
-                    <div className='w-1/2'>
-                        <div className=''>
-                            {mealPlan ? (
-                                <button
-                                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
-                                        // Execute logic after saveMealPlan Promise resolves
-                                    }).catch(error => {
-                                        // Handle error here
-                                    })}>
+                    {mealPlan ? (
 
-                                    Save
-                                </button>
-                            )
-                                : <></>
-                            }
+                        <div className='border rounded-md w-1/2 float-right border-zinc-700 text-xl my-1'>
+                            <button
+                                onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
+                                    // Execute logic after saveMealPlan Promise resolves
+                                }).catch(error => {
+                                    // Handle error here
+                                })}>
+
+                                Save
+                            </button>
+
+
                         </div>
-                    </div>
+                    ) : <></>
+
+                    }
                 </div>
             </div>
-
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto my-3">
                     <div className="px-3 py-3 h-56">
@@ -445,7 +454,7 @@ export default function ChatWindow() {
                                         </div>
                                         <div className=" mx-auto">
                                             <div
-                                                className={`py-2 cursor-pointer ${activeSection === 2 ? "underline" : ""
+                                                className={`py-2 cursor-pointer ${activeSection === 3 ? "underline" : ""
                                                     }`}
                                                 onClick={() => setActiveSection(3)}
                                             >
@@ -453,7 +462,6 @@ export default function ChatWindow() {
                                             </div>
 
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -461,8 +469,11 @@ export default function ChatWindow() {
                                     {activeSection === 1 ? (
                                         <AiSection />
                                     ) : activeSection === 2 ? (
-                                        <ManualSection />
-                                    ) : null}
+                                        <SavedSection />
+                                    ) : activeSection === 3 ? (
+                                        <SettingsSection />
+                                    ) : <></>
+                                    }
                                 </div>
 
                             </div>
@@ -472,7 +483,7 @@ export default function ChatWindow() {
                                     type="text"
                                     id="userInput"
                                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                                    className=" pl-5 bg-transparent rounded-md h-16 text-gray-200 w-9/12 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                                    className=" pl-5 bg-transparent rounded-md h-16 text-gray-200 w-9/12 focus:outline-none focus:border-transparent"
                                     placeholder="Make a mealplan plan..."
                                 />
                                 <button
