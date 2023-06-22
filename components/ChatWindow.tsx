@@ -484,7 +484,7 @@ export default function ChatWindow() {
                                                     }`}
                                                 onClick={() => setActiveSection(1)}
                                             >
-                                                <h1 className="text-xl font-bold grey-gradient-text ">CHAT</h1>
+                                                <h1 className="text-xl font-bold ">CHAT</h1>
                                             </div>
 
                                         </div>
@@ -494,7 +494,7 @@ export default function ChatWindow() {
                                                     }`}
                                                 onClick={() => setActiveSection(2)}
                                             >
-                                                <h1 className="text-xl grey-gradient-text font-bold ">PROFILE</h1>
+                                                <h1 className="text-xl  font-bold ">PROFILE</h1>
                                             </div>
 
                                         </div>
