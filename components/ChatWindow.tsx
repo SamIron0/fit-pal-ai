@@ -477,10 +477,10 @@ export default function ChatWindow() {
                         <div >
                             <div className="h-80 pb-9 text-gray-200">
                                 <div className="flex flex-col">
-                                    <div className="flex">
+                                    <div className="flex border-zinc-700 border-b ">
                                         <div className=" mx-auto">
                                             <div
-                                                className={`py-2 cursor-pointer ${activeSection === 1 ? " blue-gradient-text" : ""
+                                                className={`py-2 cursor-pointer ${activeSection === 1 ? " blue-gradient-text border-b-2 border-white" : ""
                                                     }`}
                                                 onClick={() => setActiveSection(1)}
                                             >
@@ -517,8 +517,8 @@ export default function ChatWindow() {
                                     type="text"
                                     id="userInput"
                                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                                    className=" pl-5 bg-transparent rounded-md h-16 text-gray-200 w-9/12 "
-                                    placeholder="Make a mealplan plan..."
+                                    className="pl-5 bg-transparent rounded-md h-16 text-gray-200 w-9/12 "
+                                    placeholder="Make a mealplan..."
                                 />
                                 <button
                                     className="absolute right-0 w-3/12 top-0 h-full px-2 bg-zinc-900 text-gray-100  focus:outline-none hover:bg-gray-600"
