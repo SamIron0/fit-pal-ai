@@ -77,7 +77,7 @@ export default function ChatWindow() {
     const [responseData, setResponseData] = useState('');
     const [mealPlan, setMealPlan] = useState<MealPlan>();
     const [meal, setMeal] = useState<Meal>();
-    const [queryText, setQueryText] = useState('');
+    const [queryText, setQueryText] = useState('');    
     const [messageList, setMessages] = useState<string[]>([]);
     const [mealPlanSaved, setMealPlanSaved] = useState(false);
     const planName = '';
@@ -151,12 +151,19 @@ export default function ChatWindow() {
 
                     <div className='w-1/2'>
                         <div className='float-right'>
-                            <input className='w-1/2 bg-blue'>
+                            <div className='w-1/2'>
+                                <input
+                                    type="number"
+                                    id="heightFtInput"
+                                    value={queryText} onChange={(e) => setQueryText(e.target.value)}
+                                    className="pl-5 bg-transparent border border-blue rounded-md h-8 text-gray-200 w-md "
+                                    placeholder="Make a mealplan..."
+                                />
+                            </div>
+                            <div className='w-1/2'>
+                                <input className='bg-blue w-md' />
 
-                            </input>
-                            <input className='bg-blue w-1/2'>
-
-                            </input>
+                            </div>
                         </div>
                     </div>
                 </div>
