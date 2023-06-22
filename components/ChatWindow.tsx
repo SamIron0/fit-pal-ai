@@ -226,7 +226,7 @@ export default function ChatWindow() {
 
     return (
         <section className="bg-black overflow-hidden flex-auto">
-            <div className="sm:flex sm:flex-col sm:align-center">
+            <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border flex border-zinc-700	max-w-3xl w-full rounded-md m-auto">
                     <div className="mx-1 w-1/2">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
