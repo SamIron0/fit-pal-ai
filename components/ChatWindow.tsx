@@ -154,7 +154,7 @@ export default function ChatWindow() {
                             <input className='w-1/2 bg-blue'>
 
                             </input>
-                            <input className='ml-2 bg-blue w-1/2'>
+                            <input className='bg-blue w-1/2'>
 
                             </input>
                         </div>
