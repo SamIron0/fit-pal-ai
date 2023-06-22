@@ -233,7 +233,7 @@ export default function ChatWindow() {
                     </div>
                     {mealPlan ? (
 
-                        <div className='w-1/2'>
+                        <div className='my-1 w-1/2'>
                             <button className='border float-right border-zinc-700 text-xl my-1 rounded-md font-medium'
                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
                                     // Execute logic after saveMealPlan Promise resolves
