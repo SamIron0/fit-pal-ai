@@ -198,7 +198,7 @@ export default function ChatWindow() {
                         <p> Height</p>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 
