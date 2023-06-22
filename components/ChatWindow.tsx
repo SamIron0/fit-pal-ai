@@ -143,7 +143,7 @@ export default function ChatWindow() {
 
     const ProfileSection = () => {
         return (
-            <>
+            <div className=''>
                 <div className='flex'>
                     <div className='w-1/2'>
                         <p> Height</p>
@@ -228,13 +228,13 @@ export default function ChatWindow() {
         <section className="bg-black overflow-hidden flex-auto">
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border flex border-zinc-700	max-w-3xl w-full rounded-md m-auto">
-                    <div className="px-3 w-1/2">
+                    <div className="w-1/2">
                         <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
                     </div>
                     {mealPlan ? (
 
-                        <div className='w-1/2 px-3'>
-                            <button className='border float-right border-zinc-700 text-xl my-1 rounded-md font-medium blue-gradient-text'
+                        <div className='w-1/2'>
+                            <button className='border float-right border-zinc-700 text-xl my-1 rounded-md font-medium'
                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
                                     // Execute logic after saveMealPlan Promise resolves
                                 }).catch(error => {
@@ -490,7 +490,7 @@ export default function ChatWindow() {
                                         </div>
                                         <div className=" mx-auto">
                                             <div
-                                                className={`py-2 cursor-pointer ${activeSection === 2 ? " blue-gradient-text" : ""
+                                                className={`py-2 cursor-pointer ${activeSection === 2 ? " blue-gradient-text border-b-2 border-white" : ""
                                                     }`}
                                                 onClick={() => setActiveSection(2)}
                                             >
