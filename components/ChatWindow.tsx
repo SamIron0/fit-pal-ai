@@ -146,7 +146,7 @@ export default function ChatWindow() {
     const ProfileSection = () => {
         return (
             <div className="flex-1 overflow-y-scroll w-full px-2 py-2">
-                <div className='flex'>
+                <div className=''>
                     <div className='w-1/2'>
                         <p> Height</p>
                     </div>
