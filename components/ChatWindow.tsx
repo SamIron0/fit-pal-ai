@@ -182,12 +182,12 @@ export default function ChatWindow() {
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border flex border-zinc-700	max-w-3xl w-full rounded-md m-auto">
                     <div className="px-3 w-1/2">
-                        <h3 className="text-xl my-1 blue-gradient-text font-medium">Hello User</h3>
+                        <h3 className="text-xl my-1 font-medium">Hello User</h3>
                     </div>
                     {mealPlan ? (
 
-                        <div className='border rounded-md w-1/2 float-right border-zinc-700 text-xl my-1'>
-                            <button
+                        <div className='w-1/2 '>
+                            <button   className='border float-right border-zinc-700 text-xl my-1 rounded-md font-medium blue-gradient-text'
                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
                                     // Execute logic after saveMealPlan Promise resolves
                                 }).catch(error => {
@@ -483,7 +483,7 @@ export default function ChatWindow() {
                                     type="text"
                                     id="userInput"
                                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                                    className=" pl-5 bg-transparent rounded-md h-16 text-gray-200 w-9/12 focus:outline-none focus:border-transparent"
+                                    className=" pl-5 bg-transparent rounded-md h-16 text-gray-200 w-9/12 "
                                     placeholder="Make a mealplan plan..."
                                 />
                                 <button
