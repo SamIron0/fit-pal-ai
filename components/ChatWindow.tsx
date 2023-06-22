@@ -252,8 +252,8 @@ export default function ChatWindow() {
             </div>
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border border-zinc-700	max-w-3xl w-full rounded-md m-auto my-3">
-                    <div className="px-3 py-3 h-56">
-                        <div className="flex h-full overflow-x-scroll space-x-3">
+                    <div className="px-1 py-1 h-56">
+                        <div className="flex h-full overflow-x-scroll space-x-1">
 
                             <PlanCard
                                 title="Monday"
