@@ -109,7 +109,7 @@ export default function ChatWindow() {
         //populateChat();
     };
 
-    const AiSection = () => {
+    const ChatSection = () => {
         const messageListRef = useRef<HTMLDivElement>(null);
         useEffect(() => {
             if (messageListRef.current) {
@@ -141,19 +141,66 @@ export default function ChatWindow() {
         )
     }
 
-    const SavedSection = () => {
+    const ProfileSection = () => {
         return (
-            <div> <p>saved</p> </div>
-        )
-    }
-    const SettingsSection = () => {
-        return (
-            <div>
-                <p>saved</p>
-            </div>
-        )
-    }
+            <>
+                <div className=''>
+                    <div className='w-1/2'>
+                        <p> Height</p>
+                    </div>
 
+                    <div className='w-1/2'>
+                        <p> Height</p>
+                    </div>
+                </div>
+                <div className=''>
+                    <div className='w-1/2'>
+                        <p> Weight</p>
+                    </div>
+
+                    <div className='w-1/2'>
+                        <p> Height</p>
+                    </div>
+                </div>
+                <div className=''>
+                    <div className='w-1/2'>
+                        <p> Sex</p>
+                    </div>
+
+                    <div className='w-1/2'>
+                        <p> Height</p>
+                    </div>
+                </div>
+                <div className=''>
+                    <div className='w-1/2'>
+                        <p> Age</p>
+                    </div>
+
+                    <div className='w-1/2'>
+                        <p> Height</p>
+                    </div>
+                </div>
+                <div className=''>
+                    <div className='w-1/2'>
+                        <p> Body-fat</p>
+                    </div>
+
+                    <div className='w-1/2'>
+                        <p> Height</p>
+                    </div>
+                </div>
+                <div className=''>
+                    <div className='w-1/2'>
+                        <p> Activity level</p>
+                    </div>
+
+                    <div className='w-1/2'>
+                        <p> Height</p>
+                    </div>
+                </div>
+            </>
+        )
+    }
 
     const saveMealPlan = async (mealplan: MealPlan) => {
 
@@ -187,20 +234,19 @@ export default function ChatWindow() {
                     {mealPlan ? (
 
                         <div className='w-1/2 px-3'>
-                            <button className='border float-right mx-2 border-zinc-700 text-xl my-1 rounded-md font-medium blue-gradient-text'
+                            <button className='border float-right border-zinc-700 text-xl my-1 rounded-md font-medium blue-gradient-text'
                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => saveMealPlan(mealPlan).then(() => {
                                     // Execute logic after saveMealPlan Promise resolves
                                 }).catch(error => {
                                     // Handle error here
                                 })}>
 
-                                Save
+                                <p className='mx-2'>Save</p>
                             </button>
 
 
                         </div>
                     ) : <></>
-
                     }
                 </div>
             </div>
@@ -434,7 +480,7 @@ export default function ChatWindow() {
                                     <div className="flex">
                                         <div className=" mx-auto">
                                             <div
-                                                className={`py-2 cursor-pointer ${activeSection === 1 ? "underline" : ""
+                                                className={`py-2 cursor-pointer ${activeSection === 1 ? " blue-gradient-text" : ""
                                                     }`}
                                                 onClick={() => setActiveSection(1)}
                                             >
@@ -444,21 +490,11 @@ export default function ChatWindow() {
                                         </div>
                                         <div className=" mx-auto">
                                             <div
-                                                className={`py-2 cursor-pointer ${activeSection === 2 ? "underline" : ""
+                                                className={`py-2 cursor-pointer ${activeSection === 2 ? " blue-gradient-text" : ""
                                                     }`}
                                                 onClick={() => setActiveSection(2)}
                                             >
-                                                <h1 className="text-xl grey-gradient-text font-bold ">SAVED</h1>
-                                            </div>
-
-                                        </div>
-                                        <div className=" mx-auto">
-                                            <div
-                                                className={`py-2 cursor-pointer ${activeSection === 3 ? "underline" : ""
-                                                    }`}
-                                                onClick={() => setActiveSection(3)}
-                                            >
-                                                <h1 className="text-xl grey-gradient-text font-bold ">SETTINGS</h1>
+                                                <h1 className="text-xl grey-gradient-text font-bold ">PROFILE</h1>
                                             </div>
 
                                         </div>
@@ -467,11 +503,9 @@ export default function ChatWindow() {
 
                                 <div className=" h-full flex flex-col">
                                     {activeSection === 1 ? (
-                                        <AiSection />
+                                        <ChatSection />
                                     ) : activeSection === 2 ? (
-                                        <SavedSection />
-                                    ) : activeSection === 3 ? (
-                                        <SettingsSection />
+                                        <ProfileSection />
                                     ) : <></>
                                     }
                                 </div>
