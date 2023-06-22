@@ -153,7 +153,7 @@ export default function ChatWindow() {
                         <p> Height</p>
                     </div>
                 </div>
-                <div className=''>
+                <div className='flex'>
                     <div className='w-1/2'>
                         <p> Weight</p>
                     </div>
@@ -162,7 +162,7 @@ export default function ChatWindow() {
                         <p> Height</p>
                     </div>
                 </div>
-                <div className=''>
+                <div className='flex'>
                     <div className='w-1/2'>
                         <p> Sex</p>
                     </div>
@@ -171,7 +171,7 @@ export default function ChatWindow() {
                         <p> Height</p>
                     </div>
                 </div>
-                <div className=''>
+                <div className='flex'>
                     <div className='w-1/2'>
                         <p> Age</p>
                     </div>
@@ -180,7 +180,7 @@ export default function ChatWindow() {
                         <p> Height</p>
                     </div>
                 </div>
-                <div className=''>
+                <div className='flex'>
                     <div className='w-1/2'>
                         <p> Body-fat</p>
                     </div>
@@ -189,7 +189,7 @@ export default function ChatWindow() {
                         <p> Height</p>
                     </div>
                 </div>
-                <div className=''>
+                <div className='flex'>
                     <div className='w-1/2'>
                         <p> Activity level</p>
                     </div>
