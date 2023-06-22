@@ -156,11 +156,11 @@ export default function ChatWindow() {
                                     type="number"
                                     id="heightFtInput"
                                     value={queryText} onChange={(e) => setQueryText(e.target.value)}
-                                    className="pl-5 bg-transparent border border-blue rounded-md h-8 text-gray-200 w-md "
+                                    className=" bg-transparent border border-blue rounded-md h-8 text-gray-200 w-md "
                                     placeholder="Make a mealplan..."
                                 />
                             </div>
-                            <div className='w-1/2'>
+                            <div className='w-1/2 pl-3'>
                                 <input className='bg-blue w-md' />
 
                             </div>
