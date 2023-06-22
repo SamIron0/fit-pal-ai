@@ -121,7 +121,7 @@ export default function ChatWindow() {
             <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
                 {messageList && messageList.map((message, index) => (
                     <div className={`flex ${index % 2 === 0 ? 'bg-zinc-900' : 'bg'} `}>
-                        <div className="px-3 py-2 w-1/10">
+                        <div className="px-2 py-2 w-1/10">
                             {message.charAt(0) === "U" ?
                                 <div className="circle-div overflow-hidden">
                                     <img src={userImage.src} alt="user Image" />
@@ -132,7 +132,7 @@ export default function ChatWindow() {
                                 </div>
                             }
                         </div>
-                        <div className="py-3 pr-3 w-9/10">
+                        <div className="py-3 pr-2 w-9/10">
                             <p>{message.slice(1)}</p>
                         </div>
                     </div>
@@ -143,14 +143,21 @@ export default function ChatWindow() {
 
     const ProfileSection = () => {
         return (
-            <div className=''>
+            <div className="flex-1 overflow-y-scroll w-full px-2 py-2">
                 <div className='flex'>
                     <div className='w-1/2'>
                         <p> Height</p>
                     </div>
 
                     <div className='w-1/2'>
-                        <p> Height</p>
+                        <div className='float-right'>
+                            <input className='w-1/2 bg-blue'>
+
+                            </input>
+                            <input className='ml-2 bg-blue w-1/2'>
+
+                            </input>
+                        </div>
                     </div>
                 </div>
                 <div className='flex'>
