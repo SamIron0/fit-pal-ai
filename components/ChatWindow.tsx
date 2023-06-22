@@ -158,7 +158,7 @@ export default function ChatWindow() {
                                     type="number"
                                     id="heightFtInput"
                                     value={heightFtText} onChange={(e) => setHeightFtText(e.target.value)}
-                                    className=" bg-transparent border border-blue rounded-md h-8 text-gray-200 w-md "
+                                    className=" bg-transparent border border-blue rounded-md h-8 text-gray-200  "
                                     placeholder="Make a mealplan..."
                                 />
                             </div>
@@ -167,7 +167,7 @@ export default function ChatWindow() {
                                     type="number"
                                     id="heightFtInput"
                                     value={heightFtText} onChange={(e) => setHeightFtText(e.target.value)}
-                                    className=" bg-transparent border border-blue rounded-md h-8 text-gray-200 w-md "
+                                    className=" bg-transparent border border-blue rounded-md h-8 text-gray-200  "
                                     placeholder="Make a mealplan..."
                                 />
                             </div>
