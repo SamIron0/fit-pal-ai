@@ -30,7 +30,7 @@ export default function HomePage() {
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
                                 </div>
                             </div>
-                            <div className="w-11/20 flex flex-col">
+                            <div className="w-11/20 w-full flex flex-col">
                                 <div className="h-1/2 bg-gray-300">Row 1</div>
                                 <div className="h-1/2 bg-gray-400">Row 2</div>
                             </div>
