@@ -23,21 +23,23 @@ const Navbar = () => {
             <Link href="/" className={s.logo} aria-label="Logo">
               <Logo />
             </Link>
-            
+
           </div>
 
-          <div className="flex border float-right border-zinc-700 text-xl rounded-md flex-1 justify-end space-x-8">
-              
+          <div className="flex flex-1 justify-end space-x-8">
+
             {user ? (
-              <span
-                className={s.link}
-                onClick={async () => {
-                  await supabaseClient.auth.signOut();
-                  router.push('/signin');
-                }}
-              >
-                Sign out
-              </span>
+              <div className="border blue-gradient-bg border-zinc-700 text-xl rounded-md">
+                <span
+                  className={s.link}
+                  onClick={async () => {
+                    await supabaseClient.auth.signOut();
+                    router.push('/signin');
+                  }}
+                >
+                  Sign out
+                </span>
+              </div>
             ) : (
               <Link href="/signin" className={s.link}>
                 Sign in
