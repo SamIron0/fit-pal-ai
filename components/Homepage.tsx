@@ -24,10 +24,11 @@ export default function HomePage() {
                 </div>
 
                 <div className="bg-black pb-24 px-8">
-                    <div className="rounded-full border h-20 border-gray-600 max-w-md sm:max-w-lg">
+                    <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="flex h-full p-3 w-full">
-                            <div className="circle-div w-1/4 overflow-hidden">
-                                <img src={mealIcon.src} alt="meal image" />
+                            <div className=" w-1/4 overflow-hidden">
+                                <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
+                                </div>
                             </div>
                             <div className="w-11/20 flex flex-col">
                                 <div className="h-1/2 bg-gray-300">Row 1</div>
@@ -46,6 +47,6 @@ export default function HomePage() {
             </div>
 
             <ChatWindow />
-        </div >
+        </div>
     )
 }
