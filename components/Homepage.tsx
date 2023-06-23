@@ -26,12 +26,12 @@ export default function HomePage() {
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="relative h-full p-4">
-                        <div className="circle-div overflow-hidden">
-                                    <img src={mealIcon.src} alt="meal image" />
-                                </div>
+                            <div className="circle-div overflow-hidden">
+                                <img src={mealIcon.src} alt="meal image" />
+                            </div>
                             <input
                                 type="text"
-                                className=" rounded-full py-2 h-full px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                                className=" rounded-full py-2 h-full px-4 text-gray-200  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                                 placeholder="Email address"
                             />
                             <button className="absolute right-0 top-0 h-full px-4  text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
