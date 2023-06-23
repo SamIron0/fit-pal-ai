@@ -26,7 +26,7 @@ const Navbar = () => {
             
           </div>
 
-          <div className="flex flex-1 justify-end space-x-8">
+          <div className="flex border float-right border-zinc-700 text-xl rounded-md flex-1 justify-end space-x-8">
               
             {user ? (
               <span
