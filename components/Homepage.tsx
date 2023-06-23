@@ -18,7 +18,7 @@ export default function HomePage() {
                     </div>
                     <div>
                         <p className="mt-9 mb-14 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-4xl m-auto">
-                            Your AI-powered health and fitness companion. Personalized, real-time feedback, and support. Achieve your goals with ease.
+                            Your AI-powered health and fitness companion. Personalized mealplans, real-time feedback, and support. Achieve your goals with ease.
                         </p>
                     </div>
                 </div>
@@ -26,12 +26,12 @@ export default function HomePage() {
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="flex h-full p-3 w-full">
-                            <div className=" w-1/4 overflow-hidden">
+                            <div className=" w-1/4 items-center justify-center overflow-hidden">
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
                                 </div>
                             </div>
-                            <div className="w-11/20 w-full flex flex-col">
-                                <div className="h-1/2 bg-gray-300">Row 1</div>
+                            <div className="w-11/20 w-full flex justify-center flex-col">
+                                <div className="h-1/2 bg-gray-300">Introducing Fitpal</div>
                                 <div className="h-1/2 bg-gray-400">Row 2</div>
                             </div>
                             <div className="w-1/5 ">
