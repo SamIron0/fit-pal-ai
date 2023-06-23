@@ -25,20 +25,24 @@ export default function HomePage() {
 
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
-                        <div className="relative h-full p-4">
-                            <div className="circle-div overflow-hidden">
+                        <div className="flex h-full p-4">
+                            <div className="circle-div w-1/5 overflow-hidden">
                                 <img src={mealIcon.src} alt="meal image" />
                             </div>
+                            <div className="w-3/5">
                             <input
                                 type="text"
-                                className=" rounded-full py-2 h-full px-4 text-gray-200  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                                className=" rounded-full w-py-2 h-full px-4 text-gray-200  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                                 placeholder="Email address"
                             />
+                            </div>
+                            <div className="w-1/5">
                             <button className="absolute right-0 top-0 h-full px-4  text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
                                 <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
                                 </svg>
                             </button>
+                            </div>
                         </div>
                     </div>
                 </div>
