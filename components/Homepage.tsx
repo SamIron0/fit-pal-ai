@@ -2,141 +2,43 @@ import { useState, ReactNode, FC, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import React from 'react';
 
-import { GetServerSidePropsContext } from 'next';
-import {
-    createServerSupabaseClient,
-    User
-} from '@supabase/auth-helpers-nextjs';
-
-import LoadingDots from '@/components/ui/LoadingDots';
-import Button from '@/components/ui/Button';
-import { useUser } from '@/utils/useUser';
-import { postData } from '@/utils/helpers';
-import { Meal, MealPlan } from '@/types';
-import robotImage from '../robot-icon.jpg';
-import userImage from '../ai-icon.jpg';
 import ChatWindow from './ChatWindow';
 
-interface Props {
-    title: string;
-    footer?: ReactNode;
-    children: ReactNode;
-    completed: boolean;
-}
-function PlanCard({ title, footer, children, completed }: Props) {
-    const bgColor = completed ? "blue-gradient-bg" : "bg-zinc-700";
+export default function HomePage() {
+
     return (
-        <div className={`h-full w-48 p-px rounded-md flex-shrink-0 flex-grow-0 ${bgColor}`}>
-            <div className="bg-black  h-full w-full  rounded-md m-auto">
-                <div className='w-full h-full overflow-hidden flex flex-col rounded-md  '>
-                    <div className="px-2 flex-1 overflow-y-scroll h-4/5 ">
-                        <h1 className="text-l font-medium">{title}</h1>
-                        <div className="" >
-                            {children}
-                        </div>
+        <div>
+            <div className='sm:h-screen'>
+                <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
+                    <div className=" mt-8 sm:align-center ">
+                        <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
+                            Create. <span className='text-blue'>Track</span> Achieve.
+                        </p>
                     </div>
-                    <div className="h-1/5 border-zinc-700 bg-zinc-900 p-2 text-zinc-500 rounded-b-md">
-                        {footer}
+                    <div>
+                        <p className="mt-9 mb-14 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-4xl m-auto">
+                            Your AI-powered health and fitness companion. Personalized exercises and meal plans, real-time feedback, and support. Achieve your goals with ease.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="bg-black pb-24 px-8">
+                    <div className="rounded-full border h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
+                        <div className="relative h-full ">
+                            <input
+                                type="text"
+                                className=" rounded-full py-2 h-full px-4 text-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                                placeholder="Email address"
+                            />
+                            <button className="absolute right-0 top-0 h-full px-4 bg-gray-500 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
+                                Button
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <ChatWindow />
         </div>
-    );
-} // PlanCard
-
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-    const supabase = createServerSupabaseClient(ctx);
-    const {
-        data: { session }
-    } = await supabase.auth.getSession();
-
-    if (!session)
-        return {
-            redirect: {
-                destination: '/signin',
-                permanent: false
-            }
-        };
-
-    return {
-        props: {
-            initialSession: session,
-            user: session.user
-        }
-    };
-};
-export default function HomePage() {
-    const [loading, setLoading] = useState(false);
-    const { isLoading, subscription, userDetails } = useUser();
-    const [activeSection, setActiveSection] = useState(1);
-    const [responseData, setResponseData] = useState('');
-    const [mealPlan, setMealPlan] = useState<MealPlan>();
-    const [meal, setMeal] = useState<Meal>();
-    const [queryText, setQueryText] = useState('');
-    const [messageList, setMessages] = useState<string[]>([]);
-
-    const fetchAIData = async () => {
-        try {
-            setLoading(true);
-            const response = await fetch(`/api/generate?AIquery=${queryText}&userPlan=${mealPlan}`);
-
-            const data = await response.json();
-            if (data.chat != undefined) {
-                setMessages((prevList) => [...prevList, "A" + data.chat]);
-            }
-            if (data.plan != undefined) {
-                //setMeal(data);
-                setMealPlan(data.plan);
-            }
-            setLoading(false);
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
-    const handleButtonClick = () => {
-        setQueryText('')
-        setMessages([...messageList?.concat("U" + queryText) ?? ["U" + queryText]]);
-        fetchAIData();
-        //populateChat();
-    };
-
-    const AISection = () => {
-        const messageListRef = useRef<HTMLDivElement>(null);
-        useEffect(() => {
-            if (messageListRef.current) {
-                messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
-            }
-        }, [messageList]);
-
-        return (
-            <div className="flex-1 overflow-y-scroll w-full break-words" ref={messageListRef}>
-                {messageList && messageList.map((message, index) => (
-                    <div className={`flex ${index % 2 === 0 ? 'bg-black' : 'bg'} `}>
-                        <div className="px-3 py-2 w-1/10">
-                            {message.charAt(0) === "U" ?
-                                <div className="circle-div overflow-hidden">
-                                    <img src={userImage.src} alt="user Image" />
-                                </div>
-                                :
-                                <div className="circle-div overflow-hidden">
-                                    <img src={robotImage.src} alt="ai Image" />
-                                </div>
-                            }
-                        </div>
-                        <div className="py-3 pr-3 w-9/10">
-                            <p>{message.slice(1)}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        )
-    }
-
-    const ManualSection = () => {
-        return (
-            <div> <p>saved</p> </div>
-        )
-    }
-    return (<ChatWindow/>)
+    )
 }
