@@ -29,7 +29,7 @@ export default function HomePage() {
                             <div className="circle-div w-1/4 overflow-hidden">
                                 <img src={mealIcon.src} alt="meal image" />
                             </div>
-                            <div className="w- flex justify-center">
+                            <div className="w-11/20 flex justify-center">
                                 <input
                                     type="text"
                                     className=" rounded-full py-2 h-full px-4 text-gray-200  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
