@@ -51,6 +51,9 @@ a {
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(to right, #2087cc, #baffdc);
 }
+.blue-bg {
+  background: #2087cc;
+}
 .blue-gradient-bg {
   background-image: linear-gradient(to right, #2087cc, #58a0cf);
 }

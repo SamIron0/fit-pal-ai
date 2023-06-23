@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="flex flex-1 justify-end space-x-8">
 
             {user ? (
-              <div className="border blue-gradient-bg border-zinc-700 text-xl rounded-md">
+              <div className="border blue-bg border-zinc-700 text-xl rounded-md">
                 <span
                   className={s.link}
                   onClick={async () => {
