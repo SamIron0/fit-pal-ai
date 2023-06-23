@@ -25,11 +25,11 @@ export default function HomePage() {
 
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
-                        <div className="flex h-full p-4">
-                            <div className="circle-div w-1/5 overflow-hidden">
+                        <div className="flex h-full p-3 w-full bg-zinc-500">
+                            <div className="circle-div w-1/4 overflow-hidden">
                                 <img src={mealIcon.src} alt="meal image" />
                             </div>
-                            <div className="w-3/5 flex justify-center">
+                            <div className="w- flex justify-center">
                                 <input
                                     type="text"
                                     className=" rounded-full py-2 h-full px-4 text-gray-200  focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
