@@ -540,7 +540,7 @@ export default function ChatWindow() {
                                     placeholder="Make a mealplan..."
                                 />
                                 <button
-                                    className="absolute right-0 w-3/12 top-0 h-full px-2 bg-zinc-900 text-gray-100  focus:outline-none hover:bg-blue-500"
+                                    className="absolute right-0 w-3/12 top-0 h-full px-2 bg-zinc-900 text-gray-100  focus:outline-none hover:border-blue-500"
                                     onClick={handleButtonClick}
                                 >
                                     Generate
