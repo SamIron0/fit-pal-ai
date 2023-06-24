@@ -25,7 +25,7 @@ export default function HomePage() {
 
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto ">
-                        <div className="flex p-3 pb-1 w-full">
+                        <div className="flex p-3 pb-2 w-full">
                             <div className="w-1/4 flex justify-center sm:pr-2">
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
                                 </div>
