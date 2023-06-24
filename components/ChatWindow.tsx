@@ -499,7 +499,7 @@ export default function ChatWindow() {
                                     <div className="flex border-zinc-700 border-b ">
                                         <div className=" mx-auto">
                                             <div
-                                                className={`py-2 cursor-pointer ${activeSection === 1 ? " blue-gradient-text border-b-2 border-white" : ""
+                                                className={`py-2 cursor-pointer ${activeSection === 2 ? " text-gray-200 border-b-2 border-white" : ""
                                                     }`}
                                                 onClick={() => setActiveSection(1)}
                                             >
@@ -509,7 +509,7 @@ export default function ChatWindow() {
                                         </div>
                                         <div className=" mx-auto">
                                             <div
-                                                className={`py-2 cursor-pointer ${activeSection === 2 ? " blue-gradient-text border-b-2 border-white" : ""
+                                                className={`py-2 cursor-pointer ${activeSection === 1 ? " text-gray-200 border-b-2 border-white" : ""
                                                     }`}
                                                 onClick={() => setActiveSection(2)}
                                             >
