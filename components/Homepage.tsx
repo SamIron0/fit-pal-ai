@@ -38,7 +38,7 @@ export default function HomePage() {
                                 </div>
                                 <div className="h-1/2 ">
                                     <p className="h-1/2 pl-6 text-gray-600">
-                                        Sign up to save and track
+                                        Sign up to save and track mealplans
                                     </p>
                                 </div>
                             </div>
