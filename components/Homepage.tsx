@@ -23,7 +23,7 @@ export default function HomePage() {
                     </div>
                 </div>
 
-                <div className="bg-black pb-48 px-8">
+                <div className="bg-black pb-12 px-8">
                     <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto ">
                         <div className="flex p-3 pb-2 w-full">
                             <div className="w-1/4 flex justify-center sm:pr-2">
