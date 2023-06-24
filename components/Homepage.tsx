@@ -31,8 +31,8 @@ export default function HomePage() {
                                 </div>
                             </div>
                             <div className="w-11/20 flex w-full flex-col">
-                                <div className="h-1/2 flex ">
-                                    <p className="h-1/2 flex justify-center">
+                                <div className="h-1/2 flex justify-center ">
+                                    <p className="h-1/2 ">
                                         Introducing Fitpal
                                         </p>
                                     </div>
