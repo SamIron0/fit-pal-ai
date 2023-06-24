@@ -24,7 +24,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="bg-black pb-24 px-8">
-                    <div className="rounded-full border w-md h-18 border-gray-600 max-w-md mx-auto sm:max-w-lg">
+                    <div className="rounded-full border w-md h-16 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="flex p-3 w-full">
                             <div className="w-1/4 flex justify-center">
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
@@ -38,7 +38,7 @@ export default function HomePage() {
                                 </div>
                                 <div className="h-1/2 ">
                                     <p className="h-1/2 pl-6 text-gray-600">
-                                        Sign up to save and track meals
+                                        Sign up to save and track
                                     </p>
                                 </div>
                             </div>
