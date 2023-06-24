@@ -31,7 +31,11 @@ export default function HomePage() {
                                 </div>
                             </div>
                             <div className="w-11/20 flex flex-col">
-                                <div className="h-1/2 flex justify-center">Introducing Fitpal</div>
+                                <div className="h-1/2 flex ">
+                                    <p className="h-1/2 flexjustify-center">
+                                        Introducing Fitpal
+                                        </p>
+                                    </div>
                                 <div className="h-1/2 justify-center">Row 2</div>
                             </div>
                             <div className="w-1/5 ">
