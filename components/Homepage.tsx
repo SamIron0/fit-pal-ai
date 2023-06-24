@@ -9,7 +9,7 @@ export default function HomePage() {
 
     return (
         <div>
-            <div className='sm:h-screen'>
+            <div className='h-screen'>
                 <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
                     <div className=" mt-8 sm:align-center ">
                         <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
@@ -26,7 +26,7 @@ export default function HomePage() {
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="flex p-3 pt-4 w-full">
-                            <div className="w-1/4 justify-center pt-2 overflow-hidden">
+                            <div className="w-1/4 justify-center pt-1 overflow-hidden">
                                 <div className="circle-div "><img src={mealIcon.src} alt="meal image" />
                                 </div>
                             </div>
