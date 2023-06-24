@@ -31,8 +31,8 @@ export default function HomePage() {
                                 </div>
                             </div>
                             <div className="w-11/20 w-full flex justify-center flex-col">
-                                <div className="h-1/2 bg-gray-300">Introducing Fitpal</div>
-                                <div className="h-1/2 bg-gray-400">Row 2</div>
+                                <div className="h-1/2 justify-center">Introducing Fitpal</div>
+                                <div className="h-1/2 justify-center">Row 2</div>
                             </div>
                             <div className="w-1/5 ">
                                 <button className=" h-full  text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
