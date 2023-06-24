@@ -32,12 +32,12 @@ export default function HomePage() {
                             </div>
                             <div className="w-11/20 flex w-full flex-col">
                                 <div className="h-1/2 relative ">
-                                    <p className="h-2/5 sm:h-1/2  pl-6 mb-2 sm:absolute sm:bottom-0">
+                                    <p className="  pl-6 mb-2 sm:absolute sm:bottom-0">
                                         Introducing Fitpal
                                     </p>
                                 </div>
-                                <div className="h-3/5 sm:h-1/2 relative">
-                                    <p className="h-1/2 pl-6 pb-2 md:pb-0 absolute top-0 text-gray-600">
+                                <div className="h-1/2 relative">
+                                    <p className=" pl-6 pb-2 md:pb-0 absolute top-0 text-gray-600">
                                         Sign up to save and track mealplans
                                     </p>
                                 </div>
