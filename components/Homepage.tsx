@@ -26,17 +26,21 @@ export default function HomePage() {
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="flex p-3 pt-4 w-full">
-                            <div className="w-1/4 pt-1 pr-1 h-10 flex justify-center overflow-hidden">
+                            <div className="w-1/4 pt-1 pr-1 h-16 flex justify-center">
                                 <div className="circle-div h-10"><img src={mealIcon.src} alt="meal image" />
                                 </div>
                             </div>
                             <div className="w-11/20 flex w-full flex-col">
-                                <div className="h-1/2 flex justify-center ">
-                                    <p className="h-1/2 ">
+                                <div className="h-1/2  ">
+                                    <p className="h-1/2 pl-6">
                                         Introducing Fitpal
-                                        </p>
-                                    </div>
-                                <div className="h-1/2 justify-center">Row 2</div>
+                                    </p>
+                                </div>
+                                <div className="h-1/2 ">
+                                    <p className="h-1/2 pl-6">
+                                        Introducing Fitpal
+                                    </p>
+                                </div>
                             </div>
                             <div className="w-1/5 ">
                                 <button className=" h-full  text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
