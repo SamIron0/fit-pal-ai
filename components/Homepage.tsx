@@ -9,7 +9,7 @@ export default function HomePage() {
 
     return (
         <div>
-            <div className=' sm:h-screen bg-black'>
+            <div className='h-screen bg-black'>
                 <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
                     <div className=" mt-8 sm:align-center ">
                         <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
