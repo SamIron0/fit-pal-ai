@@ -25,14 +25,14 @@ export default function HomePage() {
 
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto ">
-                        <div className="flex p-3 w-full">
+                        <div className="flex p-3 pb-1 w-full">
                             <div className="w-1/4 flex justify-center sm:pr-2">
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
                                 </div>
                             </div>
                             <div className="w-11/20 flex w-full flex-col">
                                 <div className="h-1/2 relative ">
-                                    <p className="pl-6  pb-0.5 text-zinc-200 absolute bottom-0">
+                                    <p className="pl-6 text-zinc-200 absolute bottom-0">
                                         Introducing Fitpal
                                     </p>
                                 </div>
