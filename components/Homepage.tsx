@@ -24,7 +24,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="bg-black pb-24 px-8">
-                    <div className="rounded-full border w-md border-gray-600 max-w-md mx-auto sm:max-w-lg">
+                    <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="flex p-3 w-full">
                             <div className="w-1/4 flex justify-center sm:pr-2">
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
@@ -44,7 +44,7 @@ export default function HomePage() {
                             </div>
                             <div className="w-1/5 ">
                                 <button className=" h-full pl-4 sm:pl-4 text-gray-100 rounded-r-full focus:outline-none hover:bg-gray-600">
-                                    <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
+                                    <svg className="w-6 h-6 text-gray-800 hover: text-dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
                                     </svg>
                                 </button>
