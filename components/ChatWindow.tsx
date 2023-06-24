@@ -244,7 +244,7 @@ export default function ChatWindow() {
     };
 
     return (
-        <section className="bg-black overflow-hidden flex-auto">
+        <section className="bg-black h-screen overflow-hidden flex-auto">
             <div className="sm:flex px-4 sm:flex-col sm:align-center">
                 <div className="border flex border-zinc-700	max-w-3xl w-full rounded-md m-auto">
                     <div className="mx-1 w-1/2">
