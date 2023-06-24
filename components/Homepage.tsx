@@ -26,11 +26,11 @@ export default function HomePage() {
                 <div className="bg-black pb-24 px-8">
                     <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto sm:max-w-lg">
                         <div className="flex h-full p-3 w-full">
-                            <div className=" w-1/4 items-center justify-center overflow-hidden">
+                            <div className=" w-1/4 ustify-center overflow-hidden">
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
                                 </div>
                             </div>
-                            <div className="w-11/20 w-full flex justify-center">
+                            <div className="w-11/20 w-full flex justify-center flex-col">
                                 <div className="h-1/2 bg-gray-300">Introducing Fitpal</div>
                                 <div className="h-1/2 bg-gray-400">Row 2</div>
                             </div>
