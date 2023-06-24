@@ -66,8 +66,8 @@ a {
   background-image: linear-gradient(to right, #989898, #c4c3c3);
 }
 .circle-div {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background-color: #989898;
 }
