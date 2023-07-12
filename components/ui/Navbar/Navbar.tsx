@@ -31,7 +31,7 @@ const Navbar = () => {
 
           </div>
 
-          <div className="flex flex-1 justify-end space-x-8">
+          <div className="flex items-center flex-1 justify-end space-x-8">
             <button
               className="w-[90px] h-[32px] bg-transparent border-[1px] border-blue-500 rounded-md"
               >
