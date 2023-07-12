@@ -11,7 +11,7 @@ export default function HomePage() {
         <div>
             <div className='h-screen bg-black'>
                 <div className="mx-auto py-8 px-4 sm:px-6 lg:px-8">
-                    <div className=" mt-8 sm:mt-18 sm:align-center ">
+                    <div className="mt-8 sm:pt-18 sm:align-center ">
                         <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
                             Create. <span className="text-blue-500">Track.</span> Achieve.
                         </p>
@@ -32,7 +32,7 @@ export default function HomePage() {
                             </div>
                             <div className="w-11/20 pl-4 flex w-full flex-col">
                                 <div className="h-1/2 relative ">
-                                    <p className="pl-6 text-zinc-200 absolute bottom-0">
+                                    <p className="sm:pl-6 text-zinc-200 absolute bottom-0">
                                         Introducing Fitpal
                                     </p>
                                 </div>
