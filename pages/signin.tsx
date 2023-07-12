@@ -29,7 +29,6 @@ const SignIn = () => {
           <div className="flex flex-col space-y-4">
             <Auth
               supabaseClient={supabaseClient}
-              providers={['github']}
               redirectTo={getURL()}
               magicLink={true}
               appearance={{
