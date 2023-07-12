@@ -48,7 +48,7 @@ interface SidebarActionsProps {
 export function SidebarActions({
   chat,
   removeChat,
-  shareChat
+  shareChat 
 }: SidebarActionsProps) {
   const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false)
   const [shareDialogOpen, setShareDialogOpen] = React.useState(false)
