@@ -10,14 +10,14 @@ export default function HomePage() {
     return (
         <div>
             <div className='h-screen bg-black'>
-                <div className="mx-auto py-8 sm:pt-30 px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto py-8 sm:pt-28 px-4 sm:px-6 lg:px-8">
                     <div className="mt-8 sm:align-center ">
-                        <p className="text-7xl font-extrabold text-white sm:text-center sm:text-9xl  m-auto">
+                        <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
                             Create. <span className="text-blue-500">Track.</span> Achieve.
                         </p>
                     </div>
                     <div>
-                        <p className="mt-9 mb-14 text-xl text-zinc-300 sm:text-center sm:text-2xl max-w-4xl m-auto">
+                        <p className="mt-9 mb-14 text-xl text-zinc-700 sm:text-center sm:text-2xl max-w-4xl m-auto">
                             Your AI-powered health and fitness companion. Personalized mealplans, real-time feedback, and support. Achieve your goals with ease.
                         </p>
                     </div>
@@ -32,7 +32,7 @@ export default function HomePage() {
                             </div>
                             <div className="w-11/20 sm:pl-4 flex w-full flex-col">
                                 <div className="h-1/2 relative ">
-                                    <p className="pl-6 text-zinc-200 absolute bottom-0">
+                                    <p className="pl-6 text-white absolute bottom-0">
                                         Introducing Fitpal
                                     </p>
                                 </div>
