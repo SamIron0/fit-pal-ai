@@ -6,11 +6,16 @@ import Logo from '@/components/icons/Logo';
 import { useUser } from '@/utils/useUser';
 
 import s from './Navbar.module.css';
+import Button from '../Button/Button';
 
 const Navbar = () => {
   const router = useRouter();
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
+
+  function handleButtonClick(): void {
+
+  }
 
   return (
     <nav className={s.root}>
@@ -27,24 +32,27 @@ const Navbar = () => {
           </div>
 
           <div className="flex flex-1 justify-end space-x-8">
-
-            {user ? (
-              <div className="border px-1 bg-blue-500 border-zinc-700 text-xl rounded-md">
-                <span
-                  className={s.link}
-                  onClick={async () => {
-                    await supabaseClient.auth.signOut();
-                    router.push('/signin');
-                  }}
-                >
-                  Sign out
-                </span>
-              </div>
-            ) : (
-              <Link href="/signin" className={s.link}>
-                Sign in
-              </Link>
-            )}
+            <button
+              className="w-"
+            >
+              {user ? (
+                <div className="border px-1 bg-blue-500 border-zinc-700 text-xl rounded-md">
+                  <span
+                    className={s.link}
+                    onClick={async () => {
+                      await supabaseClient.auth.signOut();
+                      router.push('/signin');
+                    }}
+                  >
+                    Sign out
+                  </span>
+                </div>
+              ) : (
+                <Link href="/signin" className={s.link}>
+                  Sign in
+                </Link>
+              )}
+            </button>
           </div>
         </div>
       </div>
