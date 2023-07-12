@@ -32,17 +32,18 @@ export default function HomePage() {
                                 </div>
                             </div>
                             <div className="w-11/20 sm:pl-4 flex w-full flex-col">
-                                
-                                    <div className="h-1/2 relative ">
-                                        <p className="pl-6 text-white absolute bottom-0">
-                                            Introducing Fitpal
-                                        </p>
-                                    </div>
-                                    <div className="h-1/2 relative">
-                                        <p className=" pl-6 absolute top-0 text-gray-600">
-                                            Sign up to save and track
-                                        </p>
-                                    </div>                            </div>
+
+                                <div className="h-1/2 relative ">
+                                    <p className="pl-6 text-white absolute bottom-0">
+                                        Introducing Fitpal
+                                    </p>
+                                </div>
+                                <div className="h-1/2 relative">
+                                    <p className=" pl-6 absolute top-0 text-gray-600">
+                                        Sign up to save and track
+                                    </p>
+                                </div>
+                            </div>
                             <Link href="/signin" className="w-1/5 ">
                                 <svg className="w-3 h-3 text-white hover:text-blue-500 text-dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
