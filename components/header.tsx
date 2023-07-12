@@ -15,7 +15,6 @@ import {
 } from '@/components/ui/icons'
 import { SidebarFooter } from '@/components/sidebar-footer'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { LoginButton } from '@/components/login-button'
 
@@ -32,7 +31,6 @@ export async function Header() {
             </React.Suspense>
             <SidebarFooter>
               <ThemeToggle />
-              <ClearHistory clearChats={clearChats} />
             </SidebarFooter>
           </Sidebar>
         ) : (

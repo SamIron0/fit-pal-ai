@@ -3,6 +3,7 @@ import { GetStaticPropsResult } from 'next';
 import Pricing from '@/components/Pricing';
 import { getActiveProductsWithPrices } from '@/utils/supabase-client';
 import { Product } from 'types';
+export const runtime = 'edge'
 
 interface Props {
   products: Product[];
