@@ -33,10 +33,9 @@ const Navbar = () => {
 
           <div className="flex flex-1 justify-end space-x-8">
             <button
-              className="w-20 h-10 bg-blue-500 rounded-md"
-            >
+              className="w-20 h-10 bg-transparent border-2 border-blue-500 rounded-md"
+              >
               {user ? (
-                <div className="border px-1 bg-blue-500 border-zinc-700 text-xl rounded-md">
                   <span
                     className={s.link}
                     onClick={async () => {
@@ -46,7 +45,6 @@ const Navbar = () => {
                   >
                     Sign out
                   </span>
-                </div>
               ) : (
                 <Link href="/signin" className={s.link}>
                   Sign in
