@@ -10,14 +10,14 @@ export default function HomePage() {
     return (
         <div>
             <div className='h-screen bg-black'>
-                <div className="mx-auto py-8 sm:pt-24 px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto py-8 sm:pt-30 px-4 sm:px-6 lg:px-8">
                     <div className="mt-8 sm:align-center ">
-                        <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
+                        <p className="text-7xl font-extrabold text-white sm:text-center sm:text-9xl  m-auto">
                             Create. <span className="text-blue-500">Track.</span> Achieve.
                         </p>
                     </div>
                     <div>
-                        <p className="mt-9 mb-14 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-4xl m-auto">
+                        <p className="mt-9 mb-14 text-xl text-zinc-300 sm:text-center sm:text-2xl max-w-4xl m-auto">
                             Your AI-powered health and fitness companion. Personalized mealplans, real-time feedback, and support. Achieve your goals with ease.
                         </p>
                     </div>
@@ -44,7 +44,7 @@ export default function HomePage() {
                             </div>
                             <div className="w-1/5 ">
                                 <button className=" h-full pl-4 sm:pl-4 text-gray-100 rounded-r-full focus:outline-none">
-                                    <svg className="w-6 h-6 text-gray-800 hover:text-white text-dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
+                                    <svg className="w-3 h-3 text-gray-800 hover:text-white text-dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1" />
                                     </svg>
                                 </button>
