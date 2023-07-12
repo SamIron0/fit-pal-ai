@@ -26,7 +26,7 @@ export default function HomePage() {
 
                 <div className="bg-black pb-12 px-8">
                     <div className="rounded-full border w-md h-20 border-gray-600 max-w-md mx-auto ">
-                        <div className="flex p-3 pb-[2px] w-full">
+                        <div className="flex p-3 w-full">
                             <div className="w-1/4 flex justify-center sm:pr-2">
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
                                 </div>
@@ -40,7 +40,7 @@ export default function HomePage() {
                                 </div>
                                 <div className="h-1/2 relative">
                                     <p className=" pl-6 absolute top-0 text-gray-600">
-                                        Sign in to create plans
+                                        Sign in to begin creating
                                     </p>
                                 </div>
                             </div>
