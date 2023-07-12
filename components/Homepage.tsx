@@ -40,7 +40,7 @@ export default function HomePage() {
                                 </div>
                                 <div className="h-1/2 relative">
                                     <p className=" pl-6 absolute top-0 text-gray-600">
-                                        Sign up to save and track
+                                        Sign in to create plans
                                     </p>
                                 </div>
                             </div>
