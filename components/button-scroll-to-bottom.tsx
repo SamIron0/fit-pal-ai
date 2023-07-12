@@ -11,7 +11,7 @@ export function ButtonScrollToBottom({ className, ...props }: ButtonProps) {
   const isAtBottom = useAtBottom()
 
   return (
-    <button
+    <Button
       variant="outline"
       size="icon"
       className={cn(
@@ -29,6 +29,6 @@ export function ButtonScrollToBottom({ className, ...props }: ButtonProps) {
     >
       <IconArrowDown />
       <span className="sr-only">Scroll to bottom</span>
-    </button>
+    </Button>
   )
 }
