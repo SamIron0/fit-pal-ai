@@ -10,7 +10,7 @@ export default function HomePage() {
     return (
         <div>
             <div className='h-screen bg-black'>
-                <div className="mx-auto py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto py-8 sm:pt-24 px-4 sm:px-6 lg:px-8">
                     <div className="mt-8 sm:align-center ">
                         <p className="text-7xl font-extrabold text-white sm:text-center sm:text-8xl  m-auto">
                             Create. <span className="text-blue-500">Track.</span> Achieve.
@@ -30,9 +30,9 @@ export default function HomePage() {
                                 <div className="circle-div"><img src={mealIcon.src} alt="meal image" />
                                 </div>
                             </div>
-                            <div className="w-11/20 pl-4 flex w-full flex-col">
+                            <div className="w-11/20 sm:pl-4 flex w-full flex-col">
                                 <div className="h-1/2 relative ">
-                                    <p className="sm:pl-6 text-zinc-200 absolute bottom-0">
+                                    <p className="pl-6 text-zinc-200 absolute bottom-0">
                                         Introducing Fitpal
                                     </p>
                                 </div>
