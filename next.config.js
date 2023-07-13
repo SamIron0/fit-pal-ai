@@ -11,11 +11,8 @@ const nextConfig = {
 
     return config;
   },
-};
-
-module.exports = nextConfig;
-module.exports = {
   experimental: {
     serverActions: true,
   },
-}
+};
+module.exports = nextConfig;
