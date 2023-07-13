@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Sidebar } from '@/components/sidebar'
-import { SidebarList } from '@/components/sidebar-list'
+//import { SidebarList } from '@/components/sidebar-list'
 import {
   IconGitHub,
   IconNextChat,
