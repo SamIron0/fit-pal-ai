@@ -1,24 +1,5 @@
 import Stripe from 'stripe';
 import { Json } from './types_db';
-import { type Message } from 'ai'
-
-export interface Chat extends Record<string, any> {
-  id: string
-  title: string
-  createdAt: Date
-  userId: string
-  path: string
-  messages: Message[]
-  sharePath?: string
-}
-
-export type ServerActionResult<Result> = Promise<
-  | Result
-  | {
-    error: string
-  }
->
-
 export interface PageMeta {
   title: string;
   description: string;
@@ -38,12 +19,12 @@ export interface Product {
   image?: string;
   metadata?: Stripe.Metadata;
 }
-export interface Meal {
+export interface Meal{
   meal: string | null,
   item: string | null,
   calories: number | null
 }
-export interface MealPlan {
+export interface MealPlan{
   [day: string]: { // day1, day2, ...
     breakfast: {
       item: string;
@@ -102,7 +83,7 @@ export interface Price {
   products?: Product;
 }
 
-export interface PriceWithProduct extends Price { }
+export interface PriceWithProduct extends Price {}
 
 export interface Subscription {
   id: string /* primary key */;
