@@ -2,7 +2,6 @@ import * as React from 'react'
 import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
-import { clearChats } from '@/app/actions'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Sidebar } from '@/components/sidebar'
 import { SidebarList } from '@/components/sidebar-list'
@@ -29,8 +28,6 @@ export async function Header() {
               <SidebarList userId={session?.user?.id} />
             </React.Suspense>
             <SidebarFooter>
-              <ThemeToggle />
-              <ClearHistory clearChats={clearChats} />
             </SidebarFooter>
           </Sidebar>
         
