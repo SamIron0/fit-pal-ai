@@ -3,10 +3,16 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "stripe:listen": "stripe listen --forward-to=localhost:3000/api/webhooks --project-name=saas-starter"
+    "stripe:listen": "stripe listen --forward-to=localhost:3000/api/webhooks --project-name=saas-starter",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "preview": "next build && next start",
+    "type-check": "tsc --noEmit",
+    "format:write": "prettier --write \"{app,lib,components}/**/*.{ts,tsx,mdx}\" --cache",
+    "format:check": "prettier --check \"{app,lib,components}**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.4",
@@ -36,7 +42,26 @@
     "swr": "^2.0.4",
     "tailwind-merge": "^1.13.2",
     "tailwindcss": "^3.2.7",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "@radix-ui/react-dialog": "^1.0.4",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-select": "^1.2.2",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@vercel/analytics": "^1.0.0",
+    "@vercel/kv": "^0.2.1",
+    "@vercel/og": "^0.5.7",
+    "clsx": "^1.2.1",
+    "focus-trap-react": "^10.1.1",
+    "nanoid": "^4.0.2",
+     "openai-edge": "^0.5.1",
+    "react-intersection-observer": "^9.4.4",
+    "react-markdown": "^8.0.7",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-textarea-autosize": "^8.4.1",
+    "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1"
   },
   "devDependencies": {
     "@types/node": "^18.14.4",
@@ -45,12 +70,24 @@
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/react-dom": "^18.0.7",
+    "@types/react-syntax-highlighter": "^15.5.6",
+    "@typescript-eslint/parser": "^5.59.7",
+    "eslint": "^8.31.0",
+    "eslint-config-next": "13.4.7-canary.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-tailwindcss": "^3.12.0",
+    "tailwind-merge": "^1.12.0",
+    "tailwindcss": "^3.3.1",
+    "tailwindcss-animate": "^1.0.5"
   },
   "prettier": {
     "arrowParens": "always",
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "none"
-  }
+  },
+  "packageManager": "pnpm@8.6.3"
 }
