@@ -50,7 +50,7 @@ const Navbar = () => {
           </div >
         </nav >
       ) : (
-        {Header}
+        <>Header</>
       )
       }
     </div>
