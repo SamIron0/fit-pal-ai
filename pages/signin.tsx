@@ -7,7 +7,6 @@ import { ThemeSupa } from '@supabase/auth-ui-shared';
 import LoadingDots from '@/components/ui/LoadingDots';
 import Logo from '@/components/icons/Logo';
 import { getURL } from '@/utils/helpers';
-import GitHub from '@/components/icons/GitHub';
 
 const SignIn = () => {
   const router = useRouter();
@@ -21,7 +20,7 @@ const SignIn = () => {
   }, [user]);
 
   if (!user)
-    return ( 
+    return (
       <div className="flex justify-center height-screen-helper">
         <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
           <div className="flex justify-center pb-12 ">
@@ -30,7 +29,7 @@ const SignIn = () => {
           <div className="flex flex-col space-y-4">
             <Auth
               supabaseClient={supabaseClient}
-              providers={['github']}
+              providers={[]}
               redirectTo={getURL()}
               magicLink={true}
               appearance={{
