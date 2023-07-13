@@ -7,6 +7,7 @@ import { ThemeSupa } from '@supabase/auth-ui-shared';
 import LoadingDots from '@/components/ui/LoadingDots';
 import Logo from '@/components/icons/Logo';
 import { getURL } from '@/utils/helpers';
+import GitHub from '@/components/icons/GitHub';
 
 const SignIn = () => {
   const router = useRouter();
@@ -29,7 +30,7 @@ const SignIn = () => {
           <div className="flex flex-col space-y-4">
             <Auth
               supabaseClient={supabaseClient}
-              providers={[]}
+              providers={['github']}
               redirectTo={getURL()}
               magicLink={true}
               appearance={{
