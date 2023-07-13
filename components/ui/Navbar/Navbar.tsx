@@ -6,7 +6,7 @@ import Logo from '@/components/icons/Logo';
 import { useUser } from '@/utils/useUser';
 
 import s from './Navbar.module.css';
-import Button from '../Button/Button';
+//import Button from '../Button/Button';
 import { Header } from '@/components/header';
 
 const Navbar = () => {
