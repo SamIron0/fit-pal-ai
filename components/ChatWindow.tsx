@@ -8,7 +8,6 @@ import {
 } from '@supabase/auth-helpers-nextjs';
 
 import LoadingDots from '@/components/ui/LoadingDots';
-import Button from '@/components/ui/Button';
 import { useUser } from '@/utils/useUser';
 import { postMealPlan } from '@/utils/helpers';
 import { Meal, MealPlan } from '@/types';
