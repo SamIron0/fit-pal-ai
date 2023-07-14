@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 
-import { auth } from '@/auth'
+//import { auth } from '@/auth'
 import { getChat } from '@/pages/actions'
 import { Chat } from '@/components/chat'
 
@@ -17,11 +17,11 @@ export interface ChatPageProps {
 export async function generateMetadata({
   params
 }: ChatPageProps): Promise<Metadata> {
-  const session = await auth()
+  //const session = await auth()
 
-  if (!session?.user) {
-    return {}
-  }
+  //if (!session?.user) {
+    //return {}
+  //}
 
   const chat = await getChat(params.id, session.user.id)
   return {
