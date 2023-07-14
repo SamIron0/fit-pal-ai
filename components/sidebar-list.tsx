@@ -1,4 +1,4 @@
-import { getChats, removeChat, shareChat } from '@/pages/actions'
+import { getChats, removeChat, shareChat } from '@/app/actions'
 import { SidebarActions } from '@/components/sidebar-actions'
 import { SidebarItem } from '@/components/sidebar-item'
 
