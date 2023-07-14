@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 
-//import { auth } from '@/auth'
+import { auth } from '@/auth'
 import { getChat } from '@/pages/actions'
 import { Chat } from '@/components/chat'
 
