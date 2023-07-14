@@ -1,6 +1,6 @@
 import { nanoid } from '@/lib/utils'
 import { Chat } from '@/components/chat'
-export const runtime = 'edge'
+export const runtime = 'experimental-edge'
 
 export default async function SignInPage() {
   const id = nanoid()
